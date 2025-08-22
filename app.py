@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, Request, HTTPException
+from fastapi import FastAPI, File, UploadFile, Request, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.templating import Jinja2Templates
@@ -22,20 +22,28 @@ app = FastAPI(
 
 # Templates - try multiple paths for Vercel compatibility
 templates = None
-template_paths = ["templates", "./templates", "/var/task/templates"]
+template_paths = [
+    "templates", 
+    "./templates", 
+    "/var/task/templates",
+    os.path.join(os.path.dirname(__file__), "templates")
+]
 
 for template_path in template_paths:
     try:
         if os.path.exists(template_path):
             templates = Jinja2Templates(directory=template_path)
-            print(f"Templates loaded from: {template_path}")
+            print(f"✅ Templates loaded from: {template_path}")
+            print(f"   Template files: {os.listdir(template_path) if os.path.isdir(template_path) else 'Not a directory'}")
             break
     except Exception as e:
-        print(f"Failed to load templates from {template_path}: {e}")
+        print(f"❌ Failed to load templates from {template_path}: {e}")
         continue
 
 if not templates:
-    print("No templates found, using fallback HTML")
+    print("⚠️ No templates found, using fallback HTML")
+    print(f"   Current working directory: {os.getcwd()}")
+    print(f"   Directory contents: {os.listdir('.')}")
 
 # Add CORS
 app.add_middleware(
@@ -314,7 +322,7 @@ async def convert_get():
     }, status_code=405)
 
 @app.post("/convert")
-async def convert_workflow(file: UploadFile = File(...), format: str = "python"):
+async def convert_workflow(file: UploadFile = File(...), format: str = Form("python")):
     """Convert uploaded Alteryx workflow to PySpark code."""
     
     print(f"Received file: {file.filename}, format: {format}")
