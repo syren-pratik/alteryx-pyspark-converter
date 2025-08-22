@@ -58,7 +58,10 @@ app.add_middleware(
 async def read_root(request: Request):
     print(f"🏠 Root route accessed from {request.client.host if request.client else 'unknown'}")
     
-    if templates:
+    # TEMPORARILY FORCE FALLBACK TO DEBUG TEMPLATE ISSUES
+    use_template = False  # Change to True to test template
+    
+    if templates and use_template:
         print("📄 Using professional template")
         try:
             template_vars = {
@@ -79,7 +82,7 @@ async def read_root(request: Request):
             import traceback
             traceback.print_exc()
     else:
-        print("📝 Using fallback HTML")
+        print("📝 Using fallback HTML (forced for debugging)")
     
     # Professional fallback HTML
     return HTMLResponse("""
@@ -334,6 +337,24 @@ async def debug():
         "python_version": sys.version,
         "timestamp": time.strftime('%Y-%m-%d %H:%M:%S')
     })
+
+@app.get("/test")
+async def test_page():
+    """Simple test page to verify routing works"""
+    return HTMLResponse("""
+    <!DOCTYPE html>
+    <html>
+    <head><title>Test Page</title></head>
+    <body>
+        <h1>✅ Test Page Working!</h1>
+        <p>If you see this, the server and routing are working.</p>
+        <p>Templates loaded: """ + str(templates is not None) + """</p>
+        <a href="/debug">Debug Info</a> | 
+        <a href="/health">Health Check</a> | 
+        <a href="/">Main Page</a>
+    </body>
+    </html>
+    """)
 
 @app.get("/convert")
 async def convert_get():
