@@ -56,7 +56,10 @@ app.add_middleware(
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
+    print(f"🏠 Root route accessed from {request.client.host if request.client else 'unknown'}")
+    
     if templates:
+        print("📄 Using professional template")
         try:
             template_vars = {
                 "request": request,
@@ -67,9 +70,16 @@ async def read_root(request: Request):
                 "tools_supported": 34,
                 "avg_conversion_time": 2.3
             }
-            return templates.TemplateResponse("index.html", template_vars)
+            print(f"✅ Template variables prepared: {list(template_vars.keys())}")
+            response = templates.TemplateResponse("index.html", template_vars)
+            print("✅ Template response generated successfully")
+            return response
         except Exception as e:
-            print(f"Template error: {e}")
+            print(f"❌ Template error: {e}")
+            import traceback
+            traceback.print_exc()
+    else:
+        print("📝 Using fallback HTML")
     
     # Professional fallback HTML
     return HTMLResponse("""
@@ -311,6 +321,19 @@ async def read_root(request: Request):
 @app.get("/health")
 async def health():
     return {"status": "ok", "message": "App is running successfully", "deployment": "vercel"}
+
+@app.get("/debug")
+async def debug():
+    """Debug endpoint to check server status"""
+    import sys
+    return JSONResponse({
+        "server": "running",
+        "templates_loaded": templates is not None,
+        "templates_path": [p for p in template_paths if os.path.exists(p)],
+        "working_directory": os.getcwd(),
+        "python_version": sys.version,
+        "timestamp": time.strftime('%Y-%m-%d %H:%M:%S')
+    })
 
 @app.get("/convert")
 async def convert_get():
