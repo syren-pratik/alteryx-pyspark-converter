@@ -1,0 +1,179 @@
+{
+  "supported": [
+    {
+      "tool": "AlteryxBasePluginsGui.DbFileInput.DbFileInput",
+      "usage_count": 217
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect",
+      "usage_count": 455
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Join.Join",
+      "usage_count": 113
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Sort.Sort",
+      "usage_count": 26
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.DbFileOutput.DbFileOutput",
+      "usage_count": 109
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Filter.Filter",
+      "usage_count": 385
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Formula.Formula",
+      "usage_count": 328
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Union.Union",
+      "usage_count": 171
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.BrowseV2.BrowseV2",
+      "usage_count": 167
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.FindReplace.FindReplace",
+      "usage_count": 108
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.TextInput.TextInput",
+      "usage_count": 36
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.RegEx.RegEx",
+      "usage_count": 7
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.CrossTab.CrossTab",
+      "usage_count": 11
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Unique.Unique",
+      "usage_count": 126
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.DynamicRename.DynamicRename",
+      "usage_count": 15
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula",
+      "usage_count": 3
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.DynamicSelect.DynamicSelect",
+      "usage_count": 3
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.RecordID.RecordID",
+      "usage_count": 18
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone",
+      "usage_count": 11
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.Transpose.Transpose",
+      "usage_count": 8
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.XMLParse.XMLParse",
+      "usage_count": 4
+    }
+  ],
+  "unsupported": [
+    {
+      "tool": "AlteryxGuiToolkit.TextBox.TextBox",
+      "usage_count": 135
+    },
+    {
+      "tool": "AlteryxGuiToolkit.ToolContainer.ToolContainer",
+      "usage_count": 172
+    },
+    {
+      "tool": "Unknown",
+      "usage_count": 130
+    },
+    {
+      "tool": "AlteryxConnectorGui.Download.Download",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.JSONParse.JSONParse",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.Summarize.Summarize",
+      "usage_count": 54
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.TextToColumns.TextToColumns",
+      "usage_count": 28
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.AppendFields.AppendFields",
+      "usage_count": 8
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula",
+      "usage_count": 11
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.DateTime.DateTime",
+      "usage_count": 17
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.FuzzyMatch.FuzzyMatch",
+      "usage_count": 8
+    },
+    {
+      "tool": "PlotlyCharting",
+      "usage_count": 10
+    },
+    {
+      "tool": "PortfolioPluginsGui.ComposerRender.PortfolioComposerRender",
+      "usage_count": 6
+    },
+    {
+      "tool": "Insights",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.CreatePoints.CreatePoints",
+      "usage_count": 4
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.TradeArea.TradeArea",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.SpatialMatch.SpatialMatch",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo",
+      "usage_count": 4
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.SpatialProcess.SpatialProcess",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.AutoField.AutoField",
+      "usage_count": 2
+    },
+    {
+      "tool": "AlteryxSpatialPluginsGui.ReportMap.ReportMap",
+      "usage_count": 4
+    },
+    {
+      "tool": "AlteryxBasePluginsGui.GenerateRows.GenerateRows",
+      "usage_count": 2
+    }
+  ],
+  "coverage_percentage": 79.26912568306011
+}

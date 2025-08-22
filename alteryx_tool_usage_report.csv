@@ -1,0 +1,44 @@
+Tool Type,Usage Count,Files Count,Example Files
+AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect,455,23,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, All Data Cleanse and Calculate v 3.0.yxmd"
+AlteryxBasePluginsGui.Filter.Filter,385,22,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, Transformations test workflow.yxmd"
+AlteryxBasePluginsGui.Formula.Formula,328,23,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, Transformations test workflow.yxmd"
+AlteryxBasePluginsGui.DbFileInput.DbFileInput,217,25,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, All Data Cleanse and Calculate v 3.0.yxmd"
+AlteryxGuiToolkit.ToolContainer.ToolContainer,172,16,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, NewAllData Union for TDE- V4.0.1.yxmd"
+AlteryxBasePluginsGui.Union.Union,171,20,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, All Data Cleanse and Calculate v 3.0.yxmd"
+AlteryxBasePluginsGui.BrowseV2.BrowseV2,167,20,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, ONEASL API FOR MD SQI.yxmd"
+AlteryxGuiToolkit.TextBox.TextBox,135,17,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, All Data Cleanse and Calculate v 3.0.yxmd"
+Unknown,130,18,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, Replica of JJV QSR Workflow.yxmd"
+AlteryxBasePluginsGui.Unique.Unique,126,13,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, QSR data refresh.yxmd"
+AlteryxBasePluginsGui.Join.Join,113,19,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, All Data Cleanse and Calculate v 3.0.yxmd"
+AlteryxBasePluginsGui.DbFileOutput.DbFileOutput,109,23,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, All Data Cleanse and Calculate v 3.0.yxmd"
+AlteryxBasePluginsGui.FindReplace.FindReplace,108,12,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, Audit_followup v5.0.yxmd"
+AlteryxSpatialPluginsGui.Summarize.Summarize,54,11,"Audit_followup.yxmd, Replica of JJV QSR Workflow.yxmd, 04 Report opioid epidemic trends by year.yxmd"
+AlteryxBasePluginsGui.TextInput.TextInput,36,11,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, World_data_prep.yxmd"
+AlteryxBasePluginsGui.TextToColumns.TextToColumns,28,8,"Audit_followup.yxmd, Audit_followup v5.0.yxmd, REGULATORY DATA WORKFLOW 3.0.4.yxmd"
+AlteryxBasePluginsGui.Sort.Sort,26,11,"Audit_followup.yxmd, 07 01 Combine 2 spreadsheets.yxmd, World_data_prep.yxmd"
+AlteryxBasePluginsGui.RecordID.RecordID,18,8,"All Data Cleanse and Calculate v 3.0.yxmd, World_data_prep.yxmd, All Data Cleanse and Calculate v 4.0.1.yxmd"
+AlteryxBasePluginsGui.DateTime.DateTime,17,7,"All Data Cleanse and Calculate v 3.0.yxmd, NewAllData Union for TDE- V4.0.1.yxmd, All Data Cleanse and Calculate v 4.0.1.yxmd"
+AlteryxBasePluginsGui.DynamicRename.DynamicRename,15,7,"Audit_followup.yxmd, Audit_followup v5.0.yxmd, ASL Data Processing for SQUIDs New.yxmd"
+AlteryxBasePluginsGui.CrossTab.CrossTab,11,6,"05 Analyze a sales pipeline.yxmd, 04 Report opioid epidemic trends by year.yxmd, ASL Data Processing for SQUIDs New.yxmd"
+AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula,11,6,"All Data Cleanse and Calculate v 3.0.yxmd, Import_World_Information.yxmd, 04 Report opioid epidemic trends by year.yxmd"
+AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone,11,5,"All Data Cleanse and Calculate v 3.0.yxmd, All Data Cleanse and Calculate v 4.0.1.yxmd, ASL Data Processing for SQUIDs New.yxmd"
+PlotlyCharting,10,2,"06 Analyze and report on traffic fatalities.yxmd, 04 Report opioid epidemic trends by year.yxmd"
+AlteryxBasePluginsGui.AppendFields.AppendFields,8,5,"Audit_followup.yxmd, All Data Cleanse and Calculate v 3.0.yxmd, Audit_followup v5.0.yxmd"
+AlteryxBasePluginsGui.FuzzyMatch.FuzzyMatch,8,1,NC WORKFLOW v4.0.yxmd
+AlteryxBasePluginsGui.Transpose.Transpose,8,4,"AUDIT DATA WORKFLOW v4.0.yxmd, NC WORKFLOW v4.0.yxmd, 05 Analyze a sales pipeline.yxmd"
+AlteryxBasePluginsGui.RegEx.RegEx,7,4,"ASL Data Processing for SQUIDs New.yxmd, 03 Convert stock info from XML to a spreadsheet.yxmd, Import_World_Information.yxmd"
+PortfolioPluginsGui.ComposerRender.PortfolioComposerRender,6,2,"06 Analyze and report on traffic fatalities.yxmd, 04 Report opioid epidemic trends by year.yxmd"
+AlteryxBasePluginsGui.XMLParse.XMLParse,4,1,03 Convert stock info from XML to a spreadsheet.yxmd
+AlteryxSpatialPluginsGui.CreatePoints.CreatePoints,4,2,"02 Map a trade area around a store.yxmd, 06 Analyze and report on traffic fatalities.yxmd"
+AlteryxSpatialPluginsGui.SpatialInfo.SpatialInfo,4,1,02 Map a trade area around a store.yxmd
+AlteryxSpatialPluginsGui.ReportMap.ReportMap,4,1,06 Analyze and report on traffic fatalities.yxmd
+AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula,3,1,Import_World_Information.yxmd
+AlteryxBasePluginsGui.DynamicSelect.DynamicSelect,3,2,"03 Convert stock info from XML to a spreadsheet.yxmd, Import_World_Information.yxmd"
+AlteryxConnectorGui.Download.Download,2,2,"ASL Data Processing for SQUIDs New.yxmd, ONEASL API FOR MD SQI.yxmd"
+AlteryxBasePluginsGui.JSONParse.JSONParse,2,2,"ASL Data Processing for SQUIDs New.yxmd, ONEASL API FOR MD SQI.yxmd"
+Insights,2,1,04 Report opioid epidemic trends by year.yxmd
+AlteryxSpatialPluginsGui.TradeArea.TradeArea,2,1,02 Map a trade area around a store.yxmd
+AlteryxSpatialPluginsGui.SpatialMatch.SpatialMatch,2,1,02 Map a trade area around a store.yxmd
+AlteryxSpatialPluginsGui.SpatialProcess.SpatialProcess,2,1,02 Map a trade area around a store.yxmd
+AlteryxBasePluginsGui.AutoField.AutoField,2,1,06 Analyze and report on traffic fatalities.yxmd
+AlteryxBasePluginsGui.GenerateRows.GenerateRows,2,1,AUDIT DATA WORKFLOW v4.0.yxmd

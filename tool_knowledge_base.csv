@@ -1,0 +1,34 @@
+Tool Type,Tool Name,Description,PySpark Functions,Usage Count,Example Use Case,Complexity
+AlteryxBasePluginsGui.DbFileInput.DbFileInput,Input Data,Read data from files (CSV/Excel/Parquet),spark.read.csv() spark.read.parquet() spark.read.format(),217,Load source data for processing,Basic
+AlteryxBasePluginsGui.DbFileOutput.DbFileOutput,Output Data,Write data to files,df.write.csv() df.write.parquet() df.write.mode(),109,Save processed results,Basic
+AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect,Select,Select and configure columns,df.select() col().alias() df.drop(),455,Choose specific columns and rename,Basic
+AlteryxBasePluginsGui.Filter.Filter,Filter,Filter rows based on conditions,df.filter() df.where() col() == lit(),385,Remove unwanted records,Basic
+AlteryxBasePluginsGui.Formula.Formula,Formula,Create calculated fields,df.withColumn() when().otherwise() concat() lit(),328,Business logic and calculations,Intermediate
+AlteryxBasePluginsGui.Union.Union,Union,Combine datasets vertically,df1.union(df2) df.unionByName(),171,Stack multiple datasets,Basic
+AlteryxBasePluginsGui.Join.Join,Join,Combine datasets on keys,df1.join(df2 'key' 'inner') broadcast(),113,Merge related data,Intermediate
+AlteryxBasePluginsGui.BrowseV2.BrowseV2,Browse,Preview data during development,df.show() df.count() df.describe(),167,Data quality checks,Basic
+AlteryxBasePluginsGui.Unique.Unique,Unique,Remove duplicate records,df.distinct() df.dropDuplicates(),126,Data deduplication,Basic
+AlteryxBasePluginsGui.FindReplace.FindReplace,Find Replace,Replace values based on lookup,df.replace() when().otherwise() lookup_df.join(),108,Data standardization,Intermediate
+AlteryxSpatialPluginsGui.Summarize.Summarize,Summarize,Group and aggregate data,df.groupBy().agg() sum() avg() count() max() min(),54,Statistical analysis,Intermediate
+AlteryxBasePluginsGui.TextInput.TextInput,Text Input,Create DataFrame from static text,spark.createDataFrame() lit() array(),36,Add constants and lookup tables,Basic
+AlteryxBasePluginsGui.TextToColumns.TextToColumns,Text to Columns,Split column into multiple columns,split() col().getItem() regexp_extract(),28,Parse delimited data,Intermediate
+AlteryxBasePluginsGui.Sort.Sort,Sort,Order rows by columns,df.orderBy() col().asc() col().desc(),26,Data ordering for analysis,Basic
+AlteryxBasePluginsGui.RecordID.RecordID,Record ID,Add sequential row numbers,row_number().over() Window.orderBy() monotonically_increasing_id(),18,Create unique identifiers,Basic
+AlteryxBasePluginsGui.DateTime.DateTime,DateTime,Parse and manipulate dates,to_date() date_format() datediff() date_add() year() month(),17,Date calculations,Intermediate
+AlteryxBasePluginsGui.DynamicRename.DynamicRename,Dynamic Rename,Rename columns based on patterns,df.select([col(c).alias(new_name)]) df.toDF(),15,Column name standardization,Intermediate
+AlteryxBasePluginsGui.CrossTab.CrossTab,CrossTab,Pivot data from rows to columns,df.groupBy().pivot().agg() first() sum(),11,Reshape data for reporting,Advanced
+AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula,Multi-Field Formula,Apply formula to multiple fields,df.select(*[f(col(c)) for c in cols]) fnmatch.fnmatch(),11,Bulk column transformations,Advanced
+AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone,Block Until Done,Control workflow execution order,df.cache().count() df.checkpoint(),11,Performance optimization,Advanced
+AlteryxBasePluginsGui.AppendFields.AppendFields,Append Fields,Cartesian product of datasets,df1.crossJoin(df2) broadcast(),8,Add constants to all rows,Intermediate
+AlteryxBasePluginsGui.Transpose.Transpose,Transpose,Transform columns to rows,stack() explode() array() struct(),8,Reshape wide to long format,Advanced
+AlteryxBasePluginsGui.RegEx.RegEx,RegEx,Extract data using patterns,regexp_extract() regexp_replace() split(),7,Text parsing and extraction,Advanced
+AlteryxBasePluginsGui.XMLParse.XMLParse,XML Parse,Parse XML into tabular format,from_json() get_json_object() spark-xml library,4,Handle semi-structured data,Advanced
+AlteryxBasePluginsGui.DynamicSelect.DynamicSelect,Dynamic Select,Select columns by patterns,df.select(*[c for c in df.columns if pattern]),3,Flexible column selection,Advanced
+AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula,Multi-Row Formula,Access previous/next rows,lag() lead() Window.partitionBy() row_number(),3,Time-series calculations,Advanced
+AlteryxBasePluginsGui.FuzzyMatch.FuzzyMatch,Fuzzy Match,Match similar text values,soundex() levenshtein() custom UDF,8,Data matching and deduplication,Expert
+AlteryxBasePluginsGui.GenerateRows.GenerateRows,Generate Rows,Create new rows based on rules,explode() sequence() range(),2,Data expansion,Intermediate
+AlteryxBasePluginsGui.AutoField.AutoField,Auto Field,Automatically optimize data types,df.dtypes cast() schema inference,2,Data type optimization,Intermediate
+AlteryxConnectorGui.Download.Download,Download,Fetch data from URLs,requests library + spark.createDataFrame(),2,API data ingestion,Advanced
+AlteryxBasePluginsGui.JSONParse.JSONParse,JSON Parse,Parse JSON into columns,from_json() get_json_object() explode(),2,Handle JSON data,Advanced
+AlteryxGuiToolkit.TextBox.TextBox,Text Box,Add documentation to workflow,# comments and docstrings,135,Workflow documentation,Basic
+AlteryxGuiToolkit.ToolContainer.ToolContainer,Tool Container,Group related tools,# section comments,172,Workflow organization,Basic
