@@ -242,7 +242,7 @@ async def read_root(request: Request):
                         </select>
                     </div>
                     
-                    <button type="submit" class="convert-btn">Convert to PySpark ⚡</button>
+                    <button type="submit" class="convert-btn" onclick="showLoading()">Convert to PySpark ⚡</button>
                 </form>
             </div>
 
@@ -265,6 +265,37 @@ async def read_root(request: Request):
                 </div>
             </div>
         </div>
+        
+        <script>
+            function showLoading() {
+                const btn = document.querySelector('.convert-btn');
+                btn.innerHTML = 'Converting... ⏳';
+                btn.disabled = true;
+            }
+            
+            // Handle form submission
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.querySelector('form');
+                form.addEventListener('submit', function(e) {
+                    const fileInput = document.querySelector('input[type="file"]');
+                    if (!fileInput.files || fileInput.files.length === 0) {
+                        e.preventDefault();
+                        alert('Please select a .yxmd file to upload');
+                        return false;
+                    }
+                    
+                    const fileName = fileInput.files[0].name;
+                    if (!fileName.toLowerCase().endsWith('.yxmd')) {
+                        e.preventDefault();
+                        alert('Please select a valid .yxmd file');
+                        return false;
+                    }
+                    
+                    showLoading();
+                    return true;
+                });
+            });
+        </script>
     </body>
     </html>
     """)
@@ -273,11 +304,23 @@ async def read_root(request: Request):
 async def health():
     return {"status": "ok", "message": "App is running successfully", "deployment": "vercel"}
 
+@app.get("/convert")
+async def convert_get():
+    """Handle GET requests to /convert - redirect to main page"""
+    return JSONResponse({
+        "error": "Please use the upload form to convert files",
+        "message": "GET requests not supported on /convert endpoint",
+        "redirect": "/"
+    }, status_code=405)
+
 @app.post("/convert")
 async def convert_workflow(file: UploadFile = File(...), format: str = "python"):
     """Convert uploaded Alteryx workflow to PySpark code."""
     
-    if not file.filename.endswith('.yxmd'):
+    print(f"Received file: {file.filename}, format: {format}")
+    
+    if not file.filename or not file.filename.endswith('.yxmd'):
+        print(f"Invalid file: {file.filename}")
         raise HTTPException(status_code=400, detail="Please upload a .yxmd file")
     
     try:
