@@ -58,8 +58,8 @@ app.add_middleware(
 async def read_root(request: Request):
     print(f"🏠 Root route accessed from {request.client.host if request.client else 'unknown'}")
     
-    # TEMPORARILY FORCE FALLBACK TO DEBUG TEMPLATE ISSUES
-    use_template = False  # Change to True to test template
+    # TEMPORARILY FORCE FALLBACK TO DEBUG TEMPLATE ISSUES  
+    use_template = True  # Re-enable template now that fallback works
     
     if templates and use_template:
         print("📄 Using professional template")
