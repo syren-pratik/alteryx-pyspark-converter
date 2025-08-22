@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from mangum import Mangum
 import sys
 import os
 
@@ -21,9 +22,6 @@ try:
         allow_headers=["*"],
     )
     
-    # Export the app for Vercel
-    handler = app
-    
 except Exception as e:
     # Create a fallback app if main_app fails to import
     app = FastAPI(title="Alteryx Converter - Error")
@@ -36,5 +34,6 @@ except Exception as e:
             "working_directory": os.getcwd(),
             "python_path": sys.path[:3]
         }, status_code=500)
-    
-    handler = app
+
+# Export the ASGI handler for Vercel
+handler = Mangum(app)

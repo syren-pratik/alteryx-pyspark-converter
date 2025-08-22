@@ -9,3 +9,6 @@ lxml==4.9.3
 
 # Production Server  
 gunicorn==21.2.0
+
+# Serverless Deployment
+mangum==0.17.0
