@@ -321,6 +321,11 @@ async def convert_get():
         "redirect": "/"
     }, status_code=405)
 
+@app.post("/api/upload")
+async def api_upload(file: UploadFile = File(...), format: str = Form("python")):
+    """API endpoint for file upload - matches professional template"""
+    return await convert_workflow(file, format)
+
 @app.post("/convert")
 async def convert_workflow(file: UploadFile = File(...), format: str = Form("python")):
     """Convert uploaded Alteryx workflow to PySpark code."""
