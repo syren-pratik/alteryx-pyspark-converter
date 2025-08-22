@@ -42,3 +42,4 @@ python main_app.py
 **Alteryx Formula:** `[Amount] * 1.1`  
 **PySpark Output:** `df.withColumn("Amount", col("Amount") * lit(1.1))`
 
+# Vercel Deployment - Fri Aug 22 19:59:49 IST 2025

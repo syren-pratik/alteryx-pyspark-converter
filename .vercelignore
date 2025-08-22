@@ -1,0 +1,8 @@
+# Vercel ignore file
+__pycache__/
+*.pyc
+.env
+logs/
+temp/
+unread_alteryx_files/
+.git/
