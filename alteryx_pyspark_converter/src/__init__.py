@@ -1,1 +1,0 @@
-"""Source package for Alteryx PySpark Converter."""

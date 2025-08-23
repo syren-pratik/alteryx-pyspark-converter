@@ -252,7 +252,6 @@
         }
 
         .result-section {
-            display: none;
             margin-top: 2rem;
         }
 
@@ -357,22 +356,7 @@
         <div class="header">
             <h1>{{ app_name }}</h1>
             <p>Enterprise-grade converter for Alteryx workflows to PySpark code</p>
-            <p>Version {{ app_version }}</p>
-            
-            <div class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-number">{{ supported_tools_count }}</div>
-                    <div class="stat-label">Supported Tools</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">{{ total_conversions }}</div>
-                    <div class="stat-label">Total Conversions</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">{{ "%.1f"|format(success_rate) }}%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-            </div>
+            <p style="color: #6b7280; font-size: 0.9rem;">Version {{ app_version }}</p>
         </div>
 
         <div class="main-section">
@@ -395,30 +379,223 @@
             </div>
         </div>
 
-        <div class="result-section" id="resultSection">
+        <div class="result-section hidden" id="resultSection">
             <div class="tabs">
                 <button class="tab active" data-tab="workflow">🔄 Workflow Steps</button>
                 <button class="tab" data-tab="analysis">🔧 Tool Analysis</button>
                 <button class="tab" data-tab="code">📋 Generated Code</button>
+                <button class="tab" data-tab="ai-analysis">🤖 AI Analysis</button>
             </div>
 
             <div class="tab-content active" id="workflow-tab">
-                <div class="workflow-canvas" id="workflowCanvas">
-                    <svg id="workflowSvg" width="100%" height="400"></svg>
+                <div class="workflow-steps" id="workflowSteps" style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; color: #F59E0B;">Workflow Steps</h3>
+                    <div id="stepsContainer" style="max-height: 500px; overflow-y: auto;">
+                        <!-- Steps will be populated here -->
+                    </div>
                 </div>
             </div>
 
             <div class="tab-content" id="analysis-tab">
-                <div id="analysisContent"></div>
+                <div class="analysis-grid" id="analysisContent" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalToolsCount">0</div>
+                        <div class="stat-label">Total Tools</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="supportedToolsCount">0</div>
+                        <div class="stat-label">Supported Tools</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="unsupportedToolsCount">0</div>
+                        <div class="stat-label">Unsupported Tools</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="supportRatePercent">0%</div>
+                        <div class="stat-label">Support Rate</div>
+                    </div>
+                </div>
             </div>
 
             <div class="tab-content" id="code-tab">
                 <div class="code-container">
                     <div class="code-header">
                         <h3>Generated PySpark Code</h3>
-                        <button class="btn btn-secondary" id="downloadBtn">Download Code</button>
+                        <div style="display: flex; align-items: center;">
+                            <select id="outputFormat" class="format-selector" style="padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; margin-right: 1rem;">
+                                <option value="python">Python (.py)</option>
+                                <option value="jupyter">Jupyter Notebook (.ipynb)</option>
+                                <option value="databricks">Databricks Notebook</option>
+                            </select>
+                            <button class="btn btn-secondary" id="copyCodeBtn" onclick="copyCode()">📋 Copy</button>
+                            <button class="btn btn-secondary" id="downloadBtn" style="margin-left: 0.5rem;">⬇ Download</button>
+                        </div>
                     </div>
                     <div class="code-content" id="codeContent"></div>
+                </div>
+                
+                <!-- XML View Section -->
+                <div class="xml-section" style="margin-top: 2rem;">
+                    <div class="collapsible-header" id="xmlHeader" style="padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>📄 Original XML Workflow</span>
+                        <div style="display: flex; align-items: center;">
+                            <button class="btn btn-secondary" id="copyXmlBtn" onclick="copyXml(event)" style="margin-right: 1rem; padding: 0.25rem 0.75rem; font-size: 0.9rem;">📋 Copy XML</button>
+                            <span id="xmlToggle">▶</span>
+                        </div>
+                    </div>
+                    <div class="xml-content" id="xmlContent" style="display: none; margin-top: 1rem; background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem; max-height: 400px; overflow-y: auto;">
+                        <pre id="xmlCode" style="color: #e5e5e5; font-family: monospace; white-space: pre-wrap; word-wrap: break-word;"></pre>
+                    </div>
+                </div>
+                
+                <!-- Conversion Logs Section -->
+                <div class="logs-section" style="margin-top: 2rem;">
+                    <div class="collapsible-header" id="logsHeader" style="padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        <span>📝 Conversion Logs</span>
+                        <div style="display: flex; align-items: center;">
+                            <button class="btn btn-secondary" id="copyLogsBtn" onclick="copyLogs(event)" style="margin-right: 1rem; padding: 0.25rem 0.75rem; font-size: 0.9rem;">📋 Copy Logs</button>
+                            <span id="logsToggle">▶</span>
+                        </div>
+                    </div>
+                    <div class="logs-content" id="logsContent" style="display: none; margin-top: 1rem; background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem; max-height: 400px; overflow-y: auto;">
+                        <pre id="logsCode" style="color: #90EE90; font-family: 'Courier New', monospace; font-size: 0.9rem; white-space: pre-wrap;"></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="ai-analysis-tab">
+                <div style="padding: 1.5rem;">
+                    <h3 style="color: #F59E0B; margin-bottom: 1rem;">🤖 AI-Powered Code Analysis</h3>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <!-- Model Selector Dropdown -->
+                        <div style="position: relative; flex: 1; max-width: 300px;">
+                            <select id="modelSelector" style="
+                                width: 100%;
+                                padding: 0.75rem 1rem;
+                                background: rgba(255, 255, 255, 0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.2);
+                                border-radius: 12px;
+                                color: white;
+                                font-size: 1rem;
+                                cursor: pointer;
+                                appearance: none;
+                                background-image: url('data:image/svg+xml;utf8,<svg fill=\"white\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>');
+                                background-repeat: no-repeat;
+                                background-position: right 0.5rem center;
+                                background-size: 1.5rem;
+                                padding-right: 2.5rem;
+                            " onchange="onModelChange()">
+                                <option value="local" style="background: #2d2d2d;">🔍 Local Analysis (No AI)</option>
+                                <option value="ollama" style="background: #2d2d2d;">🦙 Llama 3.2 (Free, Local)</option>
+                                <option value="gemini" style="background: #2d2d2d;" selected>✨ Google Gemini Pro</option>
+                                <option value="openai" style="background: #2d2d2d;">⚡ OpenAI GPT-4</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Analyze Button -->
+                        <button class="btn" onclick="runAICorrection()" style="padding: 0.75rem 2rem;">
+                            <span>✨</span>
+                            <span>Correct & Optimize Code</span>
+                        </button>
+                    </div>
+                    
+                    <!-- API Key Input (hidden by default, shown for OpenAI) -->
+                    <div id="apiKeySection" style="display: none; margin-bottom: 1rem;">
+                        <input type="password" id="openaiApiKey" placeholder="Enter OpenAI API Key (sk-...)" style="
+                            width: 100%;
+                            max-width: 400px;
+                            padding: 0.75rem 1rem;
+                            background: rgba(255, 255, 255, 0.1);
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                            border-radius: 8px;
+                            color: white;
+                            font-size: 0.9rem;
+                        ">
+                        <small style="display: block; margin-top: 0.5rem; color: #9ca3af;">
+                            Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank" style="color: #F59E0B;">OpenAI Platform</a>
+                        </small>
+                    </div>
+                    
+                    <!-- Model Description -->
+                    <div id="modelDescription" style="margin-bottom: 1rem; padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+                        <small id="modelDescText" style="color: #9ca3af;">
+                            ✨ Google Gemini Pro - Advanced AI analysis with comprehensive code review
+                        </small>
+                    </div>
+                    
+                    <!-- Correction Results -->
+                    <div id="correctionResults" style="display: none;">
+                        <!-- Accuracy Score -->
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                            <h4 style="margin-bottom: 0.5rem;">Conversion Accuracy</h4>
+                            <div style="display: flex; align-items: center;">
+                                <div id="accuracyScore" style="font-size: 2rem; font-weight: bold; color: #F59E0B; margin-right: 1rem;">0%</div>
+                                <div id="accuracyBar" style="flex: 1; height: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
+                                    <div id="accuracyFill" style="height: 100%; background: linear-gradient(90deg, #D97706, #F59E0B); transition: width 0.5s;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Improvements -->
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                            <h4 style="margin-bottom: 0.5rem;">AI Improvements Applied</h4>
+                            <div id="improvementsList"></div>
+                        </div>
+                        
+                        <!-- Code Comparison -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                                <button class="btn btn-secondary" onclick="showOriginalCode()" id="btnOriginal">📝 Original Code</button>
+                                <button class="btn" onclick="showCorrectedCode()" id="btnCorrected">✨ Corrected Code</button>
+                                <button class="btn btn-secondary" onclick="showDiff()">🔍 Show Changes</button>
+                            </div>
+                            
+                            <!-- Code Display -->
+                            <div id="codeDisplay" style="background: #1a1a1a; border-radius: 8px; padding: 1rem; overflow-x: auto;">
+                                <pre><code id="displayedCode" class="language-python"></code></pre>
+                            </div>
+                        </div>
+                        
+                        <!-- Download Options -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="btn" onclick="downloadCorrectedCode('python')">⬇️ Download Python</button>
+                            <button class="btn btn-secondary" onclick="downloadCorrectedCode('jupyter')">📓 Download Jupyter</button>
+                            <button class="btn btn-secondary" onclick="downloadCorrectedCode('databricks')">🔷 Download Databricks</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Analysis Results (Old) -->
+                    <div id="analysisResults" style="display: none;">
+                        <!-- Score -->
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                            <h4 style="margin-bottom: 0.5rem;">Quality Score</h4>
+                            <div style="display: flex; align-items: center;">
+                                <div id="qualityScore" style="font-size: 2rem; font-weight: bold; color: #F59E0B; margin-right: 1rem;">0/10</div>
+                                <div id="scoreStars" style="font-size: 1.5rem;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recommendations -->
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                            <h4 style="margin-bottom: 0.5rem;">Top Recommendations</h4>
+                            <div id="recommendationsList"></div>
+                        </div>
+                        
+                        <!-- Full Report -->
+                        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <h4>Detailed Report</h4>
+                                <button class="btn btn-secondary" onclick="copyAnalysisReport()" style="padding: 0.25rem 0.75rem; font-size: 0.9rem;">📋 Copy Report</button>
+                            </div>
+                            <pre id="analysisReport" style="color: #90EE90; font-family: 'Courier New', monospace; white-space: pre-wrap; max-height: 400px; overflow-y: auto;"></pre>
+                        </div>
+                    </div>
+                    
+                    <!-- Loading State -->
+                    <div id="analysisLoading" style="display: none; text-align: center; padding: 3rem;">
+                        <div class="loading"></div>
+                        <p style="margin-top: 1rem;">Analyzing code...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -551,12 +728,13 @@
                 convertLoading.classList.add('hidden');
                 convertBtn.disabled = false;
 
-                if (result.success) {
+                if (result.success || result.pyspark_code) {
+                    console.log('Conversion successful, showing results');
                     showConversionResults(result);
-                    resultSection.classList.remove('hidden');
                     showSuccess('Conversion completed successfully!');
                 } else {
-                    showError('Conversion failed: ' + (result.error_message || 'Unknown error'));
+                    console.error('Conversion failed:', result);
+                    showError('Conversion failed: ' + (result.error_message || result.detail || 'Unknown error'));
                 }
 
             } catch (error) {
@@ -567,57 +745,229 @@
             }
         }
 
+        function copyCode() {
+            const codeContent = document.getElementById('codeContent');
+            if (codeContent && codeContent.textContent) {
+                navigator.clipboard.writeText(codeContent.textContent).then(() => {
+                    showSuccess('Code copied to clipboard!');
+                }).catch(err => {
+                    // Fallback method
+                    const textArea = document.createElement('textarea');
+                    textArea.value = codeContent.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showSuccess('Code copied to clipboard!');
+                });
+            }
+        }
+        
+        function copyXml(event) {
+            event.stopPropagation(); // Prevent toggle when clicking copy button
+            const xmlCode = document.getElementById('xmlCode');
+            if (xmlCode && xmlCode.textContent) {
+                navigator.clipboard.writeText(xmlCode.textContent).then(() => {
+                    showSuccess('XML copied to clipboard!');
+                }).catch(err => {
+                    // Fallback method
+                    const textArea = document.createElement('textarea');
+                    textArea.value = xmlCode.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showSuccess('XML copied to clipboard!');
+                });
+            }
+        }
+        
+        function toggleXmlView() {
+            const xmlContent = document.getElementById('xmlContent');
+            const xmlToggle = document.getElementById('xmlToggle');
+            
+            if (xmlContent.style.display === 'none' || xmlContent.style.display === '') {
+                xmlContent.style.display = 'block';
+                xmlToggle.textContent = '▼';
+            } else {
+                xmlContent.style.display = 'none';
+                xmlToggle.textContent = '▶';
+            }
+        }
+        
+        function toggleLogsView() {
+            const logsContent = document.getElementById('logsContent');
+            const logsToggle = document.getElementById('logsToggle');
+            
+            if (logsContent.style.display === 'none' || logsContent.style.display === '') {
+                logsContent.style.display = 'block';
+                logsToggle.textContent = '▼';
+            } else {
+                logsContent.style.display = 'none';
+                logsToggle.textContent = '▶';
+            }
+        }
+        
+        function copyLogs(event) {
+            event.stopPropagation();
+            const logsCode = document.getElementById('logsCode');
+            if (logsCode && logsCode.textContent) {
+                navigator.clipboard.writeText(logsCode.textContent).then(() => {
+                    showSuccess('Logs copied to clipboard!');
+                }).catch(err => {
+                    // Fallback method
+                    const textArea = document.createElement('textarea');
+                    textArea.value = logsCode.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showSuccess('Logs copied to clipboard!');
+                });
+            }
+        }
+        
+        // Add event listeners for toggles
+        document.addEventListener('DOMContentLoaded', function() {
+            const xmlHeader = document.getElementById('xmlHeader');
+            if (xmlHeader) {
+                xmlHeader.addEventListener('click', function(e) {
+                    // Only toggle if not clicking on the copy button
+                    if (!e.target.id || e.target.id !== 'copyXmlBtn') {
+                        toggleXmlView();
+                    }
+                });
+            }
+            
+            const logsHeader = document.getElementById('logsHeader');
+            if (logsHeader) {
+                logsHeader.addEventListener('click', function(e) {
+                    // Only toggle if not clicking on the copy button
+                    if (!e.target.id || e.target.id !== 'copyLogsBtn') {
+                        toggleLogsView();
+                    }
+                });
+            }
+        });
+        
         function showAnalysisResults(data) {
-            const analysisContent = document.getElementById('analysisContent');
+            // Update analysis stats
+            document.getElementById('totalToolsCount').textContent = data.total_tools || 0;
+            document.getElementById('supportedToolsCount').textContent = data.supported_tools || 0;
+            document.getElementById('unsupportedToolsCount').textContent = data.unsupported_tools || 0;
+            document.getElementById('supportRatePercent').textContent = (data.support_rate || 0) + '%';
             
-            const html = `
-                <div class="stats-row">
-                    <div class="stat-card">
-                        <div class="stat-number">${data.total_tools}</div>
-                        <div class="stat-label">Total Tools</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">${data.supported_tools}</div>
-                        <div class="stat-label">Supported Tools</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">${data.unsupported_tools}</div>
-                        <div class="stat-label">Unsupported Tools</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">${data.support_rate}%</div>
-                        <div class="stat-label">Support Rate</div>
-                    </div>
-                </div>
-                
-                <h3 style="margin: 2rem 0 1rem 0;">Tool Breakdown</h3>
-                <div class="tool-list">
-                    ${data.tools.map(tool => `
-                        <div class="tool-item ${data.unsupported_tool_list.some(u => u.id === tool.id) ? 'unsupported' : ''}">
-                            <strong>${tool.name || tool.type}</strong><br>
-                            <small>ID: ${tool.id}</small>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            // Store original XML if available
+            if (data.xml_content) {
+                window.originalXml = data.xml_content;
+            }
             
-            analysisContent.innerHTML = html;
+            // Store and display logs if available
+            if (data.logs) {
+                window.conversionLogs = data.logs;
+                const logsCode = document.getElementById('logsCode');
+                if (logsCode) {
+                    logsCode.textContent = data.logs;
+                }
+            }
             
-            // Draw workflow visualization
-            drawWorkflowVisualization(data.tools, data.connections);
+            // Display workflow steps
+            displayWorkflowSteps(data.tools, data.connections);
         }
 
         function showConversionResults(result) {
+            console.log('Showing conversion results:', result);
+            
             // Update code tab
             const codeContent = document.getElementById('codeContent');
-            codeContent.textContent = result.code;
+            if (codeContent) {
+                codeContent.textContent = result.pyspark_code || 'No code generated';
+                
+                // Add syntax highlighting class if needed
+                codeContent.style.whiteSpace = 'pre';
+                codeContent.style.fontFamily = 'monospace';
+            } else {
+                console.error('Code content element not found');
+            }
             
-            // Setup download functionality
+            // Setup download functionality with format selector
             const downloadBtn = document.getElementById('downloadBtn');
-            downloadBtn.onclick = () => downloadCode(result.code, result.workflow_name);
+            const outputFormat = document.getElementById('outputFormat');
+            if (downloadBtn) {
+                downloadBtn.onclick = () => {
+                    const format = outputFormat ? outputFormat.value : 'python';
+                    downloadCode(result.pyspark_code, result.workflow_name || 'converted', format);
+                };
+            }
+            
+            // Display XML if available
+            if (window.originalXml) {
+                const xmlCode = document.getElementById('xmlCode');
+                if (xmlCode) {
+                    xmlCode.textContent = window.originalXml;
+                }
+            }
+            
+            // Append conversion logs
+            if (result.logs) {
+                const logsCode = document.getElementById('logsCode');
+                if (logsCode) {
+                    const existingLogs = logsCode.textContent || '';
+                    const separator = existingLogs ? '\n\n--- CONVERSION PHASE ---\n' : '';
+                    logsCode.textContent = existingLogs + separator + result.logs;
+                }
+            }
+            
+            // Show the result section
+            const resultSection = document.getElementById('resultSection');
+            if (resultSection) {
+                resultSection.classList.remove('hidden');
+            }
         }
 
+        function displayWorkflowSteps(tools, connections) {
+            const stepsContainer = document.getElementById('stepsContainer');
+            if (!stepsContainer) return;
+            
+            // Create workflow steps HTML
+            let stepsHtml = '<div class="steps-list">';
+            
+            if (tools && tools.length > 0) {
+                tools.forEach((tool, index) => {
+                    const stepNumber = index + 1;
+                    const toolName = tool.name || tool.type || 'Unknown Tool';
+                    const toolType = tool.type || 'Unknown';
+                    const toolId = tool.id || stepNumber;
+                    
+                    stepsHtml += `
+                        <div class="workflow-step" style="margin-bottom: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-left: 3px solid #F59E0B; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <span style="color: #F59E0B; font-weight: bold;">Step ${stepNumber}:</span>
+                                    <span style="color: #fff; font-weight: 500; margin-left: 0.5rem;">${toolName}</span>
+                                </div>
+                                <div style="font-size: 0.85rem; color: #9ca3af;">
+                                    <span>Type: ${toolType}</span>
+                                    <span style="margin-left: 1rem;">ID: ${toolId}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                stepsHtml += '<div style="color: #9ca3af; text-align: center; padding: 2rem;">No workflow steps found</div>';
+            }
+            
+            stepsHtml += '</div>';
+            stepsContainer.innerHTML = stepsHtml;
+        }
+        
         function drawWorkflowVisualization(tools, connections) {
+            // Keep this for backward compatibility but redirect to new function
+            displayWorkflowSteps(tools, connections);
+        }
+        
+        function OLD_drawWorkflowVisualization(tools, connections) {
             const canvas = document.getElementById('workflowCanvas');
             const svg = document.getElementById('workflowSvg');
             
@@ -723,35 +1073,61 @@
             svg.insertBefore(defs, svg.firstChild);
         }
 
-        async function downloadCode(code, workflowName) {
+        function downloadCode(code, workflowName, format = 'python') {
             try {
-                const response = await fetch('/api/download-code', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        code: code,
-                        filename: `${workflowName || 'workflow'}_converted.py`
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error('Download failed');
+                let content = code;
+                let filename = `${workflowName || 'workflow'}_converted`;
+                let mimeType = 'text/plain';
+                
+                if (format === 'jupyter') {
+                    // Create Jupyter notebook structure
+                    const notebook = {
+                        cells: [
+                            {
+                                cell_type: "markdown",
+                                source: [`# ${workflowName}\n\nConverted from Alteryx workflow`],
+                                metadata: {}
+                            },
+                            {
+                                cell_type: "code",
+                                source: [code],
+                                metadata: {},
+                                outputs: []
+                            }
+                        ],
+                        metadata: {
+                            kernelspec: {
+                                display_name: "Python 3",
+                                language: "python",
+                                name: "python3"
+                            }
+                        },
+                        nbformat: 4,
+                        nbformat_minor: 4
+                    };
+                    content = JSON.stringify(notebook, null, 2);
+                    filename += '.ipynb';
+                    mimeType = 'application/json';
+                } else if (format === 'databricks') {
+                    // Add Databricks notebook header
+                    content = `# Databricks notebook source\n# MAGIC %md\n# MAGIC # ${workflowName}\n# MAGIC Converted from Alteryx workflow\n\n# COMMAND ----------\n\n${code}`;
+                    filename += '_databricks.py';
+                } else {
+                    filename += '.py';
                 }
-
-                const blob = await response.blob();
+                
+                // Create download link
+                const blob = new Blob([content], { type: mimeType });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                a.style.display = 'none';
                 a.href = url;
-                a.download = `${workflowName || 'workflow'}_converted.py`;
+                a.download = filename;
                 document.body.appendChild(a);
                 a.click();
-                window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
-
-                showSuccess('Code downloaded successfully!');
+                window.URL.revokeObjectURL(url);
+                
+                showSuccess(`Downloaded ${filename} successfully!`);
 
             } catch (error) {
                 showError('Download failed: ' + error.message);
@@ -781,6 +1157,324 @@
             setTimeout(() => errorDiv.remove(), 5000);
         }
 
+        function onModelChange() {
+            const selector = document.getElementById('modelSelector');
+            const apiKeySection = document.getElementById('apiKeySection');
+            const descText = document.getElementById('modelDescText');
+            
+            // Update description based on selection
+            const descriptions = {
+                'local': '🔍 Local Analysis - Fast rule-based analysis without AI',
+                'ollama': '🦙 Llama 3.2 - Free local AI model for code analysis',
+                'gemini': '✨ Google Gemini Pro - Advanced AI analysis with comprehensive code review',
+                'openai': '⚡ OpenAI GPT-4 - Most powerful AI model for code analysis'
+            };
+            
+            descText.textContent = descriptions[selector.value] || '';
+            
+            // Show/hide API key input for OpenAI
+            if (selector.value === 'openai') {
+                apiKeySection.style.display = 'block';
+            } else {
+                apiKeySection.style.display = 'none';
+            }
+        }
+        
+        async function checkOllamaStatus() {
+            try {
+                const response = await fetch('/api/ollama-status');
+                const status = await response.json();
+                return status;
+            } catch (error) {
+                return { available: false, models: [] };
+            }
+        }
+        
+        // Store corrected code globally
+        let originalCode = '';
+        let correctedCode = '';
+        let corrections = [];
+        
+        async function runAICorrection() {
+            const modelSelector = document.getElementById('modelSelector');
+            const mode = modelSelector.value;
+            const correctionResults = document.getElementById('correctionResults');
+            const analysisLoading = document.getElementById('analysisLoading');
+            
+            // Show loading
+            analysisLoading.style.display = 'block';
+            correctionResults.style.display = 'none';
+            
+            try {
+                let requestData = {
+                    xml_content: window.originalXml || '',
+                    pyspark_code: convertedResult?.pyspark_code || '',
+                    workflow_info: {
+                        total_tools: currentWorkflowData?.total_tools || 0,
+                        tools: currentWorkflowData?.tools || []
+                    },
+                    model_provider: mode
+                };
+                
+                // Add API keys based on provider
+                if (mode === 'openai') {
+                    const apiKey = document.getElementById('openaiApiKey').value;
+                    if (!apiKey) {
+                        showError('Please enter your OpenAI API key');
+                        analysisLoading.style.display = 'none';
+                        return;
+                    }
+                    requestData.api_key = apiKey;
+                } else if (mode === 'gemini') {
+                    requestData.gemini_api_key = 'AIzaSyAaCNYpfIslFxLsL9kO-6mRmVVqNentwBE';
+                }
+                
+                // Call correction API
+                const response = await fetch('/api/correct', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Store codes
+                    originalCode = result.original_code;
+                    correctedCode = result.corrected_code;
+                    corrections = result.corrections || [];
+                    
+                    // Display accuracy score
+                    const accuracy = result.accuracy_score || 0;
+                    document.getElementById('accuracyScore').textContent = accuracy + '%';
+                    document.getElementById('accuracyFill').style.width = accuracy + '%';
+                    
+                    // Display improvements
+                    const improvementsList = document.getElementById('improvementsList');
+                    improvementsList.innerHTML = '';
+                    if (result.improvements && result.improvements.length > 0) {
+                        result.improvements.forEach(imp => {
+                            const item = document.createElement('div');
+                            item.style.padding = '0.5rem';
+                            item.style.marginBottom = '0.5rem';
+                            item.style.background = 'rgba(217, 119, 6, 0.1)';
+                            item.style.borderRadius = '8px';
+                            item.innerHTML = `✅ ${imp}`;
+                            improvementsList.appendChild(item);
+                        });
+                    } else {
+                        improvementsList.innerHTML = '<p style="color: #9ca3af;">No improvements needed - code is already optimized!</p>';
+                    }
+                    
+                    // Show corrected code by default
+                    showCorrectedCode();
+                    
+                    // Show results
+                    correctionResults.style.display = 'block';
+                } else {
+                    showError('Correction failed: ' + (result.detail || 'Unknown error'));
+                }
+            } catch (error) {
+                showError('Failed to correct code: ' + error.message);
+            } finally {
+                analysisLoading.style.display = 'none';
+            }
+        }
+        
+        function showOriginalCode() {
+            document.getElementById('displayedCode').textContent = originalCode;
+            document.getElementById('btnOriginal').classList.add('btn');
+            document.getElementById('btnOriginal').classList.remove('btn-secondary');
+            document.getElementById('btnCorrected').classList.add('btn-secondary');
+            document.getElementById('btnCorrected').classList.remove('btn');
+        }
+        
+        function showCorrectedCode() {
+            document.getElementById('displayedCode').textContent = correctedCode;
+            document.getElementById('btnCorrected').classList.add('btn');
+            document.getElementById('btnCorrected').classList.remove('btn-secondary');
+            document.getElementById('btnOriginal').classList.add('btn-secondary');
+            document.getElementById('btnOriginal').classList.remove('btn');
+        }
+        
+        function showDiff() {
+            // Simple diff display - highlight changed lines
+            const originalLines = originalCode.split('\n');
+            const correctedLines = correctedCode.split('\n');
+            let diffHtml = '';
+            
+            const maxLines = Math.max(originalLines.length, correctedLines.length);
+            for (let i = 0; i < maxLines; i++) {
+                if (originalLines[i] !== correctedLines[i]) {
+                    if (originalLines[i]) {
+                        diffHtml += `<span style="color: #ef4444;">- ${originalLines[i]}</span>\n`;
+                    }
+                    if (correctedLines[i]) {
+                        diffHtml += `<span style="color: #10b981;">+ ${correctedLines[i]}</span>\n`;
+                    }
+                } else if (originalLines[i]) {
+                    diffHtml += `  ${originalLines[i]}\n`;
+                }
+            }
+            
+            document.getElementById('displayedCode').innerHTML = diffHtml;
+        }
+        
+        function downloadCorrectedCode(format) {
+            let content = correctedCode;
+            let filename = 'corrected_code';
+            let mimeType = 'text/plain';
+            
+            if (format === 'jupyter') {
+                // Convert to Jupyter notebook format
+                const notebook = {
+                    cells: [{
+                        cell_type: 'code',
+                        source: correctedCode.split('\n'),
+                        metadata: {}
+                    }],
+                    metadata: {
+                        kernelspec: {
+                            display_name: 'Python 3',
+                            language: 'python',
+                            name: 'python3'
+                        }
+                    },
+                    nbformat: 4,
+                    nbformat_minor: 2
+                };
+                content = JSON.stringify(notebook, null, 2);
+                filename = 'corrected_code.ipynb';
+                mimeType = 'application/json';
+            } else if (format === 'databricks') {
+                // Add Databricks specific headers
+                content = '# Databricks notebook source\n' + correctedCode;
+                filename = 'corrected_code_databricks.py';
+            } else {
+                filename = 'corrected_code.py';
+            }
+            
+            // Create download
+            const blob = new Blob([content], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        async function runAIAnalysis() {
+            const modelSelector = document.getElementById('modelSelector');
+            const mode = modelSelector.value;
+            const analysisLoading = document.getElementById('analysisLoading');
+            const analysisResults = document.getElementById('analysisResults');
+            
+            // Show loading
+            analysisLoading.style.display = 'block';
+            analysisResults.style.display = 'none';
+            
+            try {
+                let requestData = {
+                    xml_content: window.originalXml || '',
+                    pyspark_code: convertedResult?.pyspark_code || '',
+                    workflow_info: {
+                        total_tools: currentWorkflowData?.total_tools || 0,
+                        tools: currentWorkflowData?.tools || []
+                    },
+                    model_provider: mode
+                };
+                
+                if (mode === 'ollama') {
+                    // Check Ollama status first
+                    const ollamaStatus = await checkOllamaStatus();
+                    if (!ollamaStatus.available) {
+                        showError('Ollama is not running. Please install Ollama from https://ollama.ai and run: ollama serve');
+                        analysisLoading.style.display = 'none';
+                        return;
+                    }
+                    requestData.ollama_model = ollamaStatus.models[0] || 'llama3.2:1b';
+                } else if (mode === 'openai') {
+                    const apiKey = document.getElementById('openaiApiKey').value;
+                    if (!apiKey) {
+                        showError('Please enter your OpenAI API key');
+                        analysisLoading.style.display = 'none';
+                        return;
+                    }
+                    requestData.api_key = apiKey;
+                } else if (mode === 'gemini') {
+                    // Gemini API key is embedded in backend
+                    requestData.gemini_api_key = 'AIzaSyAaCNYpfIslFxLsL9kO-6mRmVVqNentwBE';
+                }
+                
+                // Call analysis API
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayAnalysisResults(result);
+                } else {
+                    showError('Analysis failed: ' + (result.error || 'Unknown error'));
+                }
+            } catch (error) {
+                showError('Analysis error: ' + error.message);
+            } finally {
+                analysisLoading.style.display = 'none';
+            }
+        }
+        
+        function displayAnalysisResults(result) {
+            const analysisResults = document.getElementById('analysisResults');
+            
+            // Update score
+            const score = result.score || 0;
+            document.getElementById('qualityScore').textContent = `${score}/10`;
+            document.getElementById('scoreStars').textContent = '⭐'.repeat(Math.round(score));
+            
+            // Update recommendations
+            const recommendationsList = document.getElementById('recommendationsList');
+            if (result.recommendations && result.recommendations.length > 0) {
+                recommendationsList.innerHTML = result.recommendations
+                    .map(rec => `<div style="margin-bottom: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 4px;">${rec}</div>`)
+                    .join('');
+            } else {
+                recommendationsList.innerHTML = '<p style="color: #9ca3af;">No recommendations available</p>';
+            }
+            
+            // Update full report
+            document.getElementById('analysisReport').textContent = result.report || 'No detailed report available';
+            
+            // Store for copying
+            window.analysisReport = result.report;
+            
+            // Show results
+            analysisResults.style.display = 'block';
+        }
+        
+        function copyAnalysisReport() {
+            if (window.analysisReport) {
+                navigator.clipboard.writeText(window.analysisReport).then(() => {
+                    showSuccess('Analysis report copied to clipboard!');
+                }).catch(err => {
+                    // Fallback
+                    const textArea = document.createElement('textarea');
+                    textArea.value = window.analysisReport;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showSuccess('Analysis report copied to clipboard!');
+                });
+            }
+        }
+        
         function showSuccess(message) {
             const existing = document.querySelector('.success-message');
             if (existing) existing.remove();

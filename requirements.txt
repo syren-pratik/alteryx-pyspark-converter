@@ -12,3 +12,9 @@ gunicorn==21.2.0
 
 # Serverless Deployment
 mangum==0.17.0
+
+# AI Analysis
+requests==2.31.0
+python-dotenv==1.0.0
+openai==1.44.0
+google-generativeai==0.3.2
