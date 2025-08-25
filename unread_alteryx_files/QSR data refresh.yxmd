@@ -1,0 +1,1030 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\WorkFlows\ASL PROCESSING\OUTPUTS\One ASL MD Extract.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>One ASL MD Extract.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Unique_Supplier_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="DUNS Number" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Organization Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Address" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="City" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Postal Code" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Country" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="State/Province/Region" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Location_Type" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="OEM_Supplier" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Segment" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Organization" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Operating Company" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="J_J_Site" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="J_J_Region" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Material_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Supplier Type" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Criticality Level" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Critical_Subcontractor_Status" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Crucial_Supplier_Status" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Qualification_Status" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Quality_Agreement_Confirmation" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Risk Categorization Group" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Material_Root_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Supplier_Root_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="246" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="150" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\khill16\AppData\Local\Temp\1\Engine_21620_63adb0ecc977457cbb531ae550dc8051_\Engine_17996_e7b484f6313948e085de0b86ce56003b_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="738" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Unique_Supplier_Id" />
+            <Field field="Material_Id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Unique_Supplier_Id" />
+            <Field field="Material_Id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Unique_Supplier_Id" selected="False" rename="Right_Unique_Supplier_Id" input="Right_" />
+                <SelectField field="Right_DUNS Number" selected="False" rename="Right_DUNS Number" input="Right_" />
+                <SelectField field="Right_Organization Name" selected="False" rename="Right_Organization Name" input="Right_" />
+                <SelectField field="Right_Address" selected="False" rename="Right_Address" input="Right_" />
+                <SelectField field="Right_City" selected="False" rename="Right_City" input="Right_" />
+                <SelectField field="Right_Postal Code" selected="False" rename="Right_Postal Code" input="Right_" />
+                <SelectField field="Right_Country" selected="False" rename="Right_Country" input="Right_" />
+                <SelectField field="Right_State/Province/Region" selected="False" rename="Right_State/Province/Region" input="Right_" />
+                <SelectField field="Right_Location_Type" selected="False" rename="Right_Location_Type" input="Right_" />
+                <SelectField field="Right_OEM_Supplier" selected="False" rename="Right_OEM_Supplier" input="Right_" />
+                <SelectField field="Right_Segment" selected="False" rename="Right_Segment" input="Right_" />
+                <SelectField field="Right_Organization" selected="False" rename="Right_Organization" input="Right_" />
+                <SelectField field="Right_Operating Company" selected="False" rename="Right_Operating Company" input="Right_" />
+                <SelectField field="Right_J_J_Site" selected="False" rename="Right_J_J_Site" input="Right_" />
+                <SelectField field="Right_J_J_Region" selected="False" rename="Right_J_J_Region" input="Right_" />
+                <SelectField field="Right_Material_Id" selected="False" rename="Right_Material_Id" input="Right_" />
+                <SelectField field="Right_Supplier Type" selected="False" rename="Right_Supplier Type" input="Right_" />
+                <SelectField field="Right_Criticality Level" selected="False" rename="Right_Criticality Level" input="Right_" />
+                <SelectField field="Right_Critical_Subcontractor_Status" selected="False" rename="Right_Critical_Subcontractor_Status" input="Right_" />
+                <SelectField field="Right_Crucial_Supplier_Status" selected="False" rename="Right_Crucial_Supplier_Status" input="Right_" />
+                <SelectField field="Right_Qualification_Status" selected="False" rename="Right_Qualification_Status" input="Right_" />
+                <SelectField field="Right_Quality_Agreement_Confirmation" selected="False" rename="Right_Quality_Agreement_Confirmation" input="Right_" />
+                <SelectField field="Right_Risk Categorization Group" selected="False" rename="Right_Risk Categorization Group" input="Right_" />
+                <SelectField field="Right_Right_Unique_Supplier_Id" selected="False" rename="Right_Right_Unique_Supplier_Id" input="Right_" />
+                <SelectField field="Right_Right_DUNS Number" selected="False" rename="Right_Right_DUNS Number" input="Right_" />
+                <SelectField field="Right_Right_Organization Name" selected="False" rename="Right_Right_Organization Name" input="Right_" />
+                <SelectField field="Right_Right_Address" selected="False" rename="Right_Right_Address" input="Right_" />
+                <SelectField field="Right_Right_City" selected="False" rename="Right_Right_City" input="Right_" />
+                <SelectField field="Right_Right_Postal Code" selected="False" rename="Right_Right_Postal Code" input="Right_" />
+                <SelectField field="Right_Right_Country" selected="False" rename="Right_Right_Country" input="Right_" />
+                <SelectField field="Right_Right_State/Province/Region" selected="False" rename="Right_Right_State/Province/Region" input="Right_" />
+                <SelectField field="Right_Right_Location_Type" selected="False" rename="Right_Right_Location_Type" input="Right_" />
+                <SelectField field="Right_Right_OEM_Supplier" selected="False" rename="Right_Right_OEM_Supplier" input="Right_" />
+                <SelectField field="Right_Right_Segment" selected="False" rename="Right_Right_Segment" input="Right_" />
+                <SelectField field="Right_Right_Organization" selected="False" rename="Right_Right_Organization" input="Right_" />
+                <SelectField field="Right_Right_Operating Company" selected="False" rename="Right_Right_Operating Company" input="Right_" />
+                <SelectField field="Right_Right_J_J_Site" selected="False" rename="Right_Right_J_J_Site" input="Right_" />
+                <SelectField field="Right_Right_J_J_Region" selected="False" rename="Right_Right_J_J_Region" input="Right_" />
+                <SelectField field="Right_Right_Material_Id" selected="False" rename="Right_Right_Material_Id" input="Right_" />
+                <SelectField field="Right_Right_Supplier Type" selected="False" rename="Right_Right_Supplier Type" input="Right_" />
+                <SelectField field="Right_Right_Criticality Level" selected="False" rename="Right_Right_Criticality Level" input="Right_" />
+                <SelectField field="Right_Right_Critical_Subcontractor_Status" selected="False" rename="Right_Right_Critical_Subcontractor_Status" input="Right_" />
+                <SelectField field="Right_Right_Crucial_Supplier_Status" selected="False" rename="Right_Right_Crucial_Supplier_Status" input="Right_" />
+                <SelectField field="Right_Right_Qualification_Status" selected="False" rename="Right_Right_Qualification_Status" input="Right_" />
+                <SelectField field="Right_Right_Quality_Agreement_Confirmation" selected="False" rename="Right_Right_Quality_Agreement_Confirmation" input="Right_" />
+                <SelectField field="Right_Right_Risk Categorization Group" selected="False" rename="Right_Right_Risk Categorization Group" input="Right_" />
+                <SelectField field="Right_Right_Right_Unique_Supplier_Id" selected="False" rename="Right_Right_Right_Unique_Supplier_Id" input="Right_" />
+                <SelectField field="Right_Right_Right_DUNS Number" selected="False" rename="Right_Right_Right_DUNS Number" input="Right_" />
+                <SelectField field="Right_Right_Right_Organization Name" selected="False" rename="Right_Right_Right_Organization Name" input="Right_" />
+                <SelectField field="Right_Right_Right_Address" selected="False" rename="Right_Right_Right_Address" input="Right_" />
+                <SelectField field="Right_Right_Right_City" selected="False" rename="Right_Right_Right_City" input="Right_" />
+                <SelectField field="Right_Right_Right_Postal Code" selected="False" rename="Right_Right_Right_Postal Code" input="Right_" />
+                <SelectField field="Right_Right_Right_Country" selected="False" rename="Right_Right_Right_Country" input="Right_" />
+                <SelectField field="Right_Right_Right_State/Province/Region" selected="False" rename="Right_Right_Right_State/Province/Region" input="Right_" />
+                <SelectField field="Right_Right_Right_Location_Type" selected="False" rename="Right_Right_Right_Location_Type" input="Right_" />
+                <SelectField field="Right_Right_Right_OEM_Supplier" selected="False" rename="Right_Right_Right_OEM_Supplier" input="Right_" />
+                <SelectField field="Right_Right_Right_Segment" selected="False" rename="Right_Right_Right_Segment" input="Right_" />
+                <SelectField field="Right_Right_Right_Organization" selected="False" rename="Right_Right_Right_Organization" input="Right_" />
+                <SelectField field="Right_Right_Right_Operating Company" selected="False" rename="Right_Right_Right_Operating Company" input="Right_" />
+                <SelectField field="Right_Right_Right_J_J_Site" selected="False" rename="Right_Right_Right_J_J_Site" input="Right_" />
+                <SelectField field="Right_Right_Right_J_J_Region" selected="False" rename="Right_Right_Right_J_J_Region" input="Right_" />
+                <SelectField field="Right_Right_Right_Material_Id" selected="False" rename="Right_Right_Right_Material_Id" input="Right_" />
+                <SelectField field="Right_Right_Right_Supplier Type" selected="False" rename="Right_Right_Right_Supplier Type" input="Right_" />
+                <SelectField field="Right_Right_Right_Criticality Level" selected="False" rename="Right_Right_Right_Criticality Level" input="Right_" />
+                <SelectField field="Right_Right_Right_Critical_Subcontractor_Status" selected="False" rename="Right_Right_Right_Critical_Subcontractor_Status" input="Right_" />
+                <SelectField field="Right_Right_Right_Crucial_Supplier_Status" selected="False" rename="Right_Right_Right_Crucial_Supplier_Status" input="Right_" />
+                <SelectField field="Right_Right_Right_Qualification_Status" selected="False" rename="Right_Right_Right_Qualification_Status" input="Right_" />
+                <SelectField field="Right_Right_Right_Quality_Agreement_Confirmation" selected="False" rename="Right_Right_Right_Quality_Agreement_Confirmation" input="Right_" />
+                <SelectField field="Right_Right_Right_Risk Categorization Group" selected="False" rename="Right_Right_Right_Risk Categorization Group" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Unique_Supplier_Id" selected="False" rename="Right_Right_Right_Right_Unique_Supplier_Id" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_DUNS Number" selected="False" rename="Right_Right_Right_Right_DUNS Number" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Organization Name" selected="False" rename="Right_Right_Right_Right_Organization Name" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Address" selected="False" rename="Right_Right_Right_Right_Address" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_City" selected="False" rename="Right_Right_Right_Right_City" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Postal Code" selected="False" rename="Right_Right_Right_Right_Postal Code" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Country" selected="False" rename="Right_Right_Right_Right_Country" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_State/Province/Region" selected="False" rename="Right_Right_Right_Right_State/Province/Region" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Location_Type" selected="False" rename="Right_Right_Right_Right_Location_Type" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_OEM_Supplier" selected="False" rename="Right_Right_Right_Right_OEM_Supplier" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Segment" selected="False" rename="Right_Right_Right_Right_Segment" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Organization" selected="False" rename="Right_Right_Right_Right_Organization" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Operating Company" selected="False" rename="Right_Right_Right_Right_Operating Company" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_J_J_Site" selected="False" rename="Right_Right_Right_Right_J_J_Site" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_J_J_Region" selected="False" rename="Right_Right_Right_Right_J_J_Region" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Material_Id" selected="False" rename="Right_Right_Right_Right_Material_Id" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Supplier Type" selected="False" rename="Right_Right_Right_Right_Supplier Type" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Criticality Level" selected="False" rename="Right_Right_Right_Right_Criticality Level" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Critical_Subcontractor_Status" selected="False" rename="Right_Right_Right_Right_Critical_Subcontractor_Status" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Crucial_Supplier_Status" selected="False" rename="Right_Right_Right_Right_Crucial_Supplier_Status" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Qualification_Status" selected="False" rename="Right_Right_Right_Right_Qualification_Status" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Quality_Agreement_Confirmation" selected="False" rename="Right_Right_Right_Right_Quality_Agreement_Confirmation" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Risk Categorization Group" selected="False" rename="Right_Right_Right_Right_Risk Categorization Group" input="Right_" />
+                <SelectField field="Right_Right_Unique_Supplier_Id2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_DUNS Number2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Organization Name2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Address2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Right_City" selected="False" rename="Right_Right_Right_Right_Right_City" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Right_Postal Code" selected="False" rename="Right_Right_Right_Right_Right_Postal Code" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Right_Country" selected="False" rename="Right_Right_Right_Right_Right_Country" input="Right_" />
+                <SelectField field="Right_Right_State/Province/Region2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Location_Type2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_OEM_Supplier2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Segment2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Organization2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Operating Company2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_J_J_Site2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_J_J_Region2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Material_Id2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Right_Supplier Type" selected="False" rename="Right_Right_Right_Right_Right_Supplier Type" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Right_Criticality Level" selected="False" rename="Right_Right_Right_Right_Right_Criticality Level" input="Right_" />
+                <SelectField field="Right_Right_Critical_Subcontractor_Status2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Crucial_Supplier_Status2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Qualification_Status2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Quality_Agreement_Confirmation2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Right_Right_Risk Categorization Group" selected="False" rename="Right_Right_Right_Right_Right_Risk Categorization Group" input="Right_" />
+                <SelectField field="Right_Name of Requester" selected="False" input="Right_" />
+                <SelectField field="Right_Request Date" selected="False" input="Right_" />
+                <SelectField field="Right_Type of Request" selected="False" input="Right_" />
+                <SelectField field="Right_Requested Timing to Get Supplier on ASL" selected="False" input="Right_" />
+                <SelectField field="Right_Unique Supplier ID" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier DUNS Number" selected="False" input="Right_" />
+                <SelectField field="Right_Street" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_City2" selected="False" input="Right_" />
+                <SelectField field="Right_State/Region/Province" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Postal Code2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Country2" selected="False" input="Right_" />
+                <SelectField field="Right_Location Type" selected="False" input="Right_" />
+                <SelectField field="Right_Selection Rationale" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Contact First Name" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Contact Last Name" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Contact Email Address" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Contact Title/Position" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Contact Phone #" selected="False" input="Right_" />
+                <SelectField field="Right_Material ID" selected="False" input="Right_" />
+                <SelectField field="Right_Material Requester Name" selected="False" input="Right_" />
+                <SelectField field="Right_Request Date2" selected="False" input="Right_" />
+                <SelectField field="Right_Type of Request2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Supplier Type2" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Risk Categorization Group2" selected="False" input="Right_" />
+                <SelectField field="Right_CL Rationale" selected="False" input="Right_" />
+                <SelectField field="Right_Right_Right_Criticality Level2" selected="False" input="Right_" />
+                <SelectField field="Right_Product/Part Description" selected="False" input="Right_" />
+                <SelectField field="Right_Is this for a Medical Device or Medical Device Component/Service?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a manufacturer who places products on the European market, regardless of where they were produced or where the companies are located?" selected="False" input="Right_" />
+                <SelectField field="Right_Does the supplier provide CE marked MD types covered by one of the EU medical device regulations, regardless of the conformity assessment chosen by the manufacturer?" selected="False" input="Right_" />
+                <SelectField field="Right_Does the supplier provide Class I MDs (non-reusable, non-sterile, and without any measuring function)?" selected="False" input="Right_" />
+                <SelectField field="Right_Does the supplier provide IVD MDs not covered by Annex II?" selected="False" input="Right_" />
+                <SelectField field="Right_Does the supplier provide any of MD classes IIa, IIb and III?" selected="False" input="Right_" />
+                <SelectField field="Right_Is the supplier a notified body such as BSI, TUV or any equivalent agency sanctioned by a member state?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a supplier of raw materials or components that are not substantially modified or converted during subsequent manufacturing at one of the J&amp;J family of companies?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a supplier of raw material or components that are part of a product that has prolonged exposure or permanent contact per EN ISO 10993-1, current revision?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a supplier of packaging that forms the sterile barrier?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a supplier of finished medical devices (MD) where J&amp;J operating company is the legal manufacturer and holds the CE Mark?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a supplier of sterilization services?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a finished packaging subcontractor (sterile or non-sterile)" selected="False" input="Right_" />
+                <SelectField field="Right_Does this supplier provide process of converting/dosing Active Pharmaceutical Ingredient (API) with a Device into a combination product?" selected="False" input="Right_" />
+                <SelectField field="Right_Does this supplier provide finished device release testing?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this supplier a Strategic Collaborator?" selected="False" input="Right_" />
+                <SelectField field="Right_Is this a product design house inclusive of product software design/development?" selected="False" input="Right_" />
+                <SelectField field="Right_Does this supplier have regulatory responsibilities (for CE Marking purposes) (internal audit contractors or authorized representatives, distribution, Regulatory Compliance, post market data collect, etc.)" selected="False" input="Right_" />
+                <SelectField field="Right_Crucial Supplier Status" selected="False" input="Right_" />
+                <SelectField field="Right_Critical Subcontractor Status" selected="False" input="Right_" />
+                <SelectField field="Right_Crucial/Critical Status Over-ride Comment" selected="False" input="Right_" />
+                <SelectField field="Right_Reason for Add/Modification" selected="False" input="Right_" />
+                <SelectField field="Right_OEM Supplier" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Segment" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Quality Organization" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Operating Company" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Site" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Region" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Quality Contact" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Primary Supplier Liaison" selected="False" input="Right_" />
+                <SelectField field="Right_J&amp;J Sourcing Contact" selected="False" input="Right_" />
+                <SelectField field="Right_Purchasing System Name" selected="False" input="Right_" />
+                <SelectField field="Right_Purchasing System ID" selected="False" input="Right_" />
+                <SelectField field="Right_Location Address" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Quality Contact" selected="False" input="Right_" />
+                <SelectField field="Right_ASL Owner Confirmation" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed By" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed Date" selected="False" input="Right_" />
+                <SelectField field="Right_Audit Required" selected="False" input="Right_" />
+                <SelectField field="Right_Standards and Regulations" selected="False" input="Right_" />
+                <SelectField field="Right_Comments" selected="False" input="Right_" />
+                <SelectField field="Right_SQA Required" selected="False" input="Right_" />
+                <SelectField field="Right_Type of Supplier Quality Agreement" selected="False" input="Right_" />
+                <SelectField field="Right_Does it exist for [SUPPLIER TYPE] and [Criticality Level]?" selected="False" input="Right_" />
+                <SelectField field="Right_SQA Confirmation" selected="False" input="Right_" />
+                <SelectField field="Right_SQA Reference Number" selected="False" input="Right_" />
+                <SelectField field="Right_SQA Location Name" selected="False" input="Right_" />
+                <SelectField field="Right_SQA Comments" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed By2" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed Date2" selected="False" input="Right_" />
+                <SelectField field="Right_Qualification Package Attachments" selected="False" input="Right_" />
+                <SelectField field="Right_Qualification Status" selected="False" input="Right_" />
+                <SelectField field="Right_Qualification Rationale / Summary" selected="False" input="Right_" />
+                <SelectField field="Right_Confirm Qualification Package" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed By3" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed Date3" selected="False" input="Right_" />
+                <SelectField field="Right_Second Approver" selected="False" input="Right_" />
+                <SelectField field="Right_Regulatory Confirmation" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed By4" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed Date4" selected="False" input="Right_" />
+                <SelectField field="Right_Quality Agreement Confirmation" selected="False" input="Right_" />
+                <SelectField field="Right_Status" selected="False" input="Right_" />
+                <SelectField field="Right_Quality Agreement Executed" selected="False" input="Right_" />
+                <SelectField field="Right_Reference Number:Location Name" selected="False" input="Right_" />
+                <SelectField field="Right_Quality Agreement Comments" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed By5" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed Date5" selected="False" input="Right_" />
+                <SelectField field="Right_Audit Confirmation" selected="False" input="Right_" />
+                <SelectField field="Right_Status2" selected="False" input="Right_" />
+                <SelectField field="Right_Record Number:System Stored" selected="False" input="Right_" />
+                <SelectField field="Right_Date of Audit Completion" selected="False" input="Right_" />
+                <SelectField field="Right_Audit Type Executed" selected="False" input="Right_" />
+                <SelectField field="Right_Audit Outcome" selected="False" input="Right_" />
+                <SelectField field="Right_Refusal" selected="False" input="Right_" />
+                <SelectField field="Right_Audit Comments" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed By6" selected="False" input="Right_" />
+                <SelectField field="Right_Confirmed Date6" selected="False" input="Right_" />
+                <SelectField field="Right_Second Approver Confirmation" selected="False" input="Right_" />
+                <SelectField field="Right_Status3" selected="False" input="Right_" />
+                <SelectField field="Right_Comment" selected="False" input="Right_" />
+                <SelectField field="Right_Approved By" selected="False" input="Right_" />
+                <SelectField field="Right_Approved Date" selected="False" input="Right_" />
+                <SelectField field="Right_Supplier Name" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="870" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Unique_Supplier_Id" />
+            <Field field="Material_Id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings>
+        <Position x="150" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Organization Name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings>
+        <Position x="174" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">""</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="870" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Unique_Supplier_Id" />
+            <Field field="Material_Id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1326" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="1686" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Unique_Supplier_Id" />
+            <Field field="Material_Id" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="450" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Operating Company</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-07-15 13:09:37</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Jabil</Operand>
+              <StartDate>2021-07-15 13:09:37</StartDate>
+              <EndDate>2021-07-15 13:09:37</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Operating Company] = "Jabil"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="594" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>Qualification_Status</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-06-07 18:41:55</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>DISQUALIFIED</Operand>
+              <StartDate>2021-06-07 18:41:55</StartDate>
+              <EndDate>2021-06-07 18:41:55</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Qualification_Status] != "DISQUALIFIED"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>QSR OneASL SupplierData_ALL OPCOS.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Unique_Supplier_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="DUNS Number" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Organization Name" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Address" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="City" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Postal Code" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Country" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="State/Province/Region" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Location_Type" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="OEM_Supplier" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Segment" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Organization" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Operating Company" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="J_J_Site" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="J_J_Region" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Material_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Supplier Type" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Criticality Level" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Critical_Subcontractor_Status" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Crucial_Supplier_Status" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Qualification_Status" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Quality_Agreement_Confirmation" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Risk Categorization Group" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Material_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Right_Supplier_Root_Id" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="QSR Score&#xA;(0,1, 5, 15)" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="F25" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="QSR Date &#xA;of Rating" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="QSR Rationale" size="666" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="QSR Contact&#xA;(your name)" size="255" source="File: \\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="306" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1782" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\khill16\AppData\Local\Temp\1\Engine_21620_63adb0ecc977457cbb531ae550dc8051_\Engine_17996_9755b144a1b94b56902480267e227aa9_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1866" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1890" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeToday()" field="date added by workflow" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[date added by workflow = DateTimeToday()
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1890" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeToday()" field="date removed by workflow" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[date removed by workflow = DateTimeToday()
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2022" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1998" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1434" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF IsNull([QSR Score&#xA;(0,1, 5, 15)]) THEN 1 ELSE ([QSR Score&#xA;(0,1, 5, 15)]) ENDIF" field="QSR Score&#xA;(0,1, 5, 15)" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>QSR Score
+(0,1, 5, 15) = IF IsNull([QSR Score
+(0,1, 5, 15)]) THEN 1 ELSE ([QSR S...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2093" y="113" width="166" height="507" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 63</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2118" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\Automated QSR changes\QSR OneASL SupplierData_Added.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>QSR OneASL SupplierData_Added.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2118" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\QSR OneASL SupplierData_ALL OPCOS.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>QSR OneASL SupplierData_ALL OPCOS.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="48">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="2130" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\MD\New ASL file\Automated QSR changes\QSR OneASL SupplierData_DroppedOff.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>QSR OneASL SupplierData_DroppedOff.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="44" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Left" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Right" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="38" Connection="Join" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="42" Connection="Unique" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Unique" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output26" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output26" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Unique" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Unique" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Unique" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="False" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="True" />
+      <Destination ToolID="38" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="38" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="43" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>QSR data refresh</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="bd948399-6cf4-4cc0-afaf-4787b7700735" />
+      <Telemetry>
+        <PreviousWorkflowId value="33a54887-d0a7-49fb-b2a5-a41f2d0db085" />
+        <OriginWorkflowId value="33a54887-d0a7-49fb-b2a5-a41f2d0db085" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,714 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="437" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="OwnerId" />
+            <Field field="OwnerId" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Id" />
+            <Field field="Full_Name__c" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Full_Name__c" selected="True" rename="Sales Rep" />
+                <SelectField field="Right_Sales_Team__c" selected="True" rename="Team" />
+                <SelectField field="Right_Sales_Territory__c" selected="True" rename="Territory" />
+                <SelectField field="Right_Id" selected="False" />
+                <SelectField field="Left_SplitAmount" selected="True" rename="Opp Split Amount" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>6. Add Sales rep team and territory to Opportunity data using ID columns. Rename columns and remove duplicate rows.</AnnotationText>
+          <DefaultAnnotationText>6. Add Sales rep team and territory to Opportunity data using ID columns. Rename columns and remove duplicate rows.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="291" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Opportunity_ID__c" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="OpportunityId" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_OpportunityId" selected="False" />
+                <SelectField field="Right_SplitOwnerId" selected="True" rename="OwnerId" />
+                <SelectField field="Right_CreatedDate" selected="False" />
+                <SelectField field="Left_AccountId" selected="True" rename="Account ID SFDC" />
+                <SelectField field="Left_CloseDate" selected="True" rename="Close Date" />
+                <SelectField field="Left_Amount" selected="False" />
+                <SelectField field="Left_CreatedDate" selected="True" rename="Opp Created Date" />
+                <SelectField field="Left_OwnerId" selected="False" />
+                <SelectField field="Left_Type" selected="True" rename="Class of Business" />
+                <SelectField field="Left_Opportunity_ID__c" selected="True" rename="Opportunity ID" />
+                <SelectField field="Left_Name" selected="True" rename="Opportunity Name" />
+                <SelectField field="Left_StageName" selected="True" rename="Stage" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>5. Combine Opportunity and Opportunity Split data using ID columns. Rename columns and remove duplicate rows.</AnnotationText>
+          <DefaultAnnotationText>5. Combine Opportunity and Opportunity Split data using ID columns. Rename columns and remove duplicate rows.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="145">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="855" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="Account ID SFDC" />
+            <Field field="Close Date" />
+            <Field field="Opp Created Date" />
+            <Field field="Class of Business" />
+            <Field field="Opportunity ID" />
+            <Field field="Opportunity Name" />
+            <Field field="Stage" />
+            <Field field="SplitPercentage" />
+            <Field field="OwnerId" />
+            <Field field="Opp Split Amount" />
+            <Field field="Sales Rep" />
+            <Field field="Team" />
+            <Field field="Territory" />
+          </KeyFields>
+          <DataFields>
+            <Field field="Account ID SFDC" selected="False" />
+            <Field field="Close Date" selected="False" />
+            <Field field="Opp Created Date" selected="False" />
+            <Field field="Class of Business" selected="False" />
+            <Field field="Opportunity ID" selected="False" />
+            <Field field="Opportunity Name" selected="False" />
+            <Field field="Stage" selected="False" />
+            <Field field="SplitPercentage" selected="False" />
+            <Field field="OwnerId" selected="False" />
+            <Field field="Opp Split Amount" selected="False" />
+            <Field field="Sales Rep" selected="False" />
+            <Field field="Team" selected="False" />
+            <Field field="Territory" selected="False" />
+            <Field field="3mos_Created" selected="True" />
+            <Field field="6mos_Created" selected="True" />
+            <Field field="9mos_Created" selected="True" />
+            <Field field="12mos_Created" selected="True" />
+            <Field field="3mos_Closed" selected="True" />
+            <Field field="6mos_Closed" selected="True" />
+            <Field field="9mos_Closed" selected="True" />
+            <Field field="12mos_Closed" selected="True" />
+            <Field field="CY_Created" selected="True" />
+            <Field field="CY_Closed" selected="True" />
+            <Field field="*Unknown" selected="False" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>9. Pivot data.</AnnotationText>
+          <DefaultAnnotationText>9. Pivot data.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="146">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1002" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF Contains([Name], &quot;3m&quot;) THEN &quot;3 Months&quot;&#xA;ELSEIF Contains([Name], &quot;6m&quot;) THEN &quot;6 Months&quot;&#xA;ELSEIF Contains([Name], &quot;9m&quot;) THEN &quot;9 Months&quot;&#xA;ELSEIF Contains([Name], &quot;12m&quot;) THEN &quot;12 Months&quot;&#xA;ELSEIF Contains([Name], &quot;CY&quot;) THEN &quot;Current Year&quot;&#xA;ELSE &quot;Check&quot; ENDIF" field="Timeframe" size="254" type="V_WString" />
+            <FormulaField expression="IF Contains([Name], &quot;Created&quot;) THEN &quot;Created&quot;&#xA;ELSEIF Contains([Name], &quot;Closed&quot;) THEN &quot;Closed&quot;&#xA;ELSE &quot;Check&quot; ENDIF" field="Type" size="254" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>10. Create additional columns for "Timeframe" and "Type".</AnnotationText>
+          <DefaultAnnotationText>Timeframe = IF Contains([Name], "3m") THEN "3 Months"
+ELSEIF Contains([Name], "6...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="148">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1136" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Account ID SFDC" />
+            <Field field="Close Date" />
+            <Field field="Opp Created Date" />
+            <Field field="Class of Business" />
+            <Field field="Opportunity ID" />
+            <Field field="Opportunity Name" />
+            <Field field="Stage" />
+            <Field field="SplitPercentage" />
+            <Field field="OwnerId" />
+            <Field field="Opp Split Amount" />
+            <Field field="Sales Rep" />
+            <Field field="Team" />
+            <Field field="Territory" />
+            <Field field="Timeframe" />
+          </GroupFields>
+          <HeaderField field="Type" />
+          <DataField field="Value" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>11. Transform "Type" column into "Closed" and "Created" columns.</AnnotationText>
+          <DefaultAnnotationText>11. Transform "Type" column into "Closed" and "Created" columns.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Account ID SFDC" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Close Date" source="CrossTab:Group:Sum:" type="Date" />
+            <Field name="Opp Created Date" source="CrossTab:Group:Sum:" type="DateTime" />
+            <Field name="Class of Business" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Opportunity ID" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Opportunity Name" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Stage" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="SplitPercentage" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="OwnerId" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Opp Split Amount" source="CrossTab:Group:Sum:" type="Double" />
+            <Field name="Sales Rep" size="22" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Team" size="100" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Territory" size="64" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Timeframe" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Closed" source="CrossTab:Header:Type:Closed:Sum:" type="Double" />
+            <Field name="Created" source="CrossTab:Header:Type:Created:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Account ID SFDC" order="Asc" />
+            <Field field="Close Date" order="Asc" />
+            <Field field="Opp Created Date" order="Asc" />
+            <Field field="Class of Business" order="Asc" />
+            <Field field="Opportunity ID" order="Asc" />
+            <Field field="Opportunity Name" order="Asc" />
+            <Field field="Stage" order="Asc" />
+            <Field field="SplitPercentage" order="Asc" />
+            <Field field="OwnerId" order="Asc" />
+            <Field field="Opp Split Amount" order="Asc" />
+            <Field field="Sales Rep" order="Asc" />
+            <Field field="Team" order="Asc" />
+            <Field field="Territory" order="Asc" />
+            <Field field="Timeframe" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="584" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Opp Created Date],&quot;months&quot;) &lt;= 3 then 1 else 0 endif" field="3mos_Created" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Opp Created Date],&quot;months&quot;) &lt;= 6 then 1 else 0 endif" field="6mos_Created" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Opp Created Date],&quot;months&quot;) &lt;= 9 then 1 else 0 endif" field="9mos_Created" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Opp Created Date],&quot;months&quot;) &lt;= 12 then 1 else 0 endif" field="12mos_Created" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Close Date],&quot;months&quot;) &lt;= 3 and [Stage]='7 - Closed Won' then 1 else 0 endif" field="3mos_Closed" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Close Date],&quot;months&quot;) &lt;= 6 and [Stage]='7 - Closed Won' then 1 else 0 endif" field="6mos_Closed" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Close Date],&quot;months&quot;) &lt;= 9 and [Stage]='7 - Closed Won' then 1 else 0 endif" field="9mos_Closed" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeDiff(&quot;2017-01-01 00:00:00&quot;,[Close Date],&quot;months&quot;) &lt;= 12 and [Stage]='7 - Closed Won' then 1 else 0 endif" field="12mos_Closed" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeFormat([Opp Created Date],'%Y') == '2016' then 1 else 0 endif" field="CY_Created" size="8" type="Double" />
+            <FormulaField expression="IF DateTimeFormat([Close Date],'%Y') == '2016' and [Stage]='7 - Closed Won' then 1 else 0 endif" field="CY_Closed" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>7. Create columns indicating if opportunities were created or closed within a specific time frame.</AnnotationText>
+          <DefaultAnnotationText>3mos_Created = IF DateTimeDiff("2017-01-01 00:00:00",[Opp Created Date],"months"...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="167">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\..\..\data\StartHereData\SalesPipeline.Opportunities.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>1. Read Opportunity data from Salesforce (saved as .yxdb)</AnnotationText>
+          <DefaultAnnotationText>SalesPipeline.Opportunities.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="AccountId" size="254" source="Formula: [OpportunityId]+[1]+[2]+[3]+[4]+[5]+[6]+[7]+[8]" type="V_WString" />
+            <Field name="CloseDate" source="Formula: DateTimeAdd([CloseDate],(DateTimeDiff(DateTimeNow(),[CreatedDate],'days')),'days')" type="Date" />
+            <Field name="Amount" scale="2" size="19" source="Formula: IF IsNull([Amount]) THEN Null() ELSE ToString(ToNumber([Amount])*(1+rand())) ENDIF" type="FixedDecimal" />
+            <Field name="CreatedDate" source="Formula: DateTimeAdd([Opp Created Date],[Second],&quot;seconds&quot;)" type="DateTime" />
+            <Field name="OwnerId" size="254" source="Formula: [OpportunityId]+[1]+[2]+[3]+[4]+[5]+[6]+[7]+[8]" type="V_WString" />
+            <Field name="Type" size="254" source="Formula: IF RAND()&gt;.4 THEN &quot;NB&quot; ELSE &quot;NBEC&quot; ENDIF" type="V_String" />
+            <Field name="Opportunity_ID__c" size="254" source="Formula: [OpportunityId]+[1]+[2]+[3]+[4]+[5]+[6]+[7]+[8]" type="V_WString" />
+            <Field name="Name" size="254" source="File: C:\Program Files\Alteryx\Samples\_Internal_Apps-Modules\Desktop_Apps\SalesForce\TestDatabase\data\final\MASTER_FILES\MASTER.opportunities.csv" type="V_String" />
+            <Field name="StageName" size="254" source="File: C:\SVNRepository\Content Engineering Sandboxes\Projects\Starter Kits\Partner Kits\Wave\Install\Kit\Samples\Samples\Salesforce_Wave_Analytics_Samples\Supporting_Macros\Close-Ratio-Output-100.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="168">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="346" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\..\..\data\StartHereData\SalesPipeline.OppSplit.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>2. Read Opportunity Split data from Salesforce (saved as .yxdb)</AnnotationText>
+          <DefaultAnnotationText>SalesPipeline.OppSplit.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="OpportunityId" size="254" source="Formula: [OpportunityId]+[1]+[2]+[3]+[4]+[5]+[6]+[7]+[8]" type="V_WString" />
+            <Field name="SplitPercentage" source="Formula: (Multiple Sources)" type="Double" />
+            <Field name="SplitOwnerId" size="254" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="SplitAmount" source="Formula: (Multiple Sources)" type="Double" />
+            <Field name="CreatedDate" source="Formula: DateTimeAdd([Opp Created Date],[Second],&quot;seconds&quot;)" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="169">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="533" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\..\..\data\StartHereData\SalesPipeline.Users.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>3. Read user data from Salesforce.</AnnotationText>
+          <DefaultAnnotationText>SalesPipeline.Users.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Full_Name__c" size="22" source="TextInput:" type="V_String" />
+            <Field name="Sales_Team__c" size="100" source="Formula: IF RAND()&lt;.4 THEN &quot;Inside&quot; ELSEIF RAND()&lt;.8 THEN &quot;Field&quot; ELSE &quot;Strategic&quot; ENDIF" type="V_WString" />
+            <Field name="Sales_Territory__c" size="64" source="Formula: ToString(RandInt(3))" type="V_WString" />
+            <Field name="Id" size="254" source="Formula: [OpportunityId]+[1]+[2]+[3]+[4]+[5]+[6]+[7]+[8]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="173">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="723" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>12mos_Created</Field>
+            <Operator>=</Operator>
+            <Operands>
+              <Operand>1</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>8. Filter for opportunities created within last 12 months.</AnnotationText>
+          <DefaultAnnotationText>[12mos_Created] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="181">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1439" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\rson\AppData\Local\Temp\Engine_13948_fe5fd30029404c48ac15b08aa46c0d68_\Engine_11464_4fe5fb994a2b4f2195fff31985123b4b_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>13. View data to be output.</AnnotationText>
+          <DefaultAnnotationText>13. View data to be output.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="191">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="167" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Switch([TYPE],[TYPE]&#xA;,&quot;NB&quot;,&quot;New Business&quot;&#xA;,&quot;NBEC&quot;,&quot;Expand Business&quot;)" field="Type" size="254" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>4. Rename columns.</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Type = Switch([TYPE],[TYPE]
+,"NB","New Business"
+,"NBEC","Expand Business")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="195">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1281" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Created]!=0</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-03-27 15:44:39</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2019-03-27 15:44:39</StartDate>
+              <EndDate>2019-03-27 15:44:39</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[12. Remove rows without created opportunities. ]]></AnnotationText>
+          <DefaultAnnotationText>[Created]!=0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="215">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1439" y="291" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="64" MaxRecords="">%temp%SalesPipeline_Output.hyper</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>14. Output data to a Tableau hyper file.</AnnotationText>
+          <DefaultAnnotationText>%temp%SalesPipeline_Output.hyper</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="216">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1439" y="447" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">%temp%SalesPipeline_Output.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>15. Output data to a CSV file.</AnnotationText>
+          <DefaultAnnotationText>%temp%SalesPipeline_Output.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="217">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text />
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="218">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="462" y="54" width="396" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>This workflow combines multiple Salesforce.com tables to measure the close ratio on sales leads for reps by team and territory to validate performance and determine leadership.</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="219">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="126" width="396" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>1) Run the workflow (Ctrl+R).</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="220">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="450" y="126" width="408" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>2) Select a tool to view its output in the Results window.</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="221">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="396" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Analyze a sales pipeline</Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="17" Connection="Join" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="17" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="169" Connection="Output" />
+      <Destination ToolID="17" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="145" Connection="Output" />
+      <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="146" Connection="Output" />
+      <Destination ToolID="148" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="148" Connection="Output" />
+      <Destination ToolID="195" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="173" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="167" Connection="Output" />
+      <Destination ToolID="191" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="168" Connection="Output" />
+      <Destination ToolID="5" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="191" Connection="Output" />
+      <Destination ToolID="5" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="173" Connection="True" />
+      <Destination ToolID="145" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="195" Connection="True" />
+      <Destination ToolID="181" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="195" Connection="True" />
+      <Destination ToolID="215" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="195" Connection="True" />
+      <Destination ToolID="216" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="True" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="False" />
+      <Name>Analyze a sales pipeline</Name>
+      <Description>This workflow combines multiple Salesforce.com tables to measure the close ratio on sales leads for reps by team and territory to validate performance and determine leadership.</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>Technical Writing</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2019</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="92ae78ee-1e34-4fb7-9b58-415ec11f7d53" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="92ae78ee-1e34-4fb7-9b58-415ec11f7d53" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,1788 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">..\..\..\data\StartHereData\Emergency_vehicle_response_times_by_state.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>1. Load the 2015 traffic fatalities dataset into the workflow.</AnnotationText>
+          <DefaultAnnotationText>Emergency_vehicle_response_times_by_state.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="STATE" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="ST_CASE" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="VE_TOTAL" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="VE_FORMS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="PVH_INVL" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="PEDS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="PERNOTMVIT" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="PERMVIT" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="PERSONS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="COUNTY" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="CITY" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="DAY" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="MONTH" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="YEAR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="DAY_WEEK" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="HOUR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="MINUTE" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="NHS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="RUR_URB" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="FUNC_SYS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="RD_OWNER" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="ROUTE" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="TWAY_ID" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="TWAY_ID2" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="MILEPT" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="LATITUDE" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="LONGITUD" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="SP_JUR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="HARM_EV" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="MAN_COLL" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="RELJCT1" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="RELJCT2" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="TYP_INT" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="WRK_ZONE" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="REL_ROAD" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="LGT_COND" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="WEATHER1" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="WEATHER2" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="WEATHER" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="SCH_BUS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="RAIL" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="NOT_HOUR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="NOT_MIN" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="ARR_HOUR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="ARR_MIN" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="HOSP_HR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="HOSP_MN" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="CF1" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="CF2" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="CF3" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="FATALS" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="DRUNK_DR" size="254" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="188" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="STATE" selected="True" />
+            <Field field="ST_CASE" selected="True" />
+            <Field field="VE_TOTAL" selected="True" />
+            <Field field="VE_FORMS" selected="True" />
+            <Field field="PVH_INVL" selected="True" />
+            <Field field="PEDS" selected="True" />
+            <Field field="PERNOTMVIT" selected="True" />
+            <Field field="PERMVIT" selected="True" />
+            <Field field="PERSONS" selected="True" />
+            <Field field="COUNTY" selected="True" />
+            <Field field="CITY" selected="True" />
+            <Field field="DAY" selected="True" />
+            <Field field="MONTH" selected="True" />
+            <Field field="YEAR" selected="True" />
+            <Field field="DAY_WEEK" selected="True" />
+            <Field field="HOUR" selected="True" />
+            <Field field="MINUTE" selected="True" />
+            <Field field="NHS" selected="True" />
+            <Field field="RUR_URB" selected="True" />
+            <Field field="FUNC_SYS" selected="True" />
+            <Field field="RD_OWNER" selected="True" />
+            <Field field="ROUTE" selected="True" />
+            <Field field="TWAY_ID" selected="True" />
+            <Field field="TWAY_ID2" selected="True" />
+            <Field field="MILEPT" selected="True" />
+            <Field field="LATITUDE" selected="True" />
+            <Field field="LONGITUD" selected="True" />
+            <Field field="SP_JUR" selected="True" />
+            <Field field="HARM_EV" selected="True" />
+            <Field field="MAN_COLL" selected="True" />
+            <Field field="RELJCT1" selected="True" />
+            <Field field="RELJCT2" selected="True" />
+            <Field field="TYP_INT" selected="True" />
+            <Field field="WRK_ZONE" selected="True" />
+            <Field field="REL_ROAD" selected="True" />
+            <Field field="LGT_COND" selected="True" />
+            <Field field="WEATHER1" selected="True" />
+            <Field field="WEATHER2" selected="True" />
+            <Field field="WEATHER" selected="True" />
+            <Field field="SCH_BUS" selected="True" />
+            <Field field="RAIL" selected="True" />
+            <Field field="NOT_HOUR" selected="True" />
+            <Field field="NOT_MIN" selected="True" />
+            <Field field="ARR_HOUR" selected="True" />
+            <Field field="ARR_MIN" selected="True" />
+            <Field field="HOSP_HR" selected="True" />
+            <Field field="HOSP_MN" selected="True" />
+            <Field field="CF1" selected="True" />
+            <Field field="CF2" selected="True" />
+            <Field field="CF3" selected="True" />
+            <Field field="FATALS" selected="True" />
+            <Field field="DRUNK_DR" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>2. Automatically convert the data types of selected columns.</AnnotationText>
+          <DefaultAnnotationText>2. Automatically convert the data types of selected columns.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="STATE" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="ST_CASE" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Int32" />
+            <Field name="VE_TOTAL" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="VE_FORMS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="PVH_INVL" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="PEDS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="PERNOTMVIT" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="PERMVIT" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="PERSONS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="COUNTY" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Int16" />
+            <Field name="CITY" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Int16" />
+            <Field name="DAY" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="MONTH" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="YEAR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Int16" />
+            <Field name="DAY_WEEK" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="HOUR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="MINUTE" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="NHS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="RUR_URB" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="FUNC_SYS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="RD_OWNER" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="ROUTE" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="TWAY_ID" size="30" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="TWAY_ID2" size="30" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="V_String" />
+            <Field name="MILEPT" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Int32" />
+            <Field name="LATITUDE" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Double" />
+            <Field name="LONGITUD" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Double" />
+            <Field name="SP_JUR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="HARM_EV" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="MAN_COLL" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="RELJCT1" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="RELJCT2" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="TYP_INT" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="WRK_ZONE" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="REL_ROAD" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="LGT_COND" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="WEATHER1" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="WEATHER2" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="WEATHER" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="SCH_BUS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="RAIL" size="7" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="String" />
+            <Field name="NOT_HOUR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="NOT_MIN" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="ARR_HOUR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="ARR_MIN" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="HOSP_HR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="HOSP_MN" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="CF1" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="CF2" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="CF3" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="FATALS" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+            <Field name="DRUNK_DR" source="File: C:\Git\starter-kits\releases\designer\en\data\Emergency_vehicle_response_times_by_state.csv" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="462" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\..\..\data\StartHereData\State_file.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>8. Load State, population, and spatial objects into the workflow.</AnnotationText>
+          <DefaultAnnotationText>State_file.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Attrb Code" source="TextInput:" type="Byte" />
+            <Field description="RegEx: Parsed from Name" name="State" size="254" source="RegEx: Parsed from Name" type="V_WString" />
+            <Field name="Abbrev." size="2" source="TextInput:" type="String" />
+            <Field name="Population" source="TextInput:" type="Int32" />
+            <Field name="SpatialObj" size="2147483647" source="File: " type="SpatialObj" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="134">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="948" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text />
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="135">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="510" y="54" width="492" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>This workflow inputs 2015 traffic fatality from the National Highway Traffic Safety Administration and outputs several reports. In addition, this workflow creates multiple visuals for traffic fatalities by dates, weekdays, and per capita.</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="136">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="138" width="468" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>1) Run the workflow (Ctrl+R).</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="137">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="522" y="138" width="480" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>2) Select a tool to view its output in the Results window.</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="603" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Date" action="GroupBy" rename="Date" />
+            <SummarizeField field="FATALS" action="Sum" rename="Sum_FATALS" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>5. Group by "Date" and sum by "FATALS".</AnnotationText>
+          <DefaultAnnotationText>5. Group by "Date" and sum by "FATALS".</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="738" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="LONGITUD" fieldY="LATITUDE" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>10. Create spatial objects to produce a map.</AnnotationText>
+          <DefaultAnnotationText>10. Create spatial objects to produce a map.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="738" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>scatter</type>
+              <mode>lines</mode>
+              <xsrc>Date</xsrc>
+              <ysrc>Sum_FATALS</ysrc>
+              <fill>none</fill>
+              <name>Traffic fatalities by date</name>
+              <line>
+                <width>2</width>
+              </line>
+            </Traces>
+            <Layout>
+              <title>&amp;nbsp;&lt;b&gt;Traffic fatalities by date&lt;/b&gt;&amp;nbsp;</title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <showlegend>false</showlegend>
+              <hovermode>closest</hovermode>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <xaxis>
+                <range>2014-12-12 00:11:46.4963</range>
+                <range>2016-01-18 06:58:09.8013</range>
+                <autorange>false</autorange>
+                <type>date</type>
+                <titlefont>
+                  <size>14</size>
+                </titlefont>
+                <tickfont>
+                  <size>12</size>
+                </tickfont>
+                <nticks>0</nticks>
+                <title>&lt;br&gt;</title>
+              </xaxis>
+              <yaxis>
+                <range>33.944047721625395</range>
+                <range>169.02049326420462</range>
+                <autorange>false</autorange>
+                <type>linear</type>
+              </yaxis>
+              <legend>
+                <font>
+                  <size>12</size>
+                </font>
+                <borderwidth>0</borderwidth>
+              </legend>
+              <margin>
+                <pad>0</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>80</l>
+                <r>80</r>
+              </margin>
+              <titlefont>
+                <size>17</size>
+              </titlefont>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>6. Create a line chart of "Sum_FATALS" by "Date".</AnnotationText>
+          <DefaultAnnotationText>6. Create a line chart of "Sum_FATALS" by "Date".</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="870" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType>pdf</TempFileType>
+          <BatchMode value="False" />
+          <DataField>Chart</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="False" />
+          <ShowFooter value="False" />
+          <PortraitMode value="True" />
+          <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>7. Render a temporary PDF file to the Results window.</AnnotationText>
+          <DefaultAnnotationText>7. Render a temporary PDF file to the Results window.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="130">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="462" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF Length([MONTH]) = 1&#xA;THEN '0' + ToString([MONTH])&#xA;ELSE ToString([MONTH])&#xA;ENDIF " field="MONTH" size="3" type="String" />
+            <FormulaField expression="IF Length([DAY]) = 1&#xA;THEN '0' + ToString([DAY])&#xA;ELSE ToString([DAY])&#xA;ENDIF " field="DAY" size="3" type="String" />
+            <FormulaField expression="ToDate([YEAR] + '-' + [MONTH] + '-' + [DAY])" field="Date" size="10" type="Date" />
+            <FormulaField expression="IF [DAY_WEEK]=1 THEN 'Sunday' &#xA;ELSEIF [DAY_WEEK]=2 THEN 'Monday'&#xA;ELSEIF [DAY_WEEK]=3 THEN 'Tuesday'&#xA;ELSEIF [DAY_WEEK]=4 THEN 'Wednesday'&#xA;ELSEIF [DAY_WEEK]=5 THEN 'Thursday'&#xA;ELSEIF [DAY_WEEK]=6 THEN 'Friday'&#xA;ELSE 'Saturday' ENDIF" field="Weekday" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>4. Write multiple formulas and create a "Date" column.</AnnotationText>
+          <DefaultAnnotationText>MONTH = IF Length([MONTH]) = 1
+THEN '0' + ToString([MONTH])
+ELSE ToString([MONTH...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="131">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="321" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DAY" selected="True" type="String" size="3" />
+            <SelectField field="MONTH" selected="True" type="String" size="3" />
+            <SelectField field="YEAR" selected="True" type="String" size="5" />
+            <SelectField field="HOSP_MN" selected="True" />
+            <SelectField field="HOSP_HR" selected="True" />
+            <SelectField field="ARR_MIN" selected="True" />
+            <SelectField field="ARR_HOUR" selected="True" />
+            <SelectField field="LONGITUD" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="FATALS" selected="True" />
+            <SelectField field="HOUR" selected="True" />
+            <SelectField field="MINUTE" selected="True" />
+            <SelectField field="STATE" selected="True" />
+            <SelectField field="DRUNK_DR" selected="True" />
+            <SelectField field="CITY" selected="True" />
+            <SelectField field="DAY_WEEK" selected="True" />
+            <SelectField field="COUNTY" selected="True" />
+            <SelectField field="PVH_INVL" selected="False" />
+            <SelectField field="NHS" selected="False" />
+            <SelectField field="CF1" selected="False" />
+            <SelectField field="PERSONS" selected="False" />
+            <SelectField field="PERNOTMVIT" selected="False" />
+            <SelectField field="FUNC_SYS" selected="False" />
+            <SelectField field="PEDS" selected="False" />
+            <SelectField field="PERMVIT" selected="False" />
+            <SelectField field="VE_FORMS" selected="False" />
+            <SelectField field="ST_CASE" selected="False" />
+            <SelectField field="TWAY_ID" selected="False" />
+            <SelectField field="TWAY_ID2" selected="False" />
+            <SelectField field="MILEPT" selected="False" />
+            <SelectField field="NOT_MIN" selected="False" />
+            <SelectField field="NOT_HOUR" selected="False" />
+            <SelectField field="SP_JUR" selected="False" />
+            <SelectField field="HARM_EV" selected="False" />
+            <SelectField field="MAN_COLL" selected="False" />
+            <SelectField field="RELJCT1" selected="False" />
+            <SelectField field="RELJCT2" selected="False" />
+            <SelectField field="TYP_INT" selected="False" />
+            <SelectField field="WRK_ZONE" selected="False" />
+            <SelectField field="REL_ROAD" selected="False" />
+            <SelectField field="LGT_COND" selected="False" />
+            <SelectField field="WEATHER1" selected="False" />
+            <SelectField field="WEATHER2" selected="False" />
+            <SelectField field="WEATHER" selected="False" />
+            <SelectField field="ROUTE" selected="False" />
+            <SelectField field="SCH_BUS" selected="False" />
+            <SelectField field="RAIL" selected="False" />
+            <SelectField field="RUR_URB" selected="False" />
+            <SelectField field="CF3" selected="False" />
+            <SelectField field="CF2" selected="False" />
+            <SelectField field="VE_TOTAL" selected="False" />
+            <SelectField field="RD_OWNER" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>3. Change the data types of some fields.</AnnotationText>
+          <DefaultAnnotationText>3. Change the data types of some fields.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="140">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="603" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[LONGITUD] &lt; 0</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&lt;</Operator>
+            <Field>LONGITUD</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-02-25 11:11:36</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2019-02-25 11:11:36</StartDate>
+              <EndDate>2019-02-25 11:11:36</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>9. Filter out invalid spatial records.</AnnotationText>
+          <DefaultAnnotationText>[LONGITUD] &lt; 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1134" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Sum_FATALS]/[Population]*100000" field="Fatalities per 100,000 People" size="19.2" type="FixedDecimal" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>13. Calculate the traffic fatalities per capita.</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Fatalities per 100,000 People = [Sum_FATALS]/[Population]*100000
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1399" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_8540_38cc566518f04d9dba1968ca7ce6d349_\Engine_10576_0563e5bdfd7c424ea9514b309dcc4f64_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>15. Browse the rendered map.</AnnotationText>
+          <DefaultAnnotationText>15. Browse the rendered map.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.ReportMap.ReportMap">
+        <Position x="1267" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TemporaryFileLocationXML>C:\ProgramData\Alteryx\Engine\Engine_8540_38cc566518f04d9dba1968ca7ce6d349_\Engine_10576_57ec5d16ef8d4ccb9cbae7dd03a30be2_.xml</TemporaryFileLocationXML>
+          <IsMetric value="False" />
+          <ImageWidth>8</ImageWidth>
+          <ImageHeight>6</ImageHeight>
+          <ImageResolution>1</ImageResolution>
+          <ReferenceMap>Latest:CloudMade</ReferenceMap>
+          <BackgroundColor>#fdfeff</BackgroundColor>
+          <DropShadow>False</DropShadow>
+          <ScaleUnits>Miles</ScaleUnits>
+          <ExpandExtent>10</ExpandExtent>
+          <MinimumWidth>0.5</MinimumWidth>
+          <DataConnections>
+            <DataConnection name="#1">
+              <ConnectionType>IncomingConnection</ConnectionType>
+              <Connection>#1</Connection>
+              <FileName />
+              <SpatialObj />
+              <GroupField />
+              <ThemeField>Fatalities per 100,000 People</ThemeField>
+              <LabelField>Fatalities per 100,000 People</LabelField>
+            </DataConnection>
+          </DataConnections>
+          <Layers>
+            <Layer name="Base Layers - Points" order="0">
+              <DisplayName>Base Layers - Points</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="Base Layers - Lines" order="1">
+              <DisplayName>Base Layers - Lines</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="1" order="2">
+              <LayerType>Polygons</LayerType>
+              <isBaseLayer value="False" />
+              <isReorderedBaseLayer value="False" />
+              <isRestlyedBaseLayer value="False" />
+              <baseLabelOverriden value="False" />
+              <isThemeLayer value="False" />
+              <DisplayName>Fatalities</DisplayName>
+              <DataConnection>#1</DataConnection>
+              <ShowInLegend value="True" />
+              <ZoomToLayer value="True" />
+              <Disable value="False" />
+              <PolygonStyle FillColor="#988576" HatchColor="#000000" HatchStyle="single" Hatched="false" Opacity="50" OutlineColor="#000000" OutlineSize="3" UseFillColor="true" />
+              <ThemeStyle ColorMethod="Ramp" EndColor="#ff0000" ManualTiles="" NoneSpecificValuesAction="Color" NumTiles="5" SpecificValues="" StartColor="#0000ff" TileMethod="SmartTile" UniqueColors="#dc143c,#6495ed,#f0e68c,#228b22,#a9a9a9,#ffa500,#ba55d3,#a0522d,#ff69b4,#4b0082,#d3d3d3,#9acd32,#00ffff,#808000,#ffb6c1" UpperCutoffIncludedExcluded="Excluded" />
+              <LabelStyle Disabled="false" />
+            </Layer>
+            <Layer name="Base Layers - Polygons" order="3">
+              <DisplayName>Base Layers - Polygons</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="2" order="1001">
+              <DisplayName>High</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>1</ThemeBandNumber>
+            </Layer>
+            <Layer name="3" order="1002">
+              <DisplayName>Above Average</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>2</ThemeBandNumber>
+            </Layer>
+            <Layer name="4" order="1003">
+              <DisplayName>Average</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>3</ThemeBandNumber>
+            </Layer>
+            <Layer name="5" order="1004">
+              <DisplayName>Below Average</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>4</ThemeBandNumber>
+            </Layer>
+            <Layer name="6" order="1005">
+              <DisplayName>Low</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>5</ThemeBandNumber>
+            </Layer>
+          </Layers>
+          <Legend>
+            <LegendStyle Position="Right" UseCommaSeparators="false" />
+          </Legend>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>14. Prepare a map for output.</AnnotationText>
+          <DefaultAnnotationText>14. Prepare a map for output.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxReportMap" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="870" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="STATE" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Attrb Code" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_State" selected="True" rename="Right_State" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>11. Join the datasets together.</AnnotationText>
+          <DefaultAnnotationText>11. Join the datasets together.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1000" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Right_State" action="GroupBy" rename="State" />
+            <SummarizeField field="FATALS" action="Sum" rename="Sum_FATALS" />
+            <SummarizeField field="Population" action="First" rename="Population" />
+            <SummarizeField field="SpatialObj" action="First" rename="SpatialObj" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>12. Group by "State" to sum total "FATALS".</AnnotationText>
+          <DefaultAnnotationText>12. Group by "State" to sum total "FATALS".</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="462" y="866" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[HOUR]*60" field="Hour to Mins" size="8" type="Double" />
+            <FormulaField expression="[Hour to Mins]+[MINUTE]" field="Accident Minutes" size="8" type="Double" />
+            <FormulaField expression="[ARR_HOUR]*60" field="Arr Hour to Mins" size="8" type="Double" />
+            <FormulaField expression="[Arr Hour to Mins]+[ARR_MIN]" field="Arrival Minutes" size="8" type="Double" />
+            <FormulaField expression="[Arrival Minutes]-[Accident Minutes]" field="Arrival Minutes - Accident" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>29. Calculate the arrival time of emergency vehicles in minutes.</AnnotationText>
+          <DefaultAnnotationText>Hour to Mins = [HOUR]*60
+Accident Minutes = [Hour to Mins]+[MINUTE]
+Arr Hour to ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="321" y="866" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[ARR_HOUR] != 99 AND [ARR_MIN] !=99 AND [HOUR] !=99 AND [MINUTE] != 99  AND [ARR_HOUR] != 88 AND [ARR_MIN] !=88</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>ARR_HOUR</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-12-27 14:19:55</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>99</Operand>
+              <StartDate>2018-12-27 14:19:55</StartDate>
+              <EndDate>2018-12-27 14:19:55</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>28. Filter out invalid time data.</AnnotationText>
+          <DefaultAnnotationText>[ARR_HOUR] != 99 AND [ARR_MIN] !=99 AND [HOUR] !=99 AND [MINUTE] != 99  AND [ARR...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="603" y="866" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Arrival Minutes - Accident] &gt;= 0 
+AND [Arrival Minutes - Accident] &lt;= 120</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>&gt;=</Operator>
+            <Field>Arrival Minutes - Accident</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-12-27 14:44:28</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2018-12-27 14:44:28</StartDate>
+              <EndDate>2018-12-27 14:44:28</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>30. Filter for arrivals between 0 and 120 minutes.</AnnotationText>
+          <DefaultAnnotationText>[Arrival Minutes - Accident] &gt;= 0 
+AND [Arrival Minutes - Accident] &lt;= 120</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="738" y="866" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Arrival Minutes - Accident" action="GroupBy" rename="Arrival Minutes - Accident" />
+            <SummarizeField field="Arrival Minutes - Accident" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>31. Count the arrivals by minute.</AnnotationText>
+          <DefaultAnnotationText>31. Count the arrivals by minute.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="870" y="866" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>bar</type>
+              <mode>markers</mode>
+              <xsrc>Arrival Minutes - Accident</xsrc>
+              <ysrc>Count</ysrc>
+              <marker>
+                <color>rgb(148, 103, 189)</color>
+              </marker>
+            </Traces>
+            <Layout>
+              <title>&lt;b&gt;Minutes Until Medic Arrived at Crash Scene&amp;nbsp;(2 hrs)&lt;/b&gt;</title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <showlegend>false</showlegend>
+              <hovermode>closest</hovermode>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <xaxis>
+                <range>0</range>
+                <range>120</range>
+                <autorange>false</autorange>
+                <title>Arrival Minutes - Accident Minutes</title>
+                <titlefont>
+                  <size>14</size>
+                </titlefont>
+                <tickfont>
+                  <size>12</size>
+                </tickfont>
+                <nticks>0</nticks>
+                <type>linear</type>
+              </xaxis>
+              <yaxis>
+                <range>-5.0073680728896193</range>
+                <range>993.48601556570577</range>
+                <autorange>false</autorange>
+                <title>Frequency</title>
+                <type>linear</type>
+              </yaxis>
+              <margin>
+                <pad>0</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>80</l>
+                <r>80</r>
+              </margin>
+              <titlefont>
+                <size>17</size>
+              </titlefont>
+              <legend>
+                <font>
+                  <size>12</size>
+                </font>
+                <borderwidth>0</borderwidth>
+              </legend>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>32. Prepare a bar chart for output.</AnnotationText>
+          <DefaultAnnotationText>32. Prepare a bar chart for output.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="1000" y="866" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType>pdf</TempFileType>
+          <BatchMode value="False" />
+          <DataField>Chart</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="False" />
+          <ShowFooter value="False" />
+          <PortraitMode value="True" />
+          <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>33. Render a temporary PDF file to the Results window.</AnnotationText>
+          <DefaultAnnotationText>33. Render a temporary PDF file to the Results window.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="738" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>heatmap</type>
+              <mode>markers</mode>
+              <xsrc>Weekday</xsrc>
+              <ysrc>MONTH</ysrc>
+              <zsrc>Count</zsrc>
+              <zmin>49</zmin>
+              <zmax>136</zmax>
+              <zauto>true</zauto>
+              <colorbar>
+                <title>Weekday Count per Month</title>
+              </colorbar>
+            </Traces>
+            <Layout>
+              <title>
+              </title>
+              <font>
+                <family>sans-serif</family>
+              </font>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <xaxis>
+                <type>category</type>
+                <range>-0.5</range>
+                <range>6.5</range>
+                <autorange>true</autorange>
+                <title>Weekday</title>
+              </xaxis>
+              <yaxis>
+                <type>linear</type>
+                <range>0.5</range>
+                <range>12.5</range>
+                <autorange>true</autorange>
+                <title>Month</title>
+              </yaxis>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>17. Create a heatmap to compare "Weekdays".</AnnotationText>
+          <DefaultAnnotationText>17. Create a heatmap to compare "Weekdays".</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="870" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_8540_38cc566518f04d9dba1968ca7ce6d349_\Engine_10576_5ee717b66f554f7db15cb1f5ad85cdb4_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>18. Browse the rendered map.</AnnotationText>
+          <DefaultAnnotationText>18. Browse the rendered map.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="132">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="603" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Date" action="GroupBy" rename="Date" />
+            <SummarizeField field="MONTH" action="GroupBy" rename="MONTH" />
+            <SummarizeField field="Weekday" action="GroupBy" rename="Weekday" />
+            <SummarizeField field="Weekday" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>16. Group by multiple fields and count the total.</AnnotationText>
+          <DefaultAnnotationText>16. Group by multiple fields and count the total.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="738" y="712" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="DAY_WEEK" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="DAY_WEEK" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_DAY_WEEK" selected="False" rename="Right_DAY_WEEK" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>24. Join two data streams by "DAY_WEEK".</AnnotationText>
+          <DefaultAnnotationText>24. Join two data streams by "DAY_WEEK".</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="1000" y="712" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>heatmap</type>
+              <mode>markers</mode>
+              <zsrc>Arrival Minutes - Accident</zsrc>
+              <xsrc>Weekday</xsrc>
+              <ysrc>MONTH</ysrc>
+              <zmin>1</zmin>
+              <zmax>210</zmax>
+              <zauto>true</zauto>
+              <colorbar>
+                <title>Medic Minutes Late</title>
+              </colorbar>
+            </Traces>
+            <Layout>
+              <title>
+              </title>
+              <font>
+                <family>sans-serif</family>
+              </font>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <autosize>false</autosize>
+              <width>700</width>
+              <height>849</height>
+              <xaxis>
+                <range>-0.5</range>
+                <range>6.5</range>
+                <autorange>true</autorange>
+                <type>category</type>
+                <title>Weekday</title>
+              </xaxis>
+              <yaxis>
+                <range>0.5</range>
+                <range>12.5</range>
+                <autorange>true</autorange>
+                <type>linear</type>
+                <title>Month</title>
+              </yaxis>
+            </Layout>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>26. Prepare a heatmap for output.</AnnotationText>
+          <DefaultAnnotationText>26. Prepare a heatmap for output.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="870" y="712" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="Weekday" selected="True" />
+            <SelectField field="Arrival Minutes - Accident" selected="True" />
+            <SelectField field="DAY" selected="True" />
+            <SelectField field="VE_TOTAL" selected="False" />
+            <SelectField field="VE_FORMS" selected="False" />
+            <SelectField field="PVH_INVL" selected="False" />
+            <SelectField field="PEDS" selected="False" />
+            <SelectField field="PERNOTMVIT" selected="False" />
+            <SelectField field="PERMVIT" selected="False" />
+            <SelectField field="PERSONS" selected="False" />
+            <SelectField field="COUNTY" selected="False" />
+            <SelectField field="CITY" selected="False" />
+            <SelectField field="HARM_EV" selected="False" />
+            <SelectField field="YEAR" selected="False" />
+            <SelectField field="HOUR" selected="False" />
+            <SelectField field="LATITUDE" selected="False" />
+            <SelectField field="ST_CASE" selected="False" />
+            <SelectField field="MILEPT" selected="False" />
+            <SelectField field="TWAY_ID2" selected="False" />
+            <SelectField field="DAY_WEEK" selected="False" />
+            <SelectField field="ROUTE" selected="False" />
+            <SelectField field="TWAY_ID" selected="False" />
+            <SelectField field="FUNC_SYS" selected="False" />
+            <SelectField field="RUR_URB" selected="False" />
+            <SelectField field="NHS" selected="False" />
+            <SelectField field="MINUTE" selected="False" />
+            <SelectField field="RD_OWNER" selected="False" />
+            <SelectField field="LONGITUD" selected="False" />
+            <SelectField field="STATE" selected="False" />
+            <SelectField field="SP_JUR" selected="False" />
+            <SelectField field="Count" selected="False" />
+            <SelectField field="RELJCT2" selected="False" />
+            <SelectField field="TYP_INT" selected="False" />
+            <SelectField field="WRK_ZONE" selected="False" />
+            <SelectField field="REL_ROAD" selected="False" />
+            <SelectField field="LGT_COND" selected="False" />
+            <SelectField field="WEATHER1" selected="False" />
+            <SelectField field="WEATHER2" selected="False" />
+            <SelectField field="WEATHER" selected="False" />
+            <SelectField field="SCH_BUS" selected="False" />
+            <SelectField field="RAIL" selected="False" />
+            <SelectField field="NOT_HOUR" selected="False" />
+            <SelectField field="NOT_MIN" selected="False" />
+            <SelectField field="MAN_COLL" selected="False" />
+            <SelectField field="ARR_HOUR" selected="False" />
+            <SelectField field="HOSP_HR" selected="False" />
+            <SelectField field="HOSP_MN" selected="False" />
+            <SelectField field="CF1" selected="False" />
+            <SelectField field="CF2" selected="False" />
+            <SelectField field="CF3" selected="False" />
+            <SelectField field="FATALS" selected="False" />
+            <SelectField field="DRUNK_DR" selected="False" />
+            <SelectField field="Hour to Mins" selected="False" />
+            <SelectField field="Accident Minutes" selected="False" />
+            <SelectField field="Arr Hour to Mins" selected="False" />
+            <SelectField field="Arrival Minutes" selected="False" />
+            <SelectField field="RELJCT1" selected="False" />
+            <SelectField field="ARR_MIN" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>25. De-select unnecessary fields.</AnnotationText>
+          <DefaultAnnotationText>25. De-select unnecessary fields.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1134" y="712" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_8540_38cc566518f04d9dba1968ca7ce6d349_\Engine_10576_45294ff531a4482698817e0e0ec907ff_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>27. Browse the rendered map.</AnnotationText>
+          <DefaultAnnotationText>27. Browse the rendered map.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="133">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="603" y="716" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="DAY_WEEK" action="GroupBy" rename="DAY_WEEK" />
+            <SummarizeField field="Weekday" action="GroupBy" rename="Weekday" />
+            <SummarizeField field="Weekday" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>23. Count totals by "Weekday".</AnnotationText>
+          <DefaultAnnotationText>23. Count totals by "Weekday".</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="101">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.ReportMap.ReportMap">
+        <Position x="1267" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TemporaryFileLocationXML>C:\ProgramData\Alteryx\Engine\Engine_8540_38cc566518f04d9dba1968ca7ce6d349_\Engine_10576_9e0a992b46534158b9e8b1f1aa0520c6_.xml</TemporaryFileLocationXML>
+          <IsMetric value="False" />
+          <ImageWidth>8</ImageWidth>
+          <ImageHeight>6</ImageHeight>
+          <ImageResolution>1</ImageResolution>
+          <ReferenceMap>Latest:CloudMade</ReferenceMap>
+          <BackgroundColor>#fdfeff</BackgroundColor>
+          <DropShadow>False</DropShadow>
+          <ScaleUnits>Miles</ScaleUnits>
+          <ExpandExtent>10</ExpandExtent>
+          <MinimumWidth>0.5</MinimumWidth>
+          <DataConnections>
+            <DataConnection name="#1">
+              <ConnectionType>IncomingConnection</ConnectionType>
+              <Connection>#1</Connection>
+              <FileName />
+              <SpatialObj />
+              <GroupField />
+              <ThemeField>Drunk Count</ThemeField>
+              <LabelField>Drunk Count</LabelField>
+            </DataConnection>
+          </DataConnections>
+          <Layers>
+            <Layer name="Base Layers - Points" order="0">
+              <DisplayName>Base Layers - Points</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="Base Layers - Lines" order="1">
+              <DisplayName>Base Layers - Lines</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="1" order="2">
+              <LayerType>Polygons</LayerType>
+              <isBaseLayer value="False" />
+              <isReorderedBaseLayer value="False" />
+              <isRestlyedBaseLayer value="False" />
+              <baseLabelOverriden value="False" />
+              <isThemeLayer value="False" />
+              <DisplayName>Drunk Drivers</DisplayName>
+              <DataConnection>#1</DataConnection>
+              <ShowInLegend value="True" />
+              <ZoomToLayer value="True" />
+              <Disable value="False" />
+              <PolygonStyle FillColor="#988576" HatchColor="#000000" HatchStyle="single" Hatched="false" Opacity="50" OutlineColor="#000000" OutlineSize="3" UseFillColor="true" />
+              <ThemeStyle ColorMethod="Ramp" EndColor="#ff0000" ManualTiles="" NoneSpecificValuesAction="Color" NumTiles="5" SpecificValues="" StartColor="#008000" TileMethod="SmartTile" UniqueColors="#dc143c,#6495ed,#f0e68c,#228b22,#a9a9a9,#ffa500,#ba55d3,#a0522d,#ff69b4,#4b0082,#d3d3d3,#9acd32,#00ffff,#808000,#ffb6c1" UpperCutoffIncludedExcluded="Excluded" />
+              <LabelStyle Disabled="false" />
+            </Layer>
+            <Layer name="Base Layers - Polygons" order="3">
+              <DisplayName>Base Layers - Polygons</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="2" order="1001">
+              <DisplayName>High</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>1</ThemeBandNumber>
+            </Layer>
+            <Layer name="3" order="1002">
+              <DisplayName>Above Average</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>2</ThemeBandNumber>
+            </Layer>
+            <Layer name="4" order="1003">
+              <DisplayName>Average</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>3</ThemeBandNumber>
+            </Layer>
+            <Layer name="5" order="1004">
+              <DisplayName>Below Average</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>4</ThemeBandNumber>
+            </Layer>
+            <Layer name="6" order="1005">
+              <DisplayName>Low</DisplayName>
+              <DataConnection />
+              <LayerType>Polygons</LayerType>
+              <ShowLabel value="False" />
+              <isThemeLayer value="True" />
+              <ParentLayer>1</ParentLayer>
+              <ThemeBandNumber>5</ThemeBandNumber>
+            </Layer>
+          </Layers>
+          <Legend>
+            <LegendStyle Position="Right" UseCommaSeparators="false" />
+          </Legend>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>21. Prepare a state map for output.</AnnotationText>
+          <DefaultAnnotationText>21. Prepare a state map for output.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxReportMap" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1399" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_8540_38cc566518f04d9dba1968ca7ce6d349_\Engine_10576_625200afa33b473585947974e2ba8c9f_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>22. Browse the rendered map.</AnnotationText>
+          <DefaultAnnotationText>22. Browse the rendered map.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="105">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1134" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Right_State" action="GroupBy" rename="Right_State" />
+            <SummarizeField field="DRUNK_DR" action="Count" rename="Drunk Count" />
+            <SummarizeField field="SpatialObj" action="First" rename="State Outline" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>20. Sum the total drunk drivers by state.</AnnotationText>
+          <DefaultAnnotationText>20. Sum the total drunk drivers by state.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="107">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1000" y="532" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[DRUNK_DR] != 0</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>DRUNK_DR</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-12-28 11:39:42</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2018-12-28 11:39:42</StartDate>
+              <EndDate>2018-12-28 11:39:42</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>19. Isolate accidents that involve drunk drivers.</AnnotationText>
+          <DefaultAnnotationText>[DRUNK_DR] != 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="141">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="420" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Analyze and report on
+traffic fatalities</Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="27" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="109" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="109" Connection="Output" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="132" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="140" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="Output" />
+      <Destination ToolID="130" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="140" Connection="True" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="113" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="113" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="True" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="True" />
+      <Destination ToolID="96" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="133" Connection="Output" />
+      <Destination ToolID="96" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="True" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="132" Connection="Output" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Join" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="99" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="101" Connection="Output" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="105" Connection="Output" />
+      <Destination ToolID="101" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="107" Connection="True" />
+      <Destination ToolID="105" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="True" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>06 Analyze and report on traffic fatalities</Name>
+      <Description>Data taken from https://www.kaggle.com/nhtsa/2015-traffic-fatalities.
+
+This sample is based on a workflow created by Digan Parikh.</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>Technical Writing</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2019</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="7384fa3b-aeb7-4fa6-8c59-6a3f0a6e0655" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="7384fa3b-aeb7-4fa6-8c59-6a3f0a6e0655" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

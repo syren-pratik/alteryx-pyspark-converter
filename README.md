@@ -1,6 +1,6 @@
 # 🔄 Alteryx to PySpark Converter
 
-A comprehensive web-based tool that converts Alteryx workflows (.yxmd files) to production-ready PySpark code. Deploy instantly on Vercel!
+A comprehensive web-based tool that converts Alteryx workflows (.yxmd files) to production-ready PySpark code.
 
 ## ✨ Features
 
@@ -42,4 +42,3 @@ python main_app.py
 **Alteryx Formula:** `[Amount] * 1.1`  
 **PySpark Output:** `df.withColumn("Amount", col("Amount") * lit(1.1))`
 
-# Vercel Deployment - Fri Aug 22 19:59:49 IST 2025

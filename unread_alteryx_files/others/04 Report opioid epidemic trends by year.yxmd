@@ -1,0 +1,737 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">..\..\..\data\StartHereData\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>1. Read in a .csv file of drug data.</AnnotationText>
+          <DefaultAnnotationText>Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="State" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="State Name" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Year" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Month" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Indicator" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Data Value" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Predicted Value" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Percent Complete" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Percent Pending Investigation" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+            <Field name="Footnote" size="254" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\Trends_Opioid_Epidemic.VSRR_Provisional_Drug_Overdose_Death_Counts.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="91">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="318" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11428_3615b0fabfd445658301c84ef9ea603a_\Engine_25800_dae828547e384d59a31f2c14fb1681d9_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>3. View data profiling information.</AnnotationText>
+          <DefaultAnnotationText>3. View data profiling information.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="186" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Text</FieldType>
+          <Fields orderChanged="False">
+            <Field name="Data Value" />
+            <Field name="Predicted Value" />
+            <Field name="State" selected="False" />
+            <Field name="State Name" selected="False" />
+            <Field name="Year" selected="False" />
+            <Field name="Month" selected="False" />
+            <Field name="Indicator" selected="False" />
+            <Field name="Percent Complete" selected="False" />
+            <Field name="Percent Pending Investigation" selected="False" />
+            <Field name="Footnote" selected="False" />
+            <Field name="*Unknown" selected="False" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>ToNumber(Replace([_CurrentField_], ',', ''))</Expression>
+          <ChangeFieldType value="True" />
+          <OutputFieldType type="Double" size="8" scale="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>2. Remove extra commas and change the data type to Double.</AnnotationText>
+          <DefaultAnnotationText>ToNumber(Replace([_CurrentField_], ',', ''))</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="318" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!Contains([Indicator],"Percent")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>NotContains</Operator>
+            <Field>Indicator</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-07-25 15:06:49</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Percent</Operand>
+              <StartDate>2018-07-25 15:06:49</StartDate>
+              <EndDate>2018-07-25 15:06:49</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>4. Remove indicators that are percentages.</AnnotationText>
+          <DefaultAnnotationText>!Contains([Indicator],"Percent")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="PlotlyCharting">
+        <Position x="738" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ChartingFields>
+            <Traces json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">
+              <type>bar</type>
+              <xsrc>Year</xsrc>
+              <ysrc>Total US Value</ysrc>
+              <marker>
+                <color>rgb(0, 130, 202)</color>
+              </marker>
+              <orientation>v</orientation>
+              <name>Total US Deaths</name>
+              <hoverinfo>x+y</hoverinfo>
+            </Traces>
+            <Layout>
+              <title>
+              </title>
+              <font>
+                <family>sans-serif</family>
+                <size>12</size>
+              </font>
+              <xaxis>
+                <range>2014.5</range>
+                <range>2017.5</range>
+                <autorange>true</autorange>
+                <titlefont>
+                  <size>14</size>
+                </titlefont>
+                <tickfont>
+                  <size>12</size>
+                </tickfont>
+                <nticks>4</nticks>
+                <type>linear</type>
+                <showticklabels>true</showticklabels>
+              </xaxis>
+              <yaxis>
+                <range>0</range>
+                <range>2901761.0526315789</range>
+                <autorange>true</autorange>
+                <type>linear</type>
+              </yaxis>
+              <autosize>true</autosize>
+              <margin>
+                <pad>0</pad>
+                <t>100</t>
+                <b>80</b>
+                <l>80</l>
+                <r>80</r>
+              </margin>
+              <titlefont>
+                <size>17</size>
+              </titlefont>
+              <showlegend>true</showlegend>
+              <hovermode>closest</hovermode>
+              <legend>
+                <font>
+                  <size>12</size>
+                </font>
+                <borderwidth>0</borderwidth>
+              </legend>
+            </Layout>
+            <Batch>
+              <ColumnsToBatchBy json:Array="true" xmlns:json="http://james.newtonking.com/projects/json">Indicator</ColumnsToBatchBy>
+              <TemplateString>@[Indicator](Indicator)</TemplateString>
+            </Batch>
+          </ChartingFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>9. Create batched reports for total US deaths by Indicator.</AnnotationText>
+          <DefaultAnnotationText>9. Create batched reports for total US deaths by Indicator.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="ComposerInteractiveCharting" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="450" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Month] = "December"
+OR 
+(
+[Month] = "November" AND [Year] = "2017"
+)</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Month</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-07-26 11:05:44</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>December</Operand>
+              <StartDate>2018-07-26 11:05:44</StartDate>
+              <EndDate>2018-07-26 11:05:44</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>5. Filter for the most recent record for each year.</AnnotationText>
+          <DefaultAnnotationText>[Month] = "December"
+OR 
+(
+[Month] = "November" AND [Year] = "2017"
+)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="594" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Year" action="GroupBy" rename="Year" />
+            <SummarizeField field="Indicator" action="GroupBy" rename="Indicator" />
+            <SummarizeField field="Data Value" action="Sum" rename="Total US Value" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="1">
+          <Name />
+          <AnnotationText>8. Group by "Year" and "Indicator" to find total US deaths.</AnnotationText>
+          <DefaultAnnotationText>8. Group by "Year" and "Indicator" to find total US deaths.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="882" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType />
+          <OutputFile>%temp%Trends_Opioid_Epidemic.Total_US_Deaths_by_Indicator.pdf</OutputFile>
+          <BatchMode value="False" />
+          <DataField>Chart</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="False" />
+          <ShowFooter value="False" />
+          <PortraitMode value="True" />
+          <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>10. Create .pdf file of reports.</AnnotationText>
+          <DefaultAnnotationText>10. Create .pdf file of reports.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="126">
+      <GuiSettings Plugin="Insights">
+        <Position x="738" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <InsightFields>
+            <InsightData>C:\ProgramData\Alteryx\Engine\Engine_11428_3615b0fabfd445658301c84ef9ea603a_\Insight126\insight.sqlite|||insightdata</InsightData>
+            <InsightDescription>C:\ProgramData\Alteryx\Engine\Engine_11428_3615b0fabfd445658301c84ef9ea603a_\Insight126\insightDescription.json</InsightDescription>
+            <Description>
+              <Elements>
+                <CHART>
+                  <x>15</x>
+                  <y>4</y>
+                  <id>insight-0</id>
+                  <width>1253</width>
+                  <height>271</height>
+                  <type>CHART</type>
+                  <elementProps>
+                    <layout>
+                      <title>Drug Overdose Deaths by State of the Last 3 Years</title>
+                      <font>
+                        <family>sans-serif</family>
+                        <size>12</size>
+                      </font>
+                      <width>1253</width>
+                      <height>271</height>
+                      <xaxis>
+                        <range>-0.5</range>
+                        <range>50.5</range>
+                        <autorange>true</autorange>
+                        <type>category</type>
+                        <titlefont>
+                          <size>14</size>
+                        </titlefont>
+                        <tickfont>
+                          <size>12</size>
+                        </tickfont>
+                        <nticks>0</nticks>
+                      </xaxis>
+                      <yaxis>
+                        <range>0</range>
+                        <range>15244.21052631579</range>
+                        <autorange>true</autorange>
+                        <type>linear</type>
+                      </yaxis>
+                      <margin>
+                        <pad>0</pad>
+                        <t>100</t>
+                        <b>80</b>
+                        <l>80</l>
+                        <r>80</r>
+                      </margin>
+                      <titlefont>
+                        <size>17</size>
+                      </titlefont>
+                    </layout>
+                    <data xmlns:json="http://james.newtonking.com/projects/json" json:Array="true">
+                      <type>bar</type>
+                      <mode>markers</mode>
+                      <xsrc>State Name</xsrc>
+                      <ysrc>Number_of_Drug_Overdose_Deaths</ysrc>
+                      <aggregationField>ysrc</aggregationField>
+                      <aggregationFunction>sum</aggregationFunction>
+                      <name>State Deaths</name>
+                      <marker>
+                        <color>rgb(0, 130, 202)</color>
+                      </marker>
+                    </data>
+                    <sort xmlns:json="http://james.newtonking.com/projects/json" json:Array="true">
+                      <field>State Name</field>
+                      <order>ASC</order>
+                    </sort>
+                  </elementProps>
+                </CHART>
+                <CHART>
+                  <x>772</x>
+                  <y>290</y>
+                  <id>insight-1</id>
+                  <width>387</width>
+                  <height>230</height>
+                  <type>CHART</type>
+                  <elementProps>
+                    <layout>
+                      <title>US Drug Overdose Deaths</title>
+                      <font>
+                        <family>sans-serif</family>
+                        <size>12</size>
+                      </font>
+                      <width>387</width>
+                      <height>230</height>
+                      <xaxis>
+                        <range>2014.5</range>
+                        <range>2017.5</range>
+                        <autorange>true</autorange>
+                        <titlefont>
+                          <size>14</size>
+                        </titlefont>
+                        <tickfont>
+                          <size>12</size>
+                        </tickfont>
+                        <nticks>0</nticks>
+                        <type>linear</type>
+                      </xaxis>
+                      <yaxis>
+                        <range>0</range>
+                        <range>72044.210526315786</range>
+                        <autorange>true</autorange>
+                        <title>Deaths</title>
+                        <type>linear</type>
+                      </yaxis>
+                      <margin>
+                        <pad>0</pad>
+                        <t>100</t>
+                        <b>80</b>
+                        <l>80</l>
+                        <r>80</r>
+                      </margin>
+                      <titlefont>
+                        <size>17</size>
+                      </titlefont>
+                      <legend>
+                        <font>
+                          <size>12</size>
+                        </font>
+                        <borderwidth>0</borderwidth>
+                      </legend>
+                    </layout>
+                    <data xmlns:json="http://james.newtonking.com/projects/json" json:Array="true">
+                      <type>bar</type>
+                      <mode>markers</mode>
+                      <name>1</name>
+                      <xsrc>Year</xsrc>
+                      <ysrc>Number_of_Drug_Overdose_Deaths</ysrc>
+                      <aggregationField>ysrc</aggregationField>
+                      <aggregationFunction>sum</aggregationFunction>
+                      <marker>
+                        <color>rgb(235, 94, 112)</color>
+                      </marker>
+                    </data>
+                  </elementProps>
+                </CHART>
+                <TEXT xmlns:json="http://james.newtonking.com/projects/json" json:Array="true">
+                  <x>104</x>
+                  <y>331</y>
+                  <id>insight-2</id>
+                  <width>614</width>
+                  <height>188</height>
+                  <type>TEXT</type>
+                  <elementProps>
+                    <quillValue>&lt;p&gt;This simple dashboard shows drug overdose deaths by state and year.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click Preview to view a rendered version of the dashboard that may be published to an Alteryx Gallery instance.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Filters are available by State and Year.&lt;/p&gt;</quillValue>
+                  </elementProps>
+                </TEXT>
+              </Elements>
+              <Hierarchy>
+                <id-qv6c8e7bb3>
+                  <name />
+                  <hierarchyDescription xmlns:json="http://james.newtonking.com/projects/json" json:Array="true">State Name</hierarchyDescription>
+                  <aggregationFunction>sum</aggregationFunction>
+                </id-qv6c8e7bb3>
+              </Hierarchy>
+              <Filters>
+                <name>Year</name>
+                <controlName>dropdown</controlName>
+                <columnName>Year</columnName>
+                <type>in</type>
+              </Filters>
+              <Filters>
+                <name>State Name</name>
+                <controlName>multiselect-dropdown</controlName>
+                <columnName>State Name</columnName>
+                <type>in</type>
+              </Filters>
+            </Description>
+            <InsightGalleryID>
+            </InsightGalleryID>
+          </InsightFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>7. Create a dashboard.</AnnotationText>
+          <DefaultAnnotationText>7. Create a dashboard.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxInsights" />
+    </Node>
+    <Node ToolID="128">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="594" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="State Name" />
+            <Field field="Year" />
+            <Field field="Month" />
+          </GroupFields>
+          <HeaderField field="Indicator" />
+          <DataField field="Data Value" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>6. Organize data for presentation.</AnnotationText>
+          <DefaultAnnotationText>6. Organize data for presentation.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="State Name" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Year" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Month" size="254" source="CrossTab:Group:Sum:" type="V_WString" />
+            <Field name="Cocaine__T40_5_" source="CrossTab:Header:Indicator:Cocaine (T40.5):Sum:" type="Double" />
+            <Field name="Heroin__T40_1_" source="CrossTab:Header:Indicator:Heroin (T40.1):Sum:" type="Double" />
+            <Field name="Methadone__T40_3_" source="CrossTab:Header:Indicator:Methadone (T40.3):Sum:" type="Double" />
+            <Field name="Natural___semi_synthetic_opioids__T40_2_" source="CrossTab:Header:Indicator:Natural &amp; semi-synthetic opioids (T40.2):Sum:" type="Double" />
+            <Field name="Number_of_Deaths" source="CrossTab:Header:Indicator:Number of Deaths:Sum:" type="Double" />
+            <Field name="Number_of_Drug_Overdose_Deaths" source="CrossTab:Header:Indicator:Number of Drug Overdose Deaths:Sum:" type="Double" />
+            <Field name="Opioids__T40_0_T40_4_T40_6_" source="CrossTab:Header:Indicator:Opioids (T40.0-T40.4,T40.6):Sum:" type="Double" />
+            <Field name="Psychostimulants_with_abuse_potential__T43_6_" source="CrossTab:Header:Indicator:Psychostimulants with abuse potential (T43.6):Sum:" type="Double" />
+            <Field name="Synthetic_opioids__excl__methadone__T40_4_" source="CrossTab:Header:Indicator:Synthetic opioids, excl. methadone (T40.4):Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="State Name" order="Asc" />
+            <Field field="Year" order="Asc" />
+            <Field field="Month" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="131">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text />
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="132">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="486" y="54" width="372" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>This workflow creates visuals to help identify trends using data from the Center for Disease Control and Prevention (CDC).</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="133">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="126" width="396" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>1) Run the workflow (Ctrl+R).</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="134">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="450" y="126" width="408" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>2) Select a tool to view its output in the Results window.</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="135">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="384" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Report trends by year</Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Output" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Output" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="True" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="113" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="True" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="True" />
+      <Destination ToolID="128" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="128" Connection="Output" />
+      <Destination ToolID="126" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="True" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="False" />
+      <Name>Report opioid epidemic trends by year</Name>
+      <Description>This workflow creates visuals to help identify trends using data from the Center for Disease Control and Prevention (CDC).
+
+Data from https://catalog.data.gov/dataset/vsrr-provisional-drug-overdose-death-counts-54e35</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags>healthcare, starter kit, cdc, drug overdose, opioid epidemic</SearchTags>
+      <Author>Technical Writing</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2019</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="4d2c2ec7-ae99-4a58-b0d9-b6196651a6f2" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="4d2c2ec7-ae99-4a58-b0d9-b6196651a6f2" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

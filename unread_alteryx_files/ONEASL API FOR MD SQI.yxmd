@@ -1,0 +1,1481 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3187" y="236" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="Unique_Supplier_Id" selected="True" rename="ASL Number" />
+            <SelectField field="Supplier_DUNS_Number" selected="True" />
+            <SelectField field="Supplier_Name" selected="True" rename="Supplier Name" />
+            <SelectField field="Street" selected="True" />
+            <SelectField field="City" selected="True" />
+            <SelectField field="State" selected="True" rename="State/Region" />
+            <SelectField field="Postal_Code" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="Location_Type" selected="True" />
+            <SelectField field="OEM_Supplier" selected="True" />
+            <SelectField field="Material_Id" selected="True" />
+            <SelectField field="J_J_Segment" selected="True" />
+            <SelectField field="J_J_Quality_Organisation" selected="True" />
+            <SelectField field="J_J_Operating_Company" selected="True" rename="FRANCHISE" />
+            <SelectField field="J_J_Site" selected="True" rename="SITE" />
+            <SelectField field="J_J_Region" selected="True" />
+            <SelectField field="Supplier_Type" selected="True" rename="Supplier Type" />
+            <SelectField field="Criticality_Level" selected="True" rename="Criticality" />
+            <SelectField field="Critical/Crucial" selected="True" />
+            <SelectField field="Critical_Subcontractor_Status" selected="False" />
+            <SelectField field="Crucial_Supplier_Status" selected="False" />
+            <SelectField field="Qualification_Status" selected="True" rename="Qualification Status" />
+            <SelectField field="Quality_Agreement_Confirmation" selected="False" />
+            <SelectField field="Risk_Categorization_Group" selected="True" rename="Risk Categorization Group" />
+            <SelectField field="SupplierID" selected="False" />
+            <SelectField field="ASL Version" selected="True" />
+            <SelectField field="L2 Q&amp;C SCOPE - REDS" selected="True" />
+            <SelectField field="L2 Q&amp;C SCOPE - YELLOWS" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="263">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2958" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeToday()" field="ASL Version" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF CONTAINS([J_J_Site],&quot;MITEK&quot;) THEN &quot;Mitek&quot;&#xA;ELSEIF CONTAINS([J_J_Site],&quot;SPINE&quot;) THEN &quot;Spine&quot;&#xA;ELSEIF CONTAINS([J_J_Site],&quot;ORTHO&quot;) THEN &quot;Ortho&quot;&#xA;ELSEIF Contains([J_J_Site],&quot;Megadyne&quot;) THEN &quot;Megadyne&quot;&#xA;ELSEIF Contains([J_J_Site],&quot;Neuwave&quot;) THEN &quot;Neuwave&quot;&#xA;ELSEIF Contains([J_J_Site],&quot;Torax&quot;) THEN &quot;Torax&quot;&#xA;ELSE [J_J_Operating_Company]&#xA;ENDIF" field="OPCO" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ASL Version = DateTimeToday()
+OPCO = IF CONTAINS([J_J_Site],"MITEK") THEN "Mitek...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="264">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="3091" y="236" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="CLEANSED SUPPLIER NAME" order="Ascending" />
+            <Field field="CLEANSED SUPPLIER SITE" order="Ascending" />
+            <Field field="J_J_Operating_Company" order="Ascending" />
+            <Field field="J_J_Site" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>CLEANSED SUPPLIER NAME - Ascending
+CLEANSED SUPPLIER SITE - Ascending
+J_J_Operating_Company - Ascending
+J_J_Site - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="260">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3401" y="54" width="137" height="477" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>OUTPUT</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="3426" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\rsookoo\AppData\Local\Temp\1\Engine_5780_5a4791d766bb4609b76d37c520ebaa4e_\Engine_19096_acd861f678e84f438c294a60e1796dfc_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="146">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3426" y="415" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">\\itsusrasdna110\sqm_prod\MD SQ Metrics\ASL\ONEASL Cleansed.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ONEASL Cleansed.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3426" y="271" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\MD SQ Metrics\ASL\ONEASL Cleansed.xlsx|||ASL</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ONEASL Cleansed.xlsx
+Query=ASL</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="270">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3426" y="175" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="42" MaxRecords="">\\itsusrasdna110\sqm_prod\MD SQ Metrics\ASL\ONEASL Cleansed.tde</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ONEASL Cleansed.tde</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="258">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1326" y="187" width="456" height="357" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>NAME CLEANSING MACRO</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="116">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1351" y="368" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;ONEASL&quot;" field="SOURCE" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[SOURCE = "ONEASL"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="257">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1627" y="368" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Uppercase([SUPPLIER NAME])+Uppercase([SUPPLIER CITY])" field="SupplierID" size="255" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[SupplierID = Uppercase([SUPPLIER NAME])+Uppercase([SUPPLIER CITY])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="259">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1519" y="236" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Uppercase([Supplier_Name])+Uppercase([City])" field="SupplierID" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[SupplierID = Uppercase([Supplier_Name])+Uppercase([City])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="262">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+            <Position x="1698" y="247" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldFind>SupplierID</FieldFind>
+              <FieldSearch>SupplierID</FieldSearch>
+              <ReplaceFoundField>CLEANSED SUPPLIER SITE</ReplaceFoundField>
+              <FindMode>FindWhole</FindMode>
+              <NoCase value="False" />
+              <MatchWholeWord value="True" />
+              <ReplaceMode>Append</ReplaceMode>
+              <ReplaceMultipleFound value="True" />
+              <ReplaceAppendFields>
+                <Field field="CLEANSED SUPPLIER NAME" />
+                <Field field="CLEANSED SUPPLIER SITE" />
+              </ReplaceAppendFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+        </Node>
+        <Node ToolID="275">
+          <GuiSettings>
+            <Position x="1459" y="368" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Input.Input236"><![CDATA[SUPPLIER NAME=Supplier_Name
+RECORD ID=Unique_Supplier_Id
+SUPPLIER CITY=City
+Country=Country
+SOURCE=SOURCE
+]]></Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name>Official Supplier Cleanup Macro (154)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="..\..\..\..\AppData\Local\Temp\1\Staging\21525d19-1633-4fe4-9a81-5e8bca05da36\_externals\1\Official Supplier Cleanup Macro.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="245">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="199" width="1177" height="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>ONEASL API</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="246">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="79" y="259" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="URL" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>https://jnjux.com/api/serverscript/oneasl_external/getASLList</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="247">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="199" y="259" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Password />
+              <URLField>URL</URLField>
+              <OutputMode>String</OutputMode>
+              <CodePage>65001</CodePage>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues>
+                  <Item name="Authorization" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI5ZTZlODYxLTQ3NzYtNGU5My1hMmFlLWQxZTYwZDA4ZjM3YSIsInV1aWQiOiJkMzllZTU0MC02OGY4LTQzNTEtYjg0YS0xMmE1M2JhN2Y5NzAiLCJpYXQiOjE3MzUzMTc1MzEsImV4cCI6MTc2Njg1MzUzMX0.iXdOm8g3dn8STLagiKVCioP5JnBkg0HaI8S8faJwL4I" />
+                </NameValues>
+                <Fields orderChanged="False">
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>POST</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues>
+                  <Item name="fromDate" value="03/01/2021" />
+                </ComposeNameValues>
+                <ComposeFields orderChanged="False">
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+                <ContentType>Urlencoded</ContentType>
+              </Payload>
+              <UserName />
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+              <EnableRPM value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+        <Node ToolID="248">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="295" y="248" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="249">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+            <Position x="379" y="344" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON_Field>DownloadData</JSON_Field>
+              <IncludeInOutput value="False" />
+              <SingleField value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+        </Node>
+        <Node ToolID="250">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="475" y="344" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>JSON_Name</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-04-30 12:57:42</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>records.</Operand>
+                  <StartDate>2021-04-30 12:57:42</StartDate>
+                  <EndDate>2021-04-30 12:57:42</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([JSON_Name],"records.")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="251">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+            <Position x="595" y="332" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>JSON_Name</Field>
+              <RegExExpression value="\d+" />
+              <CaseInsensitve value="True" />
+              <Method>ParseSimple</Method>
+              <Replace expression="">
+                <CopyUnmatched value="True" />
+              </Replace>
+              <ParseSimple>
+                <SplitToRows value="False" />
+                <RootName>JSON_Record</RootName>
+                <NumFields value="1" />
+                <ErrorHandling>Ignore</ErrorHandling>
+              </ParseSimple>
+              <ParseComplex>
+                <Field field="No Marked Groups Found" type="No Marked Groups Found" size="No Marked Groups Found" />
+              </ParseComplex>
+              <Match>
+                <Field>URL_Matched</Field>
+                <ErrorUnmatched value="False" />
+              </Match>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+        </Node>
+        <Node ToolID="252">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="691" y="332" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([JSON_Name], &quot;records.\d+.&quot;, null())" field="JSON_Name" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[JSON_Name = REGEX_Replace([JSON_Name], "records.\d+.", null())
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="253">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="823" y="332" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="JSON_Record1" />
+              </GroupFields>
+              <HeaderField field="JSON_Name" />
+              <DataField field="JSON_ValueString" />
+              <Methods>
+                <Method method="First" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="RegEx: Parsed from JSON_Name" name="JSON_Record1" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="City" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Country" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Critical_Subcontractor_Status" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Criticality_Level" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Crucial_Supplier_Status" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="J_J_Operating_Company" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="J_J_Quality_Organisation" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="J_J_Region" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="J_J_Segment" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="J_J_Site" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Location_Type" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Material_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Material_Root_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="OEM_Supplier" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Postal_Code" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Qualification_Status" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Quality_Agreement_Confirmation" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Risk_Categorization_Group" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="State" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Street" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Supplier_DUNS_Number" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Supplier_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Supplier_Root_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Supplier_Type" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Unique_Supplier_Id" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="JSON_Record1" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="254">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="955" y="332" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Supplier_Name" order="Ascending" />
+                <Field field="City" order="Ascending" />
+                <Field field="Unique_Supplier_Id" order="Ascending" />
+                <Field field="J_J_Operating_Company" order="Ascending" />
+                <Field field="J_J_Site" order="Ascending" />
+                <Field field="Material_Id" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Supplier_Name - Ascending
+City - Ascending
+Unique_Supplier_Id - Ascending
+J_J_Operating_Company - Ascending
+...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="255">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1147" y="332" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Record1" selected="False" />
+                <SelectField field="Unique_Supplier_Id" selected="True" />
+                <SelectField field="Supplier_DUNS_Number" selected="True" />
+                <SelectField field="Supplier_Name" selected="True" />
+                <SelectField field="Street" selected="True" />
+                <SelectField field="City" selected="True" />
+                <SelectField field="State" selected="True" />
+                <SelectField field="Postal_Code" selected="True" />
+                <SelectField field="Country" selected="True" />
+                <SelectField field="Location_Type" selected="True" />
+                <SelectField field="OEM_Supplier" selected="True" />
+                <SelectField field="J_J_Segment" selected="True" />
+                <SelectField field="J_J_Quality_Organisation" selected="True" />
+                <SelectField field="J_J_Operating_Company" selected="True" />
+                <SelectField field="J_J_Site" selected="True" />
+                <SelectField field="J_J_Region" selected="True" />
+                <SelectField field="Material_Id" selected="True" />
+                <SelectField field="Supplier_Type" selected="True" />
+                <SelectField field="Criticality_Level" selected="True" />
+                <SelectField field="Critical_Subcontractor_Status" selected="True" />
+                <SelectField field="Crucial_Supplier_Status" selected="True" />
+                <SelectField field="Qualification_Status" selected="True" />
+                <SelectField field="Quality_Agreement_Confirmation" selected="True" />
+                <SelectField field="Risk_Categorization_Group" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="269">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1063" y="332" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>NotContains</Operator>
+                <Field>Qualification_Status</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-05-05 14:18:49</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>DISQUALIFIED</Operand>
+                  <StartDate>2021-05-05 14:18:49</StartDate>
+                  <EndDate>2021-05-05 14:18:49</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([Qualification_Status],"DISQUALIFIED")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="170">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1877" y="187" width="1006" height="383" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>CORRECTIONS</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="119">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2755" y="236" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF Contains([Qualification_Status], &quot;INACTIVE&quot;) THEN &quot;OUT OF SCOPE&quot;&#xA;&#xA;ELSEIF Contains([Supplier_Type], &quot;FINISHED&quot;) OR Contains([Supplier_Type], &quot;STRATEGIC&quot;) &#xA;THEN &quot;IN SCOPE&quot;&#xA;&#xA;ELSEIF Contains([Supplier_Type], &quot;(API)&quot;) THEN &quot;IN SCOPE&quot;&#xA;&#xA;ELSEIF StartsWith([Supplier_Type], &quot;DIRECT&quot;) AND [Criticality_Level] IN (&quot;CL1&quot;,&quot;CL2&quot;) THEN &quot;IN SCOPE&quot;&#xA;&#xA;ELSEIF Contains([Supplier_Type], &quot;INDIRECT&quot;) AND [Criticality_Level]=&quot;CL1&quot; THEN &quot;IN SCOPE&quot;&#xA;&#xA;ELSEIF [Critical/Crucial]=&quot;Yes&quot; THEN &quot;IN SCOPE&quot; &#xA;&#xA;ELSE &quot;OUT OF SCOPE&quot; ENDIF&#xA;" field="L2 Q&amp;C SCOPE - REDS" size="1073741823" type="V_WString" />
+                <FormulaField expression="IF Contains([Qualification_Status], &quot;INACTIVE&quot;) THEN &quot;OUT OF SCOPE&quot;&#xA;&#xA;ELSEIF Contains([Supplier_Type], &quot;FINISHED&quot;) OR Contains([Supplier_Type], &quot;STRATEGIC&quot;) &#xA;THEN &quot;IN SCOPE&quot;&#xA;&#xA;ELSEIF Contains([Supplier_Type], &quot;(API)&quot;) AND [Criticality_Level] IN (&quot;CL1&quot;,&quot;CL2&quot;) THEN &quot;IN SCOPE&quot; &#xA;&#xA;ELSEIF StartsWith([Supplier_Type], &quot;DIRECT&quot;) AND [Criticality_Level]=&quot;CL1&quot; THEN &quot;IN SCOPE&quot;&#xA;&#xA;ELSEIF [Critical/Crucial]=&quot;Yes&quot; AND [Criticality_Level] IN (&quot;CL1&quot;,&quot;CL2&quot;) THEN &quot;IN SCOPE&quot; &#xA;&#xA;ELSE &quot;OUT OF SCOPE&quot; ENDIF" field="L2 Q&amp;C SCOPE - YELLOWS" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>L2 Q&amp;C SCOPE - REDS = IF Contains([Qualification_Status], "INACTIVE") THEN "OUT ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="152">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="2275" y="367" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="52" />
+              <Fields>
+                <Field name="State" />
+                <Field name="Code" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>Alabama</c>
+                  <c>AL</c>
+                </r>
+                <r>
+                  <c>Alaska</c>
+                  <c>AK</c>
+                </r>
+                <r>
+                  <c>Arizona</c>
+                  <c>AZ</c>
+                </r>
+                <r>
+                  <c>Arkansas</c>
+                  <c>AR</c>
+                </r>
+                <r>
+                  <c>California</c>
+                  <c>CA</c>
+                </r>
+                <r>
+                  <c>Colorado</c>
+                  <c>CO</c>
+                </r>
+                <r>
+                  <c>Connecticut</c>
+                  <c>CT</c>
+                </r>
+                <r>
+                  <c>Delaware</c>
+                  <c>DE</c>
+                </r>
+                <r>
+                  <c>Florida</c>
+                  <c>FL</c>
+                </r>
+                <r>
+                  <c>Georgia</c>
+                  <c>GA</c>
+                </r>
+                <r>
+                  <c>Hawaii</c>
+                  <c>HI</c>
+                </r>
+                <r>
+                  <c>Idaho</c>
+                  <c>ID</c>
+                </r>
+                <r>
+                  <c>Illinois</c>
+                  <c>IL</c>
+                </r>
+                <r>
+                  <c>Indiana</c>
+                  <c>IN</c>
+                </r>
+                <r>
+                  <c>Iowa</c>
+                  <c>IA</c>
+                </r>
+                <r>
+                  <c>Kansas</c>
+                  <c>KS</c>
+                </r>
+                <r>
+                  <c>Kentucky</c>
+                  <c>KY</c>
+                </r>
+                <r>
+                  <c>Louisiana</c>
+                  <c>LA</c>
+                </r>
+                <r>
+                  <c>Maine</c>
+                  <c>ME</c>
+                </r>
+                <r>
+                  <c>Maryland</c>
+                  <c>MD</c>
+                </r>
+                <r>
+                  <c>Massachusetts</c>
+                  <c>MA</c>
+                </r>
+                <r>
+                  <c>Michigan</c>
+                  <c>MI</c>
+                </r>
+                <r>
+                  <c>Minnesota</c>
+                  <c>MN</c>
+                </r>
+                <r>
+                  <c>Mississippi</c>
+                  <c>MS</c>
+                </r>
+                <r>
+                  <c>Missouri</c>
+                  <c>MO</c>
+                </r>
+                <r>
+                  <c>Montana</c>
+                  <c>MT</c>
+                </r>
+                <r>
+                  <c>Nebraska</c>
+                  <c>NE</c>
+                </r>
+                <r>
+                  <c>Nevada</c>
+                  <c>NV</c>
+                </r>
+                <r>
+                  <c>New Hampshire</c>
+                  <c>NH</c>
+                </r>
+                <r>
+                  <c>New Jersey</c>
+                  <c>NJ</c>
+                </r>
+                <r>
+                  <c>New Mexico</c>
+                  <c>NM</c>
+                </r>
+                <r>
+                  <c>New York</c>
+                  <c>NY</c>
+                </r>
+                <r>
+                  <c>North Carolina</c>
+                  <c>NC</c>
+                </r>
+                <r>
+                  <c>North Dakota</c>
+                  <c>ND</c>
+                </r>
+                <r>
+                  <c>Ohio</c>
+                  <c>OH</c>
+                </r>
+                <r>
+                  <c>Oklahoma</c>
+                  <c>OK</c>
+                </r>
+                <r>
+                  <c>Oregon</c>
+                  <c>OR</c>
+                </r>
+                <r>
+                  <c>Pennsylvania</c>
+                  <c>PA</c>
+                </r>
+                <r>
+                  <c>Rhode Island</c>
+                  <c>RI</c>
+                </r>
+                <r>
+                  <c>South Carolina</c>
+                  <c>SC</c>
+                </r>
+                <r>
+                  <c>South Dakota</c>
+                  <c>SD</c>
+                </r>
+                <r>
+                  <c>Tennessee</c>
+                  <c>TN</c>
+                </r>
+                <r>
+                  <c>Texas</c>
+                  <c>TX</c>
+                </r>
+                <r>
+                  <c>Utah</c>
+                  <c>UT</c>
+                </r>
+                <r>
+                  <c>Vermont</c>
+                  <c>VT</c>
+                </r>
+                <r>
+                  <c>Virginia</c>
+                  <c>VA</c>
+                </r>
+                <r>
+                  <c>Washington</c>
+                  <c>WA</c>
+                </r>
+                <r>
+                  <c>West Virginia</c>
+                  <c>WV</c>
+                </r>
+                <r>
+                  <c>Wisconsin</c>
+                  <c>WI</c>
+                </r>
+                <r>
+                  <c>Wyoming</c>
+                  <c>WY</c>
+                </r>
+                <r>
+                  <c>N/A</c>
+                  <c />
+                </r>
+                <r>
+                  <c>-</c>
+                  <c />
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>STATE CORRECTIONS</AnnotationText>
+              <DefaultAnnotationText>STATE CORRECTIONS</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="153">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+            <Position x="2347" y="248" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldFind>State</FieldFind>
+              <FieldSearch>State</FieldSearch>
+              <ReplaceFoundField>Code</ReplaceFoundField>
+              <FindMode>FindWhole</FindMode>
+              <NoCase value="True" />
+              <MatchWholeWord value="True" />
+              <ReplaceMode>Replace</ReplaceMode>
+              <ReplaceMultipleFound value="True" />
+              <ReplaceAppendFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+        </Node>
+        <Node ToolID="155">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+            <Position x="2443" y="260" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldFind>Country</FieldFind>
+              <FieldSearch>COUNTRY</FieldSearch>
+              <ReplaceFoundField>CORRECTED</ReplaceFoundField>
+              <FindMode>FindWhole</FindMode>
+              <NoCase value="True" />
+              <MatchWholeWord value="True" />
+              <ReplaceMode>Replace</ReplaceMode>
+              <ReplaceMultipleFound value="True" />
+              <ReplaceAppendFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+        </Node>
+        <Node ToolID="157">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="2395" y="379" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="17" />
+              <Fields>
+                <Field name="COUNTRY" />
+                <Field name="CORRECTED" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>US</c>
+                  <c>USA</c>
+                </r>
+                <r>
+                  <c>UNITED STATES</c>
+                  <c>USA</c>
+                </r>
+                <r>
+                  <c>UK</c>
+                  <c>United Kingdom</c>
+                </r>
+                <r>
+                  <c>UNITED STATES OF AMERICA</c>
+                  <c>USA</c>
+                </r>
+                <r>
+                  <c>CH</c>
+                  <c>Switzerland</c>
+                </r>
+                <r>
+                  <c>COLUMBIA</c>
+                  <c>Colombia</c>
+                </r>
+                <r>
+                  <c>NETHERLAND</c>
+                  <c>Netherlands</c>
+                </r>
+                <r>
+                  <c>DOMINCAN REPUBLIC</c>
+                  <c>Dominican Republic</c>
+                </r>
+                <r>
+                  <c>KOREZ</c>
+                  <c>Korea</c>
+                </r>
+                <r>
+                  <c>SWOTZERLAND</c>
+                  <c>Switzerland</c>
+                </r>
+                <r>
+                  <c>UNGARN</c>
+                  <c>Hungary</c>
+                </r>
+                <r>
+                  <c>TAIWAN, 407, R.O.C.</c>
+                  <c>Taiwan</c>
+                </r>
+                <r>
+                  <c>TAIWAN (R.O.C.)</c>
+                  <c>Taiwan</c>
+                </r>
+                <r>
+                  <c>CHINA 中国</c>
+                  <c>China</c>
+                </r>
+                <r>
+                  <c>REPUBLIC OF SOUTH AFRICA</c>
+                  <c>South Africa</c>
+                </r>
+                <r>
+                  <c>UK TF74QW</c>
+                  <c>United Kingdom</c>
+                </r>
+                <r>
+                  <c>UK, CB1 7EG</c>
+                  <c>United Kingdom</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>COUNTRIES CORRECTIONS</AnnotationText>
+              <DefaultAnnotationText>COUNTRIES CORRECTIONS</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="158">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2622" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Country], &quot;(^[0-9 ,]+|[0-9 ,]+$)&quot;, &quot;&quot;) //REMOVES NUMBERS AT START AND END" field="Country" size="1073741823" type="V_WString" />
+                <FormulaField expression="if [Crucial_Supplier_Status]=&quot;Yes&quot; or [Critical_Subcontractor_Status]=&quot;Yes&quot; THEN &quot;Yes&quot; Else &quot;No&quot; ENDIF" field="Critical/Crucial" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Country = REGEX_Replace([Country], "(^[0-9 ,]+|[0-9 ,]+$)", "") //REMOVES NUMBER...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="271">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="1902" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="16" />
+              <Fields>
+                <Field name="CLEANSED SUPPLIER NAME" />
+                <Field name="CLEANSED SUPPLIER SITE" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>JABIL</c>
+                  <c>ALBUQUERQUE</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>TIJUANA</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>JUAREZ</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>ELMIRA</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>WEST CHESTER BRANDYWINE</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>WEST CHESTER WILSON DRIVE</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>MONUMENT</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>MEZZOVICO</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>RARON</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>HÄGENDORF</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>BALSTHAL</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>BETTLACH</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>GRENCHEN</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>LE LOCLE</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>TUTTLINGEN</c>
+                </r>
+                <r>
+                  <c>JABIL</c>
+                  <c>UMKIRCH</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>JABIL SC SITES</AnnotationText>
+              <DefaultAnnotationText>JABIL SC SITES</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="272">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="2010" y="259" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="CLEANSED SUPPLIER NAME" />
+                <Field field="CLEANSED SUPPLIER SITE" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="CLEANSED SUPPLIER NAME" />
+                <Field field="CLEANSED SUPPLIER SITE" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Supplier_Type" selected="False" input="Left_" />
+                    <SelectField field="Right_CLEANSED SUPPLIER NAME" selected="False" input="Right_" />
+                    <SelectField field="Right_CLEANSED SUPPLIER SITE" selected="False" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="273">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1998" y="439" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;Strategic Collaborator&quot;" field="Supplier_Type" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Supplier_Type = "Strategic Collaborator"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="274">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="2130" y="259" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="270" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="263" Connection="Output" />
+      <Destination ToolID="264" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="264" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="116" Connection="Output" />
+      <Destination ToolID="275" Connection="Input236" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="257" Connection="Output" />
+      <Destination ToolID="262" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="259" Connection="Output" />
+      <Destination ToolID="262" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="262" Connection="Output" />
+      <Destination ToolID="272" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="273" Connection="Output" />
+      <Destination ToolID="272" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="275" Connection="Output237" />
+      <Destination ToolID="257" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="246" Connection="Output" />
+      <Destination ToolID="247" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="247" Connection="Output" />
+      <Destination ToolID="248" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="248" Connection="Output" />
+      <Destination ToolID="249" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="249" Connection="Output" />
+      <Destination ToolID="250" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="250" Connection="True" />
+      <Destination ToolID="251" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="251" Connection="Output" />
+      <Destination ToolID="252" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="252" Connection="Output" />
+      <Destination ToolID="253" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="253" Connection="Output" />
+      <Destination ToolID="254" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="254" Connection="Output" />
+      <Destination ToolID="269" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="255" Connection="Output" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="255" Connection="Output" />
+      <Destination ToolID="259" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="269" Connection="True" />
+      <Destination ToolID="255" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Output" />
+      <Destination ToolID="263" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="152" Connection="Output" />
+      <Destination ToolID="153" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="274" Connection="Output" />
+      <Destination ToolID="153" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="153" Connection="Output" />
+      <Destination ToolID="155" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="157" Connection="Output" />
+      <Destination ToolID="155" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="155" Connection="Output" />
+      <Destination ToolID="158" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="158" Connection="Output" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="271" Connection="Output" />
+      <Destination ToolID="273" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="272" Connection="Join" />
+      <Destination ToolID="274" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="272" Connection="Left" />
+      <Destination ToolID="274" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-1" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>ONEASL API FOR MD SQI</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="90cbd8a7-c123-4fc0-8518-2a1bf6399330" />
+      <Telemetry>
+        <PreviousWorkflowId value="a01a3de9-c961-4663-8a23-fb2d667d3680" />
+        <OriginWorkflowId value="a01a3de9-c961-4663-8a23-fb2d667d3680" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

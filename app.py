@@ -14,20 +14,35 @@ from typing import Dict, Any, Optional
 from simple_converter_backup import SimpleAlteryxConverter
 from ai_analyzer import CodeAnalyzer
 from ai_code_corrector import CodeCorrector
+from usage_tracker import UsageTracker
 
-# FastAPI app for Vercel
+# Initialize usage tracker
+usage_tracker = UsageTracker()
+
+# Global settings storage (in production, use a database)
+admin_settings = {
+    'provider': 'gemini',
+    'geminiKey': 'AIzaSyAaCNYpfIslFxLsL9kO-6mRmVVqNentwBE',
+    'openaiKey': '',
+    'ollamaModel': 'llama3.2:1b',
+    'openaiModel': 'gpt-4',
+    'ollamaUrl': 'http://localhost:11434',
+    'timeout': 60,
+    'autoCorrect': True
+}
+
+# FastAPI app
 app = FastAPI(
     title="Alteryx PySpark Converter",
     description="Convert Alteryx workflows to PySpark code",
     version="2.0.0"
 )
 
-# Templates - try multiple paths for Vercel compatibility
+# Templates - try multiple paths for compatibility
 templates = None
 template_paths = [
     "templates", 
     "./templates", 
-    "/var/task/templates",
     os.path.join(os.path.dirname(__file__), "templates")
 ]
 
@@ -55,6 +70,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/admin", response_class=HTMLResponse)
+async def admin_page(request: Request):
+    """Serve the admin panel page"""
+    if templates:
+        try:
+            return templates.TemplateResponse("admin.html", {"request": request})
+        except Exception as e:
+            print(f"❌ Admin template error: {e}")
+    return HTMLResponse("<h1>Admin template not found</h1>")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
@@ -303,7 +328,7 @@ async def read_root(request: Request):
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "message": "App is running successfully", "deployment": "vercel"}
+    return {"status": "ok", "message": "App is running successfully", "deployment": "local"}
 
 @app.get("/debug")
 async def debug():
@@ -789,36 +814,66 @@ async def api_status():
         "service": "Alteryx PySpark Converter",
         "status": "operational", 
         "version": "2.0.0",
-        "platform": "vercel",
+        "platform": "local",
         "features": ["workflow_conversion", "multiple_formats", "file_upload", "ai_analysis"]
     }
 
 @app.post("/api/correct")
 async def correct_code(request: Request):
     """AI-powered code correction endpoint"""
+    import time
+    start_time = time.time()
+    
     try:
         body = await request.json()
         xml_content = body.get('xml_content', '')
         pyspark_code = body.get('pyspark_code', '')
         workflow_info = body.get('workflow_info', {})
-        model_provider = body.get('model_provider', 'gemini')
-        api_key = body.get('api_key', '')
-        gemini_api_key = body.get('gemini_api_key', 'AIzaSyAaCNYpfIslFxLsL9kO-6mRmVVqNentwBE')
+        
+        # Use admin settings by default, allow override from request
+        model_provider = body.get('model_provider', admin_settings['provider'])
+        
+        # Get user IP for tracking
+        user_ip = request.client.host if request.client else "unknown"
         
         print(f"Correcting code with model provider: {model_provider}")
         
-        # Initialize corrector based on provider
+        # Initialize corrector based on provider using admin settings
         if model_provider == 'gemini':
-            corrector = CodeCorrector(model_provider='gemini', api_key=gemini_api_key)
+            api_key = body.get('gemini_api_key', admin_settings['geminiKey'])
+            corrector = CodeCorrector(model_provider='gemini', api_key=api_key)
         elif model_provider == 'ollama':
             corrector = CodeCorrector(model_provider='ollama')
         elif model_provider == 'openai':
+            api_key = body.get('api_key', admin_settings['openaiKey'])
             corrector = CodeCorrector(model_provider='openai', api_key=api_key)
         else:
             corrector = CodeCorrector(model_provider='local')
         
         # Get corrections
         corrections = corrector.get_corrections(xml_content, pyspark_code, workflow_info)
+        
+        # Calculate response time
+        response_time_ms = int((time.time() - start_time) * 1000)
+        
+        # Track usage
+        file_info = body.get('file_info', {})
+        usage_result = usage_tracker.log_usage(
+            user_ip=user_ip,
+            file_name=file_info.get('name', 'unknown.yxmd'),
+            file_size=file_info.get('size', 0),
+            workflow_name=file_info.get('workflow_name', 'Workflow'),
+            total_tools=workflow_info.get('total_tools', 0),
+            provider=model_provider,
+            model=admin_settings.get('ollamaModel') if model_provider == 'ollama' else 
+                  admin_settings.get('openaiModel') if model_provider == 'openai' else 'gemini-1.5-flash',
+            input_text=xml_content + pyspark_code,
+            output_text=corrections.get('corrected_code', ''),
+            response_time_ms=response_time_ms,
+            success=True,
+            improvements_count=len(corrections.get('improvements', [])),
+            accuracy_score=corrections.get('accuracy_score', 0)
+        )
         
         # Prepare response
         response_data = {
@@ -830,7 +885,14 @@ async def correct_code(request: Request):
             'accuracy_score': corrections.get('accuracy_score', 75),
             'improvements': corrections.get('improvements', []),
             'missing_features': corrections.get('missing_features', []),
-            'model_provider': model_provider
+            'model_provider': model_provider,
+            'usage': {
+                'tokens': usage_result['total_tokens'],
+                'input_tokens': usage_result['input_tokens'],
+                'output_tokens': usage_result['output_tokens'],
+                'cost_usd': usage_result['cost_usd'],
+                'response_time_ms': response_time_ms
+            }
         }
         
         return JSONResponse(content=response_data)
@@ -838,7 +900,203 @@ async def correct_code(request: Request):
         print(f"Correction error: {e}")
         import traceback
         traceback.print_exc()
+        
+        # Log failed request
+        try:
+            user_ip = request.client.host if request.client else "unknown"
+            usage_tracker.log_usage(
+                user_ip=user_ip,
+                file_name="error",
+                file_size=0,
+                workflow_name="Error",
+                total_tools=0,
+                provider=model_provider if 'model_provider' in locals() else 'unknown',
+                model='unknown',
+                input_text='',
+                output_text='',
+                response_time_ms=int((time.time() - start_time) * 1000) if 'start_time' in locals() else 0,
+                success=False,
+                error_message=str(e)
+            )
+        except:
+            pass
+        
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/admin/settings")
+async def save_admin_settings(request: Request):
+    """Save admin configuration settings"""
+    global admin_settings
+    try:
+        body = await request.json()
+        
+        # Update global settings
+        admin_settings.update({
+            'provider': body.get('provider', admin_settings['provider']),
+            'geminiKey': body.get('geminiKey', admin_settings['geminiKey']),
+            'openaiKey': body.get('openaiKey', admin_settings['openaiKey']),
+            'ollamaModel': body.get('ollamaModel', admin_settings['ollamaModel']),
+            'openaiModel': body.get('openaiModel', admin_settings['openaiModel']),
+            'ollamaUrl': body.get('ollamaUrl', admin_settings['ollamaUrl']),
+            'timeout': body.get('timeout', admin_settings['timeout']),
+            'autoCorrect': body.get('autoCorrect', admin_settings['autoCorrect'])
+        })
+        
+        print(f"✅ Admin settings updated: provider={admin_settings['provider']}")
+        
+        return JSONResponse({
+            'success': True,
+            'message': 'Settings saved successfully',
+            'settings': admin_settings
+        })
+    except Exception as e:
+        print(f"❌ Error saving admin settings: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/admin/settings")
+async def get_admin_settings():
+    """Get current admin configuration settings"""
+    return JSONResponse({
+        'success': True,
+        'settings': admin_settings
+    })
+
+@app.get("/api/admin/usage")
+async def get_usage_stats(request: Request):
+    """Get usage statistics for admin panel"""
+    from datetime import datetime, timedelta
+    
+    # Get query parameters
+    days = int(request.query_params.get('days', 30))
+    provider = request.query_params.get('provider', None)
+    
+    try:
+        # Get comprehensive stats
+        summary = usage_tracker.get_usage_summary()
+        provider_stats = usage_tracker.get_provider_stats(days)
+        daily_summary = usage_tracker.get_daily_summary(days)
+        recent_logs = usage_tracker.get_usage_logs(limit=50)
+        
+        return JSONResponse({
+            'success': True,
+            'summary': summary,
+            'provider_stats': provider_stats,
+            'daily_summary': daily_summary,
+            'recent_logs': recent_logs
+        })
+    except Exception as e:
+        print(f"Error getting usage stats: {e}")
+        return JSONResponse({
+            'success': False,
+            'error': str(e)
+        })
+
+@app.get("/api/admin/usage/export")
+async def export_usage_data(request: Request):
+    """Export usage data as CSV"""
+    from datetime import datetime
+    import csv
+    import io
+    
+    # Get date range from query params
+    start_date = request.query_params.get('start_date')
+    end_date = request.query_params.get('end_date')
+    
+    if start_date:
+        start_date = datetime.fromisoformat(start_date)
+    if end_date:
+        end_date = datetime.fromisoformat(end_date)
+    
+    # Get logs
+    logs = usage_tracker.get_usage_logs(
+        start_date=start_date,
+        end_date=end_date,
+        limit=10000
+    )
+    
+    # Create CSV
+    output = io.StringIO()
+    if logs:
+        writer = csv.DictWriter(output, fieldnames=logs[0].keys())
+        writer.writeheader()
+        writer.writerows(logs)
+    
+    # Return as downloadable file
+    from fastapi.responses import Response
+    return Response(
+        content=output.getvalue(),
+        media_type='text/csv',
+        headers={
+            'Content-Disposition': f'attachment; filename=usage_logs_{datetime.now().strftime("%Y%m%d")}.csv'
+        }
+    )
+
+@app.post("/api/admin/test")
+async def test_ai_connection(request: Request):
+    """Test AI provider connection"""
+    try:
+        body = await request.json()
+        provider = body.get('provider')
+        
+        test_code = "df = spark.read.csv('test.csv')"
+        test_xml = "<AlteryxDocument><Nodes></Nodes></AlteryxDocument>"
+        
+        # Test based on provider
+        if provider == 'gemini':
+            api_key = body.get('geminiKey')
+            if not api_key:
+                return JSONResponse({'success': False, 'error': 'Gemini API key required'})
+            
+            try:
+                import google.generativeai as genai
+                genai.configure(api_key=api_key)
+                model = genai.GenerativeModel('gemini-1.5-flash')
+                response = model.generate_content("Say 'Connection successful' in 3 words")
+                return JSONResponse({'success': True, 'message': 'Gemini connection successful'})
+            except Exception as e:
+                return JSONResponse({'success': False, 'error': str(e)})
+                
+        elif provider == 'openai':
+            api_key = body.get('openaiKey')
+            if not api_key:
+                return JSONResponse({'success': False, 'error': 'OpenAI API key required'})
+            
+            try:
+                import openai
+                openai.api_key = api_key
+                # Simple test prompt
+                response = openai.ChatCompletion.create(
+                    model=body.get('openaiModel', 'gpt-3.5-turbo'),
+                    messages=[{"role": "user", "content": "Say 'test'"}],
+                    max_tokens=10
+                )
+                return JSONResponse({'success': True, 'message': 'OpenAI connection successful'})
+            except Exception as e:
+                return JSONResponse({'success': False, 'error': str(e)})
+                
+        elif provider == 'ollama':
+            try:
+                import requests
+                url = body.get('ollamaUrl', 'http://localhost:11434')
+                model = body.get('ollamaModel', 'llama3.2:1b')
+                
+                response = requests.post(
+                    f"{url}/api/generate",
+                    json={"model": model, "prompt": "test", "stream": False},
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    return JSONResponse({'success': True, 'message': f'Ollama {model} connection successful'})
+                else:
+                    return JSONResponse({'success': False, 'error': f'Ollama returned status {response.status_code}'})
+            except Exception as e:
+                return JSONResponse({'success': False, 'error': f'Cannot connect to Ollama: {str(e)}'})
+                
+        else:
+            return JSONResponse({'success': True, 'message': 'Local mode - no AI connection needed'})
+            
+    except Exception as e:
+        return JSONResponse({'success': False, 'error': str(e)})
 
 if __name__ == "__main__":
     import uvicorn

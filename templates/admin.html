@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Alteryx PySpark Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .admin-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            width: 100%;
+            display: none;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #F59E0B;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+        }
+
+        .settings-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .settings-section h2 {
+            color: #F59E0B;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .api-key-group {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .current-settings {
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logout-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container" id="loginContainer">
+        <h1>🔐 Admin Access</h1>
+        <div id="loginError" class="alert alert-error hidden">
+            Invalid password. Please try again.
+        </div>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label for="password">Admin Password</label>
+                <input type="password" id="password" placeholder="Enter admin password" required>
+            </div>
+            <button type="submit" class="btn">Access Admin Panel</button>
+        </form>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-container" id="adminContainer">
+        <button class="btn btn-secondary logout-btn" onclick="logout()">Logout</button>
+        <h1>⚙️ Admin Configuration</h1>
+        
+        <div id="saveMessage" class="alert alert-success hidden">
+            Settings saved successfully!
+        </div>
+
+        <!-- Current Settings -->
+        <div class="current-settings">
+            <strong>Current Configuration:</strong>
+            <div id="currentConfig">Loading...</div>
+        </div>
+
+        <!-- Model Selection -->
+        <div class="settings-section">
+            <h2>🤖 AI Model Configuration</h2>
+            <div class="form-group">
+                <label for="modelProvider">Select AI Provider</label>
+                <select id="modelProvider" onchange="onProviderChange()">
+                    <option value="gemini">Google Gemini</option>
+                    <option value="openai">OpenAI GPT-4</option>
+                    <option value="ollama">Ollama (Local)</option>
+                    <option value="local">No AI (Local Analysis Only)</option>
+                </select>
+            </div>
+
+            <!-- Gemini Settings -->
+            <div id="geminiSettings" class="api-key-group">
+                <div class="form-group">
+                    <label for="geminiKey">Gemini API Key</label>
+                    <input type="password" id="geminiKey" placeholder="AIza...">
+                    <small style="color: #9ca3af; display: block; margin-top: 0.5rem;">
+                        Get your key from <a href="https://makersuite.google.com/app/apikey" target="_blank" style="color: #F59E0B;">Google AI Studio</a>
+                    </small>
+                </div>
+            </div>
+
+            <!-- OpenAI Settings -->
+            <div id="openaiSettings" class="api-key-group">
+                <div class="form-group">
+                    <label for="openaiKey">OpenAI API Key</label>
+                    <input type="password" id="openaiKey" placeholder="sk-...">
+                    <small style="color: #9ca3af; display: block; margin-top: 0.5rem;">
+                        Get your key from <a href="https://platform.openai.com/api-keys" target="_blank" style="color: #F59E0B;">OpenAI Platform</a>
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="openaiModel">Model</label>
+                    <select id="openaiModel">
+                        <option value="gpt-4">GPT-4</option>
+                        <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Ollama Settings -->
+            <div id="ollamaSettings" class="api-key-group">
+                <div class="form-group">
+                    <label for="ollamaModel">Ollama Model</label>
+                    <select id="ollamaModel">
+                        <option value="llama3.2:1b">Llama 3.2 (1B)</option>
+                        <option value="llama3.2:3b">Llama 3.2 (3B)</option>
+                        <option value="codellama:7b">CodeLlama (7B)</option>
+                        <option value="mistral">Mistral</option>
+                        <option value="deepseek-coder">DeepSeek Coder</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ollamaUrl">Ollama Server URL</label>
+                    <input type="text" id="ollamaUrl" value="http://localhost:11434" placeholder="http://localhost:11434">
+                </div>
+            </div>
+        </div>
+
+        <!-- System Settings -->
+        <div class="settings-section">
+            <h2>⚙️ System Settings</h2>
+            <div class="form-group">
+                <label for="adminPassword">Change Admin Password</label>
+                <input type="password" id="adminPassword" placeholder="Enter new password (leave blank to keep current)">
+            </div>
+            <div class="form-group">
+                <label for="timeout">AI Request Timeout (seconds)</label>
+                <input type="number" id="timeout" value="60" min="10" max="300">
+            </div>
+            <div class="form-group">
+                <label for="autoCorrect">
+                    <input type="checkbox" id="autoCorrect" checked> 
+                    Automatically optimize code after conversion
+                </label>
+            </div>
+        </div>
+
+        <!-- Save Button -->
+        <button class="btn" onclick="saveSettings()">💾 Save Configuration</button>
+        <button class="btn btn-secondary" onclick="testConnection()">🧪 Test AI Connection</button>
+        
+        <!-- Usage Analytics Section -->
+        <div class="settings-section" style="margin-top: 2rem;">
+            <h2>📊 Usage Analytics</h2>
+            
+            <!-- Summary Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                <div style="background: rgba(217, 119, 6, 0.1); border: 1px solid rgba(217, 119, 6, 0.3); border-radius: 8px; padding: 1rem;">
+                    <div style="font-size: 0.9rem; color: #9ca3af;">Today's Requests</div>
+                    <div id="todayRequests" style="font-size: 2rem; font-weight: bold; color: #F59E0B;">0</div>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem;">
+                    <div style="font-size: 0.9rem; color: #9ca3af;">Today's Tokens</div>
+                    <div id="todayTokens" style="font-size: 2rem; font-weight: bold; color: #10b981;">0</div>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 1rem;">
+                    <div style="font-size: 0.9rem; color: #9ca3af;">Today's Cost</div>
+                    <div id="todayCost" style="font-size: 2rem; font-weight: bold; color: #ef4444;">$0.00</div>
+                </div>
+                <div style="background: rgba(147, 51, 234, 0.1); border: 1px solid rgba(147, 51, 234, 0.3); border-radius: 8px; padding: 1rem;">
+                    <div style="font-size: 0.9rem; color: #9ca3af;">Month Total</div>
+                    <div id="monthCost" style="font-size: 2rem; font-weight: bold; color: #9333ea;">$0.00</div>
+                </div>
+            </div>
+            
+            <!-- Date Filter -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center;">
+                <input type="date" id="startDate" style="max-width: 200px;">
+                <span style="color: #9ca3af;">to</span>
+                <input type="date" id="endDate" style="max-width: 200px;">
+                <button class="btn" onclick="loadUsageData()" style="padding: 0.5rem 1rem;">🔍 Filter</button>
+                <button class="btn btn-secondary" onclick="exportUsageData()" style="padding: 0.5rem 1rem;">📥 Export CSV</button>
+            </div>
+            
+            <!-- Recent Usage Logs -->
+            <div style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 1rem; max-height: 400px; overflow-y: auto;">
+                <h3 style="margin-bottom: 1rem; color: #F59E0B;">Recent Activity</h3>
+                <table id="usageTable" style="width: 100%; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="color: #9ca3af; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                            <th style="text-align: left; padding: 0.5rem;">Time</th>
+                            <th style="text-align: left; padding: 0.5rem;">File</th>
+                            <th style="text-align: left; padding: 0.5rem;">Provider</th>
+                            <th style="text-align: right; padding: 0.5rem;">Tokens</th>
+                            <th style="text-align: right; padding: 0.5rem;">Cost</th>
+                            <th style="text-align: right; padding: 0.5rem;">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usageTableBody">
+                        <!-- Logs will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Provider Stats -->
+            <div style="margin-top: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 1rem;">
+                <h3 style="margin-bottom: 1rem; color: #F59E0B;">Provider Statistics</h3>
+                <div id="providerStats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <!-- Provider stats will be populated here -->
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn" onclick="refreshUsageData()" style="margin-top: 1rem;">🔄 Refresh Analytics</button>
+    </div>
+
+    <script>
+        // Default admin password (should be changed in production)
+        const DEFAULT_PASSWORD = 'admin123';
+        let currentSettings = {};
+
+        // Check if already logged in
+        if (sessionStorage.getItem('adminAuth') === 'true') {
+            showAdminPanel();
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            // Check password (in production, this should verify against backend)
+            if (password === DEFAULT_PASSWORD || password === localStorage.getItem('adminPassword')) {
+                sessionStorage.setItem('adminAuth', 'true');
+                showAdminPanel();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function showAdminPanel() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('adminContainer').style.display = 'block';
+            loadCurrentSettings();
+            loadUsageData();  // Load usage analytics
+        }
+
+        function logout() {
+            sessionStorage.removeItem('adminAuth');
+            location.reload();
+        }
+
+        function loadCurrentSettings() {
+            // Load settings from localStorage or backend
+            const savedSettings = localStorage.getItem('aiSettings');
+            if (savedSettings) {
+                currentSettings = JSON.parse(savedSettings);
+                document.getElementById('modelProvider').value = currentSettings.provider || 'gemini';
+                document.getElementById('geminiKey').value = currentSettings.geminiKey || '';
+                document.getElementById('openaiKey').value = currentSettings.openaiKey || '';
+                document.getElementById('ollamaModel').value = currentSettings.ollamaModel || 'llama3.2:1b';
+                document.getElementById('openaiModel').value = currentSettings.openaiModel || 'gpt-4';
+                document.getElementById('timeout').value = currentSettings.timeout || 60;
+                document.getElementById('autoCorrect').checked = currentSettings.autoCorrect !== false;
+                
+                updateCurrentConfig();
+                onProviderChange();
+            } else {
+                // Default settings
+                currentSettings = {
+                    provider: 'gemini',
+                    geminiKey: 'AIzaSyAaCNYpfIslFxLsL9kO-6mRmVVqNentwBE',
+                    autoCorrect: true,
+                    timeout: 60
+                };
+                updateCurrentConfig();
+                onProviderChange();
+            }
+        }
+
+        function updateCurrentConfig() {
+            const configDiv = document.getElementById('currentConfig');
+            configDiv.innerHTML = `
+                <br>• Provider: <strong>${currentSettings.provider}</strong>
+                <br>• Auto-optimize: <strong>${currentSettings.autoCorrect ? 'Enabled' : 'Disabled'}</strong>
+                <br>• Timeout: <strong>${currentSettings.timeout}s</strong>
+                ${currentSettings.provider === 'gemini' && currentSettings.geminiKey ? '<br>• Gemini API: <strong>Configured ✓</strong>' : ''}
+                ${currentSettings.provider === 'openai' && currentSettings.openaiKey ? '<br>• OpenAI API: <strong>Configured ✓</strong>' : ''}
+            `;
+        }
+
+        function onProviderChange() {
+            const provider = document.getElementById('modelProvider').value;
+            
+            // Hide all settings
+            document.getElementById('geminiSettings').style.display = 'none';
+            document.getElementById('openaiSettings').style.display = 'none';
+            document.getElementById('ollamaSettings').style.display = 'none';
+            
+            // Show relevant settings
+            if (provider === 'gemini') {
+                document.getElementById('geminiSettings').style.display = 'block';
+            } else if (provider === 'openai') {
+                document.getElementById('openaiSettings').style.display = 'block';
+            } else if (provider === 'ollama') {
+                document.getElementById('ollamaSettings').style.display = 'block';
+            }
+        }
+
+        async function saveSettings() {
+            const settings = {
+                provider: document.getElementById('modelProvider').value,
+                geminiKey: document.getElementById('geminiKey').value,
+                openaiKey: document.getElementById('openaiKey').value,
+                ollamaModel: document.getElementById('ollamaModel').value,
+                openaiModel: document.getElementById('openaiModel').value,
+                ollamaUrl: document.getElementById('ollamaUrl').value,
+                timeout: parseInt(document.getElementById('timeout').value),
+                autoCorrect: document.getElementById('autoCorrect').checked
+            };
+            
+            // Save new admin password if provided
+            const newPassword = document.getElementById('adminPassword').value;
+            if (newPassword) {
+                localStorage.setItem('adminPassword', newPassword);
+            }
+            
+            // Save settings to localStorage (in production, save to backend)
+            localStorage.setItem('aiSettings', JSON.stringify(settings));
+            currentSettings = settings;
+            
+            // Update main app configuration
+            try {
+                const response = await fetch('/api/admin/settings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(settings)
+                });
+                
+                if (response.ok) {
+                    document.getElementById('saveMessage').classList.remove('hidden');
+                    setTimeout(() => {
+                        document.getElementById('saveMessage').classList.add('hidden');
+                    }, 3000);
+                    updateCurrentConfig();
+                }
+            } catch (error) {
+                // If backend not available, still save locally
+                document.getElementById('saveMessage').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('saveMessage').classList.add('hidden');
+                }, 3000);
+                updateCurrentConfig();
+            }
+        }
+
+        // Load usage data on panel show
+        async function loadUsageData() {
+            try {
+                const startDate = document.getElementById('startDate').value;
+                const endDate = document.getElementById('endDate').value;
+                let url = '/api/admin/usage?days=30';
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Update summary cards
+                    const summary = data.summary;
+                    document.getElementById('todayRequests').textContent = summary.today.requests_today || 0;
+                    document.getElementById('todayTokens').textContent = (summary.today.tokens_today || 0).toLocaleString();
+                    document.getElementById('todayCost').textContent = '$' + (summary.today.cost_today || 0).toFixed(2);
+                    document.getElementById('monthCost').textContent = '$' + (summary.this_month.cost_month || 0).toFixed(2);
+                    
+                    // Update usage table
+                    const tbody = document.getElementById('usageTableBody');
+                    tbody.innerHTML = '';
+                    
+                    if (data.recent_logs && data.recent_logs.length > 0) {
+                        data.recent_logs.forEach(log => {
+                            const row = tbody.insertRow();
+                            const time = new Date(log.timestamp).toLocaleString();
+                            row.innerHTML = `
+                                <td style="padding: 0.5rem; color: #e5e5e5;">${time}</td>
+                                <td style="padding: 0.5rem; color: #e5e5e5;">${log.file_name}</td>
+                                <td style="padding: 0.5rem; color: #e5e5e5;">${log.provider}</td>
+                                <td style="padding: 0.5rem; text-align: right; color: #F59E0B;">${log.total_tokens}</td>
+                                <td style="padding: 0.5rem; text-align: right; color: #10b981;">$${log.cost_usd.toFixed(4)}</td>
+                                <td style="padding: 0.5rem; text-align: right; color: #9333ea;">${log.accuracy_score}%</td>
+                            `;
+                        });
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 1rem; color: #9ca3af;">No usage data yet</td></tr>';
+                    }
+                    
+                    // Update provider stats
+                    const providerStats = document.getElementById('providerStats');
+                    providerStats.innerHTML = '';
+                    
+                    if (data.provider_stats && data.provider_stats.by_provider) {
+                        data.provider_stats.by_provider.forEach(stat => {
+                            const card = document.createElement('div');
+                            card.style.cssText = 'background: rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 1rem;';
+                            card.innerHTML = `
+                                <div style="font-weight: bold; color: #F59E0B; margin-bottom: 0.5rem;">${stat.provider} - ${stat.model}</div>
+                                <div style="font-size: 0.9rem; color: #9ca3af;">
+                                    <div>Requests: ${stat.total_requests}</div>
+                                    <div>Tokens: ${stat.total_tokens?.toLocaleString()}</div>
+                                    <div>Cost: $${(stat.total_cost || 0).toFixed(4)}</div>
+                                    <div>Avg Time: ${Math.round(stat.avg_response_time || 0)}ms</div>
+                                </div>
+                            `;
+                            providerStats.appendChild(card);
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to load usage data:', error);
+            }
+        }
+        
+        function refreshUsageData() {
+            loadUsageData();
+            showSuccess('Usage data refreshed!');
+        }
+        
+        async function exportUsageData() {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            let url = '/api/admin/usage/export';
+            const params = new URLSearchParams();
+            if (startDate) params.append('start_date', startDate);
+            if (endDate) params.append('end_date', endDate);
+            if (params.toString()) url += '?' + params.toString();
+            
+            window.open(url, '_blank');
+        }
+        
+        function showSuccess(message) {
+            const msg = document.getElementById('saveMessage');
+            msg.textContent = message;
+            msg.classList.remove('hidden');
+            setTimeout(() => msg.classList.add('hidden'), 3000);
+        }
+        
+        async function testConnection() {
+            const provider = document.getElementById('modelProvider').value;
+            
+            // Prepare test request
+            const testData = {
+                provider: provider,
+                geminiKey: document.getElementById('geminiKey').value,
+                openaiKey: document.getElementById('openaiKey').value,
+                ollamaModel: document.getElementById('ollamaModel').value
+            };
+            
+            try {
+                const response = await fetch('/api/admin/test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testData)
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    alert('✅ Connection successful! AI model is working.');
+                } else {
+                    alert('❌ Connection failed: ' + result.error);
+                }
+            } catch (error) {
+                alert('❌ Connection test failed: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

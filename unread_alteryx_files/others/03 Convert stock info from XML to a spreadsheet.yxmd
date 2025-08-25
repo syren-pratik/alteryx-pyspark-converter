@@ -1,0 +1,854 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="498" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_REPLACE([column-name],'.*\.(.*?)','$1')" field="column-name" size="23" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>5. Remove unneeded prefixes from strings.</AnnotationText>
+          <DefaultAnnotationText><![CDATA[column-name = REGEX_REPLACE([column-name],'.*\.(.*?)','$1')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="1038" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>FirstRow</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="1" />
+            <Field name="2" />
+            <Field name="3" />
+            <Field name="4" />
+            <Field name="5" />
+            <Field name="6" />
+            <Field name="7" />
+            <Field name="8" />
+            <Field name="9" />
+            <Field name="10" />
+            <Field name="11" />
+            <Field name="12" />
+            <Field name="13" />
+            <Field name="14" />
+            <Field name="15" />
+            <Field name="16" />
+            <Field name="17" />
+            <Field name="18" />
+            <Field name="19" />
+            <Field name="20" />
+            <Field name="21" />
+            <Field name="22" />
+            <Field name="23" />
+            <Field name="24" />
+            <Field name="25" />
+            <Field name="26" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression />
+          <FirstRow>
+            <OnError>Warn</OnError>
+          </FirstRow>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>11. Rename all columns with the first row of data to reflect stock title.</AnnotationText>
+          <DefaultAnnotationText>11. Rename all columns with the first row of data to reflect stock title.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Date" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="FB - Open" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="FB - High" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="FB - Low" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="FB - Close" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="FB - Volume" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="TWTR - Open" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="TWTR - High" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="TWTR - Low" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="TWTR - Close" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="TWTR - Volume" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="AAPL - Open" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="AAPL - High" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="AAPL - Low" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="AAPL - Close" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="AAPL - Volume" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="SBUX - Open" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="SBUX - High" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="SBUX - Low" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="SBUX - Close" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="SBUX - Volume" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="MSFT - Open" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="MSFT - High" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="MSFT - Low" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="MSFT - Close" size="2048" source="(Multiple Sources)" type="V_String" />
+            <Field name="MSFT - Volume" size="2048" source="(Multiple Sources)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
+        <Position x="498" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RenameMode>Formula</RenameMode>
+          <Fields orderChanged="False">
+            <Field name="datum_1" />
+            <Field name="datum_2" />
+            <Field name="datum_3" />
+            <Field name="datum_4" />
+            <Field name="datum_5" />
+            <Field name="datum_6" />
+            <Field name="datum_7" />
+            <Field name="datum_8" />
+            <Field name="datum_9" />
+            <Field name="datum_10" />
+            <Field name="datum_11" />
+            <Field name="datum_12" />
+            <Field name="datum_13" />
+            <Field name="datum_14" />
+            <Field name="datum_15" />
+            <Field name="datum_16" />
+            <Field name="datum_17" />
+            <Field name="datum_18" />
+            <Field name="datum_19" />
+            <Field name="datum_20" />
+            <Field name="datum_21" />
+            <Field name="datum_22" />
+            <Field name="datum_23" />
+            <Field name="datum_24" />
+            <Field name="datum_25" />
+            <Field name="datum_26" />
+            <Field name="*Unknown" />
+          </Fields>
+          <Expression>REGEX_REPLACE([_CurrentField_],'.*\_(\d+)','$1')</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>9. Rename all columns that match set criteria.</AnnotationText>
+          <DefaultAnnotationText>9. Rename all columns that match set criteria.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="10" type="V_String" />
+            <Field name="2" size="5" type="V_String" />
+            <Field name="3" size="5" type="V_String" />
+            <Field name="4" size="5" type="V_String" />
+            <Field name="5" size="5" type="V_String" />
+            <Field name="6" size="11" type="V_String" />
+            <Field name="7" size="5" type="V_String" />
+            <Field name="8" size="5" type="V_String" />
+            <Field name="9" size="5" type="V_String" />
+            <Field name="10" size="5" type="V_String" />
+            <Field name="11" size="11" type="V_String" />
+            <Field name="12" size="6" type="V_String" />
+            <Field name="13" size="6" type="V_String" />
+            <Field name="14" size="6" type="V_String" />
+            <Field name="15" size="6" type="V_String" />
+            <Field name="16" size="11" type="V_String" />
+            <Field name="17" size="5" type="V_String" />
+            <Field name="18" size="5" type="V_String" />
+            <Field name="19" size="5" type="V_String" />
+            <Field name="20" size="5" type="V_String" />
+            <Field name="21" size="10" type="V_String" />
+            <Field name="22" size="5" type="V_String" />
+            <Field name="23" size="5" type="V_String" />
+            <Field name="24" size="5" type="V_String" />
+            <Field name="25" size="5" type="V_String" />
+            <Field name="26" size="10" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicRename" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicSelect.DynamicSelect">
+        <Position x="354" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Formula</Mode>
+          <Expression>LEFT([Name],6)=='datum_' &amp;&amp; RIGHT([Name],4) != 'type'</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>8.  Remove all columns that match set criteria.</AnnotationText>
+          <DefaultAnnotationText>8.  Remove all columns that match set criteria.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicSelect" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="906" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>10. Stack stock title and stock value data.</AnnotationText>
+          <DefaultAnnotationText>10. Stack stock title and stock value data.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.XMLParse.XMLParse">
+        <Position x="218" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <XMLField>multiset_OuterXML</XMLField>
+          <XMLElement>column-name</XMLElement>
+          <ChildValues value="True" />
+          <OuterXML value="False" />
+          <ParseRoot value="False" />
+          <IgnoreErrors value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>2. Parse out elements of interest.</AnnotationText>
+          <DefaultAnnotationText>2. Parse out elements of interest.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="multiset" size="22" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\XML_Parse.Sample_XML.xml" type="V_String" />
+            <Field name="multiset_OuterXML" size="109035" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\XML_Parse.Sample_XML.xml" type="V_String" />
+            <Field name="column-name" size="23" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxXMLParse" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.XMLParse.XMLParse">
+        <Position x="222" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <XMLField>multiset_OuterXML</XMLField>
+          <XMLElement>datum</XMLElement>
+          <ChildValues value="True" />
+          <OuterXML value="False" />
+          <ParseRoot value="False" />
+          <IgnoreErrors value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>3. Parse out elements of interest.</AnnotationText>
+          <DefaultAnnotationText>3. Parse out elements of interest.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="multiset" size="22" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\XML_Parse.Sample_XML.xml" type="V_String" />
+            <Field name="multiset_OuterXML" size="109035" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\XML_Parse.Sample_XML.xml" type="V_String" />
+            <Field name="datum" size="133" type="V_String" />
+            <Field name="type" size="5" type="V_String" />
+            <Field name="datum_1" size="10" type="V_String" />
+            <Field name="datum_2" size="5" type="V_String" />
+            <Field name="datum_2_type" size="5" type="V_String" />
+            <Field name="datum_3" size="5" type="V_String" />
+            <Field name="datum_3_type" size="5" type="V_String" />
+            <Field name="datum_4" size="5" type="V_String" />
+            <Field name="datum_4_type" size="5" type="V_String" />
+            <Field name="datum_5" size="5" type="V_String" />
+            <Field name="datum_5_type" size="5" type="V_String" />
+            <Field name="datum_6" size="11" type="V_String" />
+            <Field name="datum_6_type" size="5" type="V_String" />
+            <Field name="datum_7" size="5" type="V_String" />
+            <Field name="datum_7_type" size="5" type="V_String" />
+            <Field name="datum_8" size="5" type="V_String" />
+            <Field name="datum_8_type" size="5" type="V_String" />
+            <Field name="datum_9" size="5" type="V_String" />
+            <Field name="datum_9_type" size="5" type="V_String" />
+            <Field name="datum_10" size="5" type="V_String" />
+            <Field name="datum_10_type" size="5" type="V_String" />
+            <Field name="datum_11" size="11" type="V_String" />
+            <Field name="datum_11_type" size="5" type="V_String" />
+            <Field name="datum_12" size="6" type="V_String" />
+            <Field name="datum_12_type" size="5" type="V_String" />
+            <Field name="datum_13" size="6" type="V_String" />
+            <Field name="datum_13_type" size="5" type="V_String" />
+            <Field name="datum_14" size="6" type="V_String" />
+            <Field name="datum_14_type" size="5" type="V_String" />
+            <Field name="datum_15" size="6" type="V_String" />
+            <Field name="datum_15_type" size="5" type="V_String" />
+            <Field name="datum_16" size="11" type="V_String" />
+            <Field name="datum_16_type" size="5" type="V_String" />
+            <Field name="datum_17" size="5" type="V_String" />
+            <Field name="datum_17_type" size="5" type="V_String" />
+            <Field name="datum_18" size="5" type="V_String" />
+            <Field name="datum_18_type" size="5" type="V_String" />
+            <Field name="datum_19" size="5" type="V_String" />
+            <Field name="datum_19_type" size="5" type="V_String" />
+            <Field name="datum_20" size="5" type="V_String" />
+            <Field name="datum_20_type" size="5" type="V_String" />
+            <Field name="datum_21" size="10" type="V_String" />
+            <Field name="datum_21_type" size="5" type="V_String" />
+            <Field name="datum_22" size="5" type="V_String" />
+            <Field name="datum_22_type" size="5" type="V_String" />
+            <Field name="datum_23" size="5" type="V_String" />
+            <Field name="datum_23_type" size="5" type="V_String" />
+            <Field name="datum_24" size="5" type="V_String" />
+            <Field name="datum_24_type" size="5" type="V_String" />
+            <Field name="datum_25" size="5" type="V_String" />
+            <Field name="datum_25_type" size="5" type="V_String" />
+            <Field name="datum_26" size="10" type="V_String" />
+            <Field name="datum_26_type" size="5" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxXMLParse" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="1182" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="Date" />
+          </KeyFields>
+          <DataFields>
+            <Field field="Date" selected="False" />
+            <Field field="FB - Open" selected="True" />
+            <Field field="FB - High" selected="True" />
+            <Field field="FB - Low" selected="True" />
+            <Field field="FB - Close" selected="True" />
+            <Field field="FB - Volume" selected="True" />
+            <Field field="TWTR - Open" selected="True" />
+            <Field field="TWTR - High" selected="True" />
+            <Field field="TWTR - Low" selected="True" />
+            <Field field="TWTR - Close" selected="True" />
+            <Field field="TWTR - Volume" selected="True" />
+            <Field field="AAPL - Open" selected="True" />
+            <Field field="AAPL - High" selected="True" />
+            <Field field="AAPL - Low" selected="True" />
+            <Field field="AAPL - Close" selected="True" />
+            <Field field="AAPL - Volume" selected="True" />
+            <Field field="SBUX - Open" selected="True" />
+            <Field field="SBUX - High" selected="True" />
+            <Field field="SBUX - Low" selected="True" />
+            <Field field="SBUX - Close" selected="True" />
+            <Field field="SBUX - Volume" selected="True" />
+            <Field field="MSFT - Open" selected="True" />
+            <Field field="MSFT - High" selected="True" />
+            <Field field="MSFT - Low" selected="True" />
+            <Field field="MSFT - Close" selected="True" />
+            <Field field="MSFT - Volume" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>12. Pivot the data on "Date" to display the stock information by time.</AnnotationText>
+          <DefaultAnnotationText>12. Pivot the data on "Date" to display the stock information by time.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1458" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Date" selected="True" type="Date" size="10" />
+            <SelectField field="Stock" selected="True" />
+            <SelectField field="Column_Name" selected="True" />
+            <SelectField field="Value" selected="True" type="Double" size="8" />
+            <SelectField field="Name" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>14. Remove unneeded column.</AnnotationText>
+          <DefaultAnnotationText>14. Remove unneeded column.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="630" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>6. Assign unique identifier to each "column name" row.</AnnotationText>
+          <DefaultAnnotationText>6. Assign unique identifier to each "column name" row.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="1326" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Name</Field>
+          <RegExExpression value="([A-Za-z]*)\s\-\s(.*)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>Name</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="Stock" type="String" size="14" />
+            <Field field="Column_Name" type="String" size="14" />
+          </ParseComplex>
+          <Match>
+            <Field>Name_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>13. Separate the stock information.</AnnotationText>
+          <DefaultAnnotationText>Parse:
+([A-Za-z]*)\s\-\s(.*)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="762" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields />
+          <HeaderField field="RecordID" />
+          <DataField field="column-name" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>7. Pivot the data so columns are identified by "RecordID", creating columns of stock title information.</AnnotationText>
+          <DefaultAnnotationText>7. Pivot the data so columns are identified by "RecordID", creating columns of stock title information.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="1" size="2048" source="CrossTab:Header:RecordID:1:Concat:" type="V_String" />
+            <Field name="2" size="2048" source="CrossTab:Header:RecordID:2:Concat:" type="V_String" />
+            <Field name="3" size="2048" source="CrossTab:Header:RecordID:3:Concat:" type="V_String" />
+            <Field name="4" size="2048" source="CrossTab:Header:RecordID:4:Concat:" type="V_String" />
+            <Field name="5" size="2048" source="CrossTab:Header:RecordID:5:Concat:" type="V_String" />
+            <Field name="6" size="2048" source="CrossTab:Header:RecordID:6:Concat:" type="V_String" />
+            <Field name="7" size="2048" source="CrossTab:Header:RecordID:7:Concat:" type="V_String" />
+            <Field name="8" size="2048" source="CrossTab:Header:RecordID:8:Concat:" type="V_String" />
+            <Field name="9" size="2048" source="CrossTab:Header:RecordID:9:Concat:" type="V_String" />
+            <Field name="10" size="2048" source="CrossTab:Header:RecordID:10:Concat:" type="V_String" />
+            <Field name="11" size="2048" source="CrossTab:Header:RecordID:11:Concat:" type="V_String" />
+            <Field name="12" size="2048" source="CrossTab:Header:RecordID:12:Concat:" type="V_String" />
+            <Field name="13" size="2048" source="CrossTab:Header:RecordID:13:Concat:" type="V_String" />
+            <Field name="14" size="2048" source="CrossTab:Header:RecordID:14:Concat:" type="V_String" />
+            <Field name="15" size="2048" source="CrossTab:Header:RecordID:15:Concat:" type="V_String" />
+            <Field name="16" size="2048" source="CrossTab:Header:RecordID:16:Concat:" type="V_String" />
+            <Field name="17" size="2048" source="CrossTab:Header:RecordID:17:Concat:" type="V_String" />
+            <Field name="18" size="2048" source="CrossTab:Header:RecordID:18:Concat:" type="V_String" />
+            <Field name="19" size="2048" source="CrossTab:Header:RecordID:19:Concat:" type="V_String" />
+            <Field name="20" size="2048" source="CrossTab:Header:RecordID:20:Concat:" type="V_String" />
+            <Field name="21" size="2048" source="CrossTab:Header:RecordID:21:Concat:" type="V_String" />
+            <Field name="22" size="2048" source="CrossTab:Header:RecordID:22:Concat:" type="V_String" />
+            <Field name="23" size="2048" source="CrossTab:Header:RecordID:23:Concat:" type="V_String" />
+            <Field name="24" size="2048" source="CrossTab:Header:RecordID:24:Concat:" type="V_String" />
+            <Field name="25" size="2048" source="CrossTab:Header:RecordID:25:Concat:" type="V_String" />
+            <Field name="26" size="2048" source="CrossTab:Header:RecordID:26:Concat:" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1566" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Date" />
+            <Field field="Stock" />
+          </GroupFields>
+          <HeaderField field="Column_Name" />
+          <DataField field="Value" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>15. Consolidate data to display by date and stock.</AnnotationText>
+          <DefaultAnnotationText>15. Consolidate data to display by date and stock.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Date" source="CrossTab:Group:Sum:" type="Date" />
+            <Field description="RegEx: Parsed from Name" name="Stock" size="14" source="CrossTab:Group:Sum:" type="String" />
+            <Field name="Close" source="CrossTab:Header:Column_Name:Close:Sum:" type="Double" />
+            <Field name="High" source="CrossTab:Header:Column_Name:High:Sum:" type="Double" />
+            <Field name="Low" source="CrossTab:Header:Column_Name:Low:Sum:" type="Double" />
+            <Field name="Open" source="CrossTab:Header:Column_Name:Open:Sum:" type="Double" />
+            <Field name="Volume" source="CrossTab:Header:Column_Name:Volume:Sum:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Date" order="Asc" />
+            <Field field="Stock" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="37">..\..\..\data\StartHereData\XML_Parse.Sample_XML.xml</File>
+          <FormatSpecificOptions>
+            <ParseRoot>True</ParseRoot>
+            <OuterXML>True</OuterXML>
+            <IgnoreErrors>False</IgnoreErrors>
+            <XmlElement />
+            <ChildValues>False</ChildValues>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>1. Read in an .xml file containing stock information.
+
+Note: “Return Outer XML” is selected because elements of interest are contained within the outer xml.</AnnotationText>
+          <DefaultAnnotationText>XML_Parse.Sample_XML.xml</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="multiset" size="22" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\XML_Parse.Sample_XML.xml" type="V_String" />
+            <Field name="multiset_OuterXML" size="109035" source="File: C:\Git\starter-kits\releases\designer\en\01 Supporting_Macros\data\XML_Parse.Sample_XML.xml" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="354" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="multiset" selected="False" />
+            <SelectField field="multiset_OuterXML" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>4. Remove unneeded columns.</AnnotationText>
+          <DefaultAnnotationText>4. Remove unneeded columns.</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="91">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1698" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">%temp%XMLData_Output.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>16. Output data to an .xlsx file.</AnnotationText>
+          <DefaultAnnotationText>%temp%XMLData_Output.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text />
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="522" y="54" width="336" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>This workflow transforms an XML file into a more readable spreadsheet format.</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="94">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="126" width="396" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>1) Run the workflow (Ctrl+R).</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="450" y="126" width="408" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>2) Select a tool to view its output in the Results window.</Text>
+          <Font name="Segoe UI" size="8.25" style="1" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="1" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="444" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Convert XML to a spreadsheet</Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="13" g="35" b="69" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="12" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="13" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="True" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="False" />
+      <Name>Convert stock info from XML to a spreadsheet</Name>
+      <Description>This workflow transforms an XML file into a more readable spreadsheet format.</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags>data blending, starter kit</SearchTags>
+      <Author>Technical Writing</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>2019</Copyright>
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="74b4a698-85b7-4900-af54-8cd623bd8f03" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="74b4a698-85b7-4900-af54-8cd623bd8f03" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

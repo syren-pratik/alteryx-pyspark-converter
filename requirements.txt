@@ -4,17 +4,17 @@ uvicorn[standard]==0.24.0
 python-multipart==0.0.6
 jinja2==3.1.2
 
+# Configuration Management
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+
 # XML Processing
 lxml==4.9.3
 
 # Production Server  
 gunicorn==21.2.0
 
-# Serverless Deployment
-mangum==0.17.0
-
 # AI Analysis
 requests==2.31.0
-python-dotenv==1.0.0
 openai==1.44.0
 google-generativeai==0.3.2

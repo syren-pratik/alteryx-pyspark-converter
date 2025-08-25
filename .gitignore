@@ -1,3 +1,9 @@
+# Environment variables
+.env
+.env.*
+*.env
+!.env.example
+
 # Python
 __pycache__/
 *.py[cod]
@@ -19,48 +25,78 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Virtual Environment
-.venv/
+# Virtual environments
 venv/
 ENV/
 env/
+.venv
+.virtualenv
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Temporary files
-*.tmp
-*.temp
+*~
 .DS_Store
-Thumbs.db
-
-# Uploaded files and temporary data
-uploads/
-temp/
-*.yxmd
-!test_*.yxmd
 
 # Logs
 logs/
 *.log
-
-# Environment variables
-.env
-.env.local
-.env.production
+log/
+*.err
 
 # Database
 *.db
 *.sqlite
 *.sqlite3
+usage_data.db
 
-# Node modules (if any frontend tools)
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.cache
+
+# Test coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# API Keys and Secrets
+*.pem
+*.key
+*.crt
+secrets/
+credentials/
+
+# Upload folders
+uploads/
+uploaded_files/
+
+# Generated files
+output/
+generated/
+
+# Node (if using any JS tools)
 node_modules/
+npm-debug.log
+yarn-error.log
 
-# Production builds
-build/
-dist/
+# OS files
+Thumbs.db

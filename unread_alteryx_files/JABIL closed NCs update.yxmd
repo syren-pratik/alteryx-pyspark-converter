@@ -1,0 +1,1695 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1078" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Created Date" selected="True" type="Date" size="10" />
+            <SelectField field="Completed Date" selected="True" type="Date" size="10" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1474" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!Contains([Completed Date], "20") AND CONTAINS([NCR #],"TJ")</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!Contains([Completed Date], "20") AND CONTAINS([NCR #],"TJ")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="706" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="NCR #" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="NCR #" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_NCR #" selected="False" input="Left_" />
+                <SelectField field="Left_Date Closed" selected="True" rename="Completed Date" input="Left_" />
+                <SelectField field="Right_Completed Date" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>ADD COMPLETED DATE FROM WEEKLY FILE</AnnotationText>
+          <DefaultAnnotationText>ADD COMPLETED DATE FROM WEEKLY FILE</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1294" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1438" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="RecordID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RecordID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1546" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="NCR #" selected="True" />
+            <SelectField field="Site Found" selected="True" />
+            <SelectField field="Process Area" selected="True" />
+            <SelectField field="Assignable Cause" selected="True" />
+            <SelectField field="Created Date" selected="True" />
+            <SelectField field="Completed Date" selected="True" />
+            <SelectField field="Problem Description" selected="True" />
+            <SelectField field="Defect Tier 1" selected="True" />
+            <SelectField field="Risk Level" selected="True" />
+            <SelectField field="Supplier" selected="True" />
+            <SelectField field="Supplier City" selected="True" />
+            <SelectField field="Supplier Country" selected="True" />
+            <SelectField field="Product Code" selected="True" />
+            <SelectField field="Product Description" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1330" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings>
+        <Position x="1174" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"NCR #","Site Found","Process Area","Assignable Cause","Created Date","Completed Date","Problem Description","Defect Tier 1","Risk Level","Supplier","Supplier City","Supplier Country","Product Code","Product Description"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="2732" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">\\itsusrasdna110\sqm_prod\SQUIDs\MD\JABIL NCs\WAVE 2 3 JNJ Owned Supplier NC List.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>RemoveFile</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>WAVE 2 3 JNJ Owned Supplier NC List.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="1642" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\record exclusions.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>record exclusions.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RECORD ID" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\record exclusions.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="EXCLUSION RATIONALE" size="398" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\record exclusions.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="RECORD TYPE" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\record exclusions.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1690" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="NCR #" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RECORD ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="802" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="898" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([NCR #]) and !IsEmpty([NCR #])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([NCR #]) and !IsEmpty([NCR #])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="994" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if contains([Completed Date],&quot;OPEN&quot;) OR [Completed Date]=&quot;-&quot; THEN NULL() ELSE [Completed Date] ENDIF" field="Completed Date" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Completed Date = if contains([Completed Date],"OPEN") OR [Completed Date]="-" TH...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1798" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>Contains([NCR #],"TJ")// AND DATETIMEDIFF([Created Date],DateTimeToday(),'days')&lt;-14</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([NCR #],"TJ")// AND DATETIMEDIFF([Created Date],DateTimeToday(),'days')...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2145" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1918" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="NCR #" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="NCR #" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_NCR #" selected="False" rename="Right_NCR #" input="Right_" />
+                <SelectField field="Right_Date closed" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>only keep BAJA records which are on Ivan's weekly report</AnnotationText>
+          <DefaultAnnotationText>only keep BAJA records which are on Ivan's weekly report</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="586" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Date closed</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-01-08 10:19:47</PeriodDate>
+              <PeriodType>days</PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>2021-01-08</Operand>
+              <StartDate>2021-01-08 10:19:47</StartDate>
+              <EndDate>2021-01-08 10:19:47</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Date closed])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="2276" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Text</FieldType>
+          <Fields orderChanged="False">
+            <Field name="NCR #" />
+            <Field name="Site Found" />
+            <Field name="Process Area" />
+            <Field name="Assignable Cause" />
+            <Field name="Completed Date" />
+            <Field name="Problem Description" />
+            <Field name="Defect Tier 1" />
+            <Field name="Risk Level" />
+            <Field name="Supplier" />
+            <Field name="Supplier City" />
+            <Field name="Supplier Country" />
+            <Field name="Product Code" />
+            <Field name="Product Description" />
+            <Field name="NC Assignee" />
+            <Field name="*Unknown" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>if ([_CurrentField_])="-" OR isempty([_CurrentField_]) then Null()
+
+else
+	[_CurrentField_]
+endif</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>if ([_CurrentField_])="-" OR isempty([_CurrentField_]) then N...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="2732" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\final combined\JABIL Provided Retained Supplier NC List.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>RemoveFile</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>JABIL Provided Retained Supplier NC List.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="2744" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="8">\\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\Dolphin\Output Object\Jabil Closed NCs Output.xls|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PostSQL />
+            <PreSQL />
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Jabil Closed NCs Output.xls
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="2588" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="NCR #" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="114" y="1133" width="316" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 71</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="44">
+          <GuiSettings>
+            <Position x="238" y="1182" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"NC Number","UAI"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="346" y="1182" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Assign Ownership" selected="True" />
+                <SelectField field="Assignable Cause" selected="True" />
+                <SelectField field="Calibration Defect Type" selected="True" />
+                <SelectField field="Calibration Disposition" selected="True" />
+                <SelectField field="Completed Date" selected="True" />
+                <SelectField field="Created Date" selected="True" />
+                <SelectField field="Defect Tier 1" selected="True" />
+                <SelectField field="Department/Functional Area Found" selected="True" />
+                <SelectField field="Equipment ID" selected="True" />
+                <SelectField field="Equipment Name" selected="True" />
+                <SelectField field="Investigation Results" selected="True" />
+                <SelectField field="Investigator Owner" selected="True" rename="NC Assignee" />
+                <SelectField field="Is Near Miss" selected="True" />
+                <SelectField field="Is this a Valid NC?" selected="True" />
+                <SelectField field="Lot Batch Serial RNA#" selected="True" />
+                <SelectField field="Material Number/Product  Code/Part Number/Catalog  Number" selected="True" rename="Product Code" />
+                <SelectField field="NC Classification" selected="True" />
+                <SelectField field="NC Completed Date" selected="True" />
+                <SelectField field="NC Created Date" selected="True" />
+                <SelectField field="NC Current Assignee" selected="True" />
+                <SelectField field="NC Current Phase" selected="True" />
+                <SelectField field="NC Document Age" selected="True" />
+                <SelectField field="NC Document Number" selected="True" rename="NCR #" />
+                <SelectField field="NC Investigator" selected="True" />
+                <SelectField field="NCC Classification Method" selected="True" />
+                <SelectField field="NCR #" selected="False" />
+                <SelectField field="Non Product Defect Type" selected="True" />
+                <SelectField field="Nonconformance Problem Description" selected="True" />
+                <SelectField field="Nonconformance Type" selected="True" />
+                <SelectField field="owner" selected="True" />
+                <SelectField field="Part Description" selected="True" />
+                <SelectField field="Part Number" selected="True" />
+                <SelectField field="Problem Description" selected="True" />
+                <SelectField field="Process Area" selected="True" />
+                <SelectField field="Process Area Occurred" selected="True" />
+                <SelectField field="Product Containment Status" selected="True" />
+                <SelectField field="Product Defect Type" selected="True" />
+                <SelectField field="Product Description" selected="True" />
+                <SelectField field="Product Disposition" selected="True" />
+                <SelectField field="Risk Level" selected="True" />
+                <SelectField field="Site Found" selected="True" />
+                <SelectField field="Site Occured" selected="True" />
+                <SelectField field="Supplier" selected="True" />
+                <SelectField field="Supplier City" selected="True" />
+                <SelectField field="Supplier Country" selected="True" />
+                <SelectField field="Supplier Name" selected="True" />
+                <SelectField field="What is the Requirement Spec/Doc Reference" selected="True" />
+                <SelectField field="NC Number" selected="True" />
+                <SelectField field="UAI" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="64">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="139" y="1182" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD NCs*.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>JJMD NCs*.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="NC Number" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="UAI" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD NCs*.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="78" y="112" width="582" height="193" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>IVAN WEEKLY ABQ/TORRES FILE (new name--baja file equiv to "BAJA" containter in green)</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+          <Caption>IVAN WEEKLY ABQ/TORRES FILE (new name--baja file equiv to "BAJA" containter in green)</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="391" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="NCR #" selected="True" />
+                <SelectField field="Completed Date" selected="True" rename="Date Closed" />
+                <SelectField field="NCMR #" selected="False" rename="NCR #" />
+                <SelectField field="Date Closed2" selected="False" rename="Date Closed" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings>
+            <Position x="199" y="161" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"NCR #","Site Found","Process Area","Assignable Cause","Created Date","Completed Date","Problem Description","Defect Tier 1","Risk Level","Supplier","Supplier City","Supplier Country","Product Code","Product Description"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="295" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>NCR #</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2022-03-04 08:42:56</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <StartDate>2022-03-04 08:42:56</StartDate>
+                  <EndDate>2022-03-04 08:42:56</EndDate>
+                  <Operand>TJ</Operand>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([NCR #],"TJ")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="103" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Retained NCs*.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="NCR #" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Site Found" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Process Area" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Assignable Cause" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Created Date" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="Date" />
+                <Field name="Completed Date" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Problem Description" size="530" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Defect Tier 1" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Risk Level" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier City" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier Country" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Product Code" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Product Description" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Quantity (EA)" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Unit Price" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Total Cost" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Disposition" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Samples" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="RMA" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="RTV" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="RCA" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="J&amp;J SQE" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Comments" size="382" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\weekly updates\Retained NCs*.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="750" y="293" width="156" height="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 68</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="775" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>!Contains([Site Found],"Ethicon") // exclude these because they are already provided by EES JABIL team separately</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([Site Found],"Ethicon") // exclude these because they are already prov...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="377" width="588" height="207" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>DPS--self service</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="525" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Supplier],&quot;(.*)\(.*&quot;, &quot;$1&quot;)" field="Supplier" size="255" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Supplier = REGEX_Replace([Supplier],"(.*)\(.*", "$1")
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings>
+            <Position x="285" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">""</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>JNJ Owned Supplier NC*.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="NCR #" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Site Found" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Process Area" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Assignable Cause" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Created Date" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="DateTime" />
+                <Field name="Completed Date" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="DateTime" />
+                <Field name="Problem Description" size="3931" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Defect Tier 1" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Risk Level" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier City" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier Country" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Product Code" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Material Description" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JNJ Owned Supplier NC*.xlsx|||`Sheet1$`" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="332" y="450" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="65">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="153" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression><![CDATA[!Contains([NCR #],"Applied") ]]></Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[!Contains([NCR #],"Applied") ]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="213" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNull</Operator>
+                <Field>NCR #</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2023-02-15 09:57:35</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2023-02-15 09:57:35</StartDate>
+                  <EndDate>2023-02-15 09:57:35</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>IsNull([NCR #])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="93" y="617" width="552" height="249" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Caption>BAJA</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ff00" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="382" y="690" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Supplier City],&quot;(.*)\,.*&quot;, &quot;$1&quot;)" field="Supplier City" size="255" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Supplier City = REGEX_Replace([Supplier City],"(.*)\,.*", "$1")
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="490" y="690" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Contains([NCR #],"TJ") OR Contains([NCR #],"JBL") OR Contains([NCR #],"NC")</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([NCR #],"TJ") OR Contains([NCR #],"JBL") OR Contains([NCR #],"NC")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings>
+            <Position x="214" y="690" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (11)">"NCR #","Site Found","Process Area","Assignable Cause","Created Date","Completed Date","Problem Description","Defect Tier 1","Risk Level","Supplier","Supplier City","Supplier Country","Product Code","Product Description"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="118" y="690" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Retained NCs template*.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="NCR #" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Site Found" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Process Area" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Assignable Cause" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Created Date" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="Date" />
+                <Field name="Completed Date" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Problem Description" size="530" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Defect Tier 1" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Risk Level" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier City" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Supplier Country" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Product Code" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Product Description" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="Quantity (EA)" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Unit Price" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Total Cost" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Disposition" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Samples" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="RMA" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="RTV" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="RCA" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="J&amp;J SQE" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Comments" size="382" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\Retained NCs template*.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="298" y="690" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="561" y="666" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\JCappel2\AppData\Local\Temp\Engine_13040_881f623d10234a63903415c39449eb09_\Engine_6160_baf22ad7c1c84bfe98c92181903677a1_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="342" y="869" width="543" height="225" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>TORRES ALBUQUERQUE</Caption>
+          <Style TextColor="#314c4a" FillColor="#ff8000" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+          <Caption>TORRES ALBUQUERQUE</Caption>
+          <Style TextColor="#314c4a" FillColor="#ff8000" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Caption>TORRES ALBUQUERQUE</Caption>
+          <Style TextColor="#314c4a" FillColor="#ff8000" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="429" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>NC Number</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2025-01-22 15:30:05</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2025-01-22 15:30:05</StartDate>
+                  <EndDate>2025-01-22 15:30:05</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([NC Number])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="48">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="705" y="918" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if Contains([Site Found], &quot;Torres&quot;) THEN &quot;Jabil : Torres&quot;&#xA;elseif Contains([Site Found], &quot;Albuquerque&quot;) then &quot;Jabil : Albuquerque&quot;&#xA;else [Site Found]&#xA;endif" field="Site Found" size="255" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Site Found = if Contains([Site Found], "Torres") THEN "Jabil : Torres"
+elseif Co...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="609" y="918" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Supplier Name],&quot;(.*)\(.*&quot;, &quot;$1&quot;)" field="Supplier" size="255" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Supplier = REGEX_Replace([Supplier Name],"(.*)\(.*", "$1")
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="525" y="918" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="NC Number" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings>
+            <Position x="801" y="918" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (11)">"NCR #","Site Found","Process Area","Assignable Cause","Created Date","Completed Date","Problem Description","Defect Tier 1","Risk Level","Supplier","Supplier City","Supplier Country","Product Code","Product Description","NC Assignee"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="72">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="367" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>JJMD*.xlsx
+Query=`Export$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="NC Number" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Site Found" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NC Created Date" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="DateTime" />
+                <Field name="Nonconformance Type" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NC Current Phase" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NC Current Assignee" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NC Completed Date" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Is this a Valid NC?" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NCC Classification Method" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NC Investigator" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="NC Classification" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Site Occured" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Assign Ownership" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Department/Functional Area Found" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Process Area Occurred" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Is Near Miss" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Product Containment Status" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Supplier Name" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Equipment ID" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Equipment Name" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="Double" />
+                <Field name="Nonconformance Problem Description" size="2694" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_WString" />
+                <Field name="What is the Requirement Spec/Doc Reference" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Assignable Cause" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Investigation Results" size="3948" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_WString" />
+                <Field name="Risk Level" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Part Number" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Part Description" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Lot Batch Serial RNA#" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Product Defect Type" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Non Product Defect Type" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Calibration Defect Type" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="Double" />
+                <Field name="Product Disposition" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+                <Field name="Calibration Disposition" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="Double" />
+                <Field name="NC Document Age" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="Double" />
+                <Field name="Owner" size="255" source="File: \\itsusrasdna110\sqm_prod\MD SQ Metrics\Jabil NCs\monthly files\JJMD*.xlsx|||`Export$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="13" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="6" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="True" />
+      <Destination ToolID="6" Connection="Left" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="6" Connection="Join" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="6" Connection="Right" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="24" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output26" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Left" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="True" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="40" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="40" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="38" Connection="False" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="40" Connection="Join" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="56" Connection="Output26" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Unique" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Unique" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Unique" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output26" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="44" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output26" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="True" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="21" Connection="Input2" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="30" Connection="True" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output26" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="True" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="False" />
+      <Destination ToolID="31" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="True" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output26" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="32" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="True" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="56" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Unique" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="-1" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>JABIL closed NCs update</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="1dfd058e-4d62-49d6-8bb8-4bb1194da76b" />
+      <Telemetry>
+        <PreviousWorkflowId value="66c6d250-5369-40d6-b0ac-6b7781a0ede1" />
+        <OriginWorkflowId value="66c6d250-5369-40d6-b0ac-6b7781a0ede1" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

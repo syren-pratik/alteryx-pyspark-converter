@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>JJV QSR MasterFile.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Unique Supplier ID&#xA;(for J&amp;J One ASL purpose)" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="OpCo Site" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Status" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Category" size="701" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Supplier Type for Risk Categorization &#xA;(Direct Material, API, Finished Product or Indirect Material/Service)" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Supplier Group for Risk Categorization&#xA;(as per SQ-0012 or TV-eFRM-03865)" size="454" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Risk Rationale Table &#xA;(SQ-0012 or TV-eFRM-03865)" size="2638" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="CL Level" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Supplier Name" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Approved Site(s)/ Location" size="294" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="City" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Source" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>QSR Master File.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Supplier Name" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Approved Site(s)/ Location" size="294" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Category" size="701" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CL Level" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="City" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="OpCo Site" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Source" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="SQE" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Country" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="J&amp;J Site" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Metric" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="546" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>Contains([OpCo SIte],"JJSV") OR Contains([OpCo SIte],"JJVC")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>NotContains</Operator>
+            <Field>OpCo Site</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-04-24 19:03:01</PeriodDate>
+              <PeriodCount>0</PeriodCount>
+              <Operand>JJSV</Operand>
+              <StartDate>2019-04-24 19:03:01</StartDate>
+              <EndDate>2019-04-24 19:03:01</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([OpCo SIte],"JJSV") OR Contains([OpCo SIte],"JJVC")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="714" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="OpCo SIte" action="GroupBy" rename="OpCo SIte" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="582" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Unique Supplier ID&#xA;(for J&amp;J One ASL purpose)" selected="True" rename="RECORD ID" />
+            <SelectField field="OpCo Site" selected="True" />
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="Value" selected="True" />
+            <SelectField field="Supplier Name" selected="True" />
+            <SelectField field="Approved Site(s)/ Location" selected="True" />
+            <SelectField field="City" selected="True" />
+            <SelectField field="Source" selected="True" />
+            <SelectField field="Supplier Name " selected="False" rename="Supplier Name" />
+            <SelectField field="Approved Site(s)/ Location " selected="False" rename="Approved Site(s)/ Location" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="774" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="OpCo SIte" selected="True" rename="OpCo Site" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="702" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Quality System Robustness&quot;" field="Metric" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Metric = "Quality System Robustness"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="942" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>ByName</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="Supplier Name" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_WString" column="1" />
+                <Field name="Approved Site(s)/ Location" size="294" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_WString" column="2" />
+                <Field name="Category" size="701" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="3" />
+                <Field name="CL Level" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="4" />
+                <Field name="City" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="5" />
+                <Field name="OpCo Site" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="6" />
+                <Field name="Value" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="7" />
+                <Field name="Source" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="8" />
+                <Field name="SQE" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="9" />
+                <Field name="Country" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="J&amp;J Site" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="11" />
+                <Field name="Metric" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||`Sheet1$`" type="V_String" column="12" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="Supplier Name" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_WString" column="1" />
+                <Field name="Approved Site(s)/ Location" size="294" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_WString" column="2" />
+                <Field name="Category" size="701" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="3" />
+                <Field name="CL Level" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="4" />
+                <Field name="City" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="5" />
+                <Field name="OpCo Site" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="6" />
+                <Field name="Value" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="7" />
+                <Field name="Source" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="8" />
+                <Field name="Metric" size="1073741823" source="Formula: &quot;Quality System Robustness&quot;" type="V_WString" column="12" />
+                <Field name="RECORD ID" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\MD QSR\JJV QSR\JJV QSR MasterFile.xlsx|||`Sheet1$`" type="V_String" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings>
+        <Position x="1122" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Supplier Name","Approved Site(s)/ Location","Category","CL Level","City","OpCo Site","Value","Source","SQE","Country","J&amp;J Site","Metric"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1422" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">\\ITSUSRAWSP06292\AlteryxWorkflows\Supplier Quality\SQuIDS\Inputs\QSR\QSR Master File.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>QSR Master File.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
+        <Position x="1266" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output26" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output2" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>JJV QSR Workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

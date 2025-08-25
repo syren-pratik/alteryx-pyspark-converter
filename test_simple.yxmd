@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<AlteryxDocument>
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Configuration>
+          <File>test.csv</File>
+        </Configuration>
+      </GuiSettings>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Configuration>
+          <File>output.csv</File>
+        </Configuration>
+      </GuiSettings>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output"/>
+      <Destination ToolID="2" Connection="Input"/>
+    </Connection>
+  </Connections>
+</AlteryxDocument>

@@ -336,6 +336,38 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Loading animations */
+        @keyframes shimmer {
+            to {
+                left: 100%;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+        
+        .loading-dot {
+            display: inline-block;
+            color: #F59E0B;
+            font-size: 2rem;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        
+        @keyframes bounce {
+            0%, 80%, 100% { 
+                transform: scale(0);
+            } 
+            40% { 
+                transform: scale(1.0);
+            }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -591,10 +623,73 @@
                         </div>
                     </div>
                     
-                    <!-- Loading State -->
+                    <!-- Cool Loading Animation -->
                     <div id="analysisLoading" style="display: none; text-align: center; padding: 3rem;">
-                        <div class="loading"></div>
-                        <p style="margin-top: 1rem;">Analyzing code...</p>
+                        <div style="position: relative; margin: 2rem auto; max-width: 400px;">
+                            <!-- Animated Status Text -->
+                            <div id="loadingStatus" style="
+                                font-size: 1.8rem;
+                                font-weight: 600;
+                                color: #F59E0B;
+                                position: relative;
+                                overflow: hidden;
+                                display: inline-block;
+                                padding: 0.5rem 1rem;
+                            ">
+                                <span id="statusText">Initializing...</span>
+                                <!-- Shimmer Effect Overlay -->
+                                <div class="shimmer-effect" style="
+                                    position: absolute;
+                                    top: 0;
+                                    left: -100%;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: linear-gradient(
+                                        90deg,
+                                        transparent,
+                                        rgba(255, 255, 255, 0.4),
+                                        transparent
+                                    );
+                                    animation: shimmer 2s infinite;
+                                "></div>
+                            </div>
+                            
+                            <!-- Progress Dots -->
+                            <div style="margin-top: 1rem;">
+                                <span class="loading-dot" style="animation-delay: 0s;">●</span>
+                                <span class="loading-dot" style="animation-delay: 0.2s;">●</span>
+                                <span class="loading-dot" style="animation-delay: 0.4s;">●</span>
+                            </div>
+                            
+                            <!-- Sub-status Message -->
+                            <div id="subStatus" style="
+                                margin-top: 1rem;
+                                font-size: 0.9rem;
+                                color: #9ca3af;
+                                font-style: italic;
+                            ">
+                                Preparing your enhanced code...
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div style="
+                            width: 100%;
+                            max-width: 400px;
+                            height: 4px;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 2px;
+                            margin: 2rem auto;
+                            overflow: hidden;
+                        ">
+                            <div id="loadingProgress" style="
+                                height: 100%;
+                                background: linear-gradient(90deg, #D97706, #F59E0B);
+                                width: 0%;
+                                transition: width 0.5s ease;
+                                animation: pulse 1s infinite;
+                            "></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1195,15 +1290,97 @@
         let correctedCode = '';
         let corrections = [];
         
+        // Creative loading messages like Claude
+        const creativeStatuses = [
+            // Food/Cooking
+            { main: "Caramelizing syntax...", sub: "Adding sweetness to your code" },
+            { main: "Marinating logic...", sub: "Letting the flavors develop" },
+            { main: "Sautéing algorithms...", sub: "Bringing out the best taste" },
+            { main: "Fermenting functions...", sub: "Creating complex flavors" },
+            
+            // Nature/Growth
+            { main: "Germinating improvements...", sub: "Planting seeds of efficiency" },
+            { main: "Photosynthesizing patterns...", sub: "Converting light into logic" },
+            { main: "Pollinating parameters...", sub: "Cross-breeding better code" },
+            { main: "Cultivating clarity...", sub: "Growing readable solutions" },
+            
+            // Science/Chemistry
+            { main: "Crystallizing concepts...", sub: "Forming perfect structures" },
+            { main: "Catalyzing computations...", sub: "Accelerating reactions" },
+            { main: "Synthesizing solutions...", sub: "Creating new compounds" },
+            { main: "Distilling essence...", sub: "Purifying the core logic" },
+            
+            // Art/Creativity
+            { main: "Sculpting statements...", sub: "Chiseling away excess" },
+            { main: "Composing symphonies...", sub: "Harmonizing your workflow" },
+            { main: "Painting pixels...", sub: "Adding color to your code" },
+            { main: "Choreographing logic...", sub: "Dancing through data" },
+            
+            // Space/Physics
+            { main: "Orbiting optimizations...", sub: "Finding gravitational pull" },
+            { main: "Quantizing queries...", sub: "Discrete packets of power" },
+            { main: "Warping workflows...", sub: "Bending space-time" },
+            { main: "Fusing fragments...", sub: "Nuclear-level efficiency" },
+            
+            // Mystical/Fun
+            { main: "Enchanting expressions...", sub: "Casting optimization spells" },
+            { main: "Transmuting types...", sub: "Alchemical transformations" },
+            { main: "Summoning sparkles...", sub: "Invoking the code spirits" },
+            { main: "Brewing potions...", sub: "Mixing magical methods" },
+            { main: "Weaving workflows...", sub: "Threading the needle" },
+            { main: "Forging frameworks...", sub: "Hammering out the details" }
+        ];
+        
+        let statusInterval;
+        let progressInterval;
+        
+        function startCreativeLoading() {
+            let statusIndex = 0;
+            let progress = 0;
+            
+            // Shuffle statuses for variety
+            const shuffled = [...creativeStatuses].sort(() => Math.random() - 0.5);
+            
+            // Update status text every 2 seconds
+            statusInterval = setInterval(() => {
+                if (statusIndex >= shuffled.length) statusIndex = 0;
+                const status = shuffled[statusIndex];
+                document.getElementById('statusText').textContent = status.main;
+                document.getElementById('subStatus').textContent = status.sub;
+                statusIndex++;
+            }, 2000);
+            
+            // Update progress bar
+            progressInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 90) progress = 90; // Cap at 90% until complete
+                document.getElementById('loadingProgress').style.width = progress + '%';
+            }, 500);
+            
+            // Start with first message
+            const firstStatus = shuffled[0];
+            document.getElementById('statusText').textContent = firstStatus.main;
+            document.getElementById('subStatus').textContent = firstStatus.sub;
+        }
+        
+        function stopCreativeLoading() {
+            clearInterval(statusInterval);
+            clearInterval(progressInterval);
+            document.getElementById('loadingProgress').style.width = '100%';
+            document.getElementById('statusText').textContent = 'Complete!';
+            document.getElementById('subStatus').textContent = 'Your code has been perfected';
+        }
+        
         async function runAICorrection() {
             const modelSelector = document.getElementById('modelSelector');
             const mode = modelSelector.value;
             const correctionResults = document.getElementById('correctionResults');
             const analysisLoading = document.getElementById('analysisLoading');
             
-            // Show loading
+            // Show creative loading animation
             analysisLoading.style.display = 'block';
             correctionResults.style.display = 'none';
+            startCreativeLoading();
             
             try {
                 let requestData = {
@@ -1212,6 +1389,11 @@
                     workflow_info: {
                         total_tools: currentWorkflowData?.total_tools || 0,
                         tools: currentWorkflowData?.tools || []
+                    },
+                    file_info: {
+                        name: currentWorkflowData?.filename || 'unknown.yxmd',
+                        size: currentWorkflowData?.file_size || 0,
+                        workflow_name: currentWorkflowData?.workflow_name || 'Workflow'
                     },
                     model_provider: mode
                 };
@@ -1249,6 +1431,23 @@
                     document.getElementById('accuracyScore').textContent = accuracy + '%';
                     document.getElementById('accuracyFill').style.width = accuracy + '%';
                     
+                    // Display token usage if available
+                    if (result.usage) {
+                        const usageDiv = document.createElement('div');
+                        usageDiv.style.cssText = 'margin-top: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.9rem; color: #9ca3af;';
+                        usageDiv.innerHTML = `
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                                <div>📊 Tokens: <strong style="color: #F59E0B;">${result.usage.tokens}</strong></div>
+                                <div>⚡ Response: <strong style="color: #F59E0B;">${result.usage.response_time_ms}ms</strong></div>
+                                <div>💰 Cost: <strong style="color: #F59E0B;">$${result.usage.cost_usd.toFixed(4)}</strong></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">
+                                Input: ${result.usage.input_tokens} tokens | Output: ${result.usage.output_tokens} tokens
+                            </div>
+                        `;
+                        document.getElementById('accuracyScore').parentElement.parentElement.appendChild(usageDiv);
+                    }
+                    
                     // Display improvements
                     const improvementsList = document.getElementById('improvementsList');
                     improvementsList.innerHTML = '';
@@ -1277,6 +1476,7 @@
             } catch (error) {
                 showError('Failed to correct code: ' + error.message);
             } finally {
+                stopCreativeLoading();
                 analysisLoading.style.display = 'none';
             }
         }
@@ -1383,6 +1583,11 @@
                     workflow_info: {
                         total_tools: currentWorkflowData?.total_tools || 0,
                         tools: currentWorkflowData?.tools || []
+                    },
+                    file_info: {
+                        name: currentWorkflowData?.filename || 'unknown.yxmd',
+                        size: currentWorkflowData?.file_size || 0,
+                        workflow_name: currentWorkflowData?.workflow_name || 'Workflow'
                     },
                     model_provider: mode
                 };

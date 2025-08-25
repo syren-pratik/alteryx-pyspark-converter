@@ -1,0 +1,2799 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">\\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Outputs\Official Outputs\New All Data 4.0 Current.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>New All Data 4.0 Current.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ASL Supplier" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="AUDIT STATUS" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Category" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="CL Level" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="CLEANSED SUPPLIER NAME" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="CLEANSED SUPPLIER SITE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="CLOSED DATE" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="DateTime" />
+            <Field name="CONTACT" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Country" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Crucial Supplier or Critical Subcontractor Status" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="CURRENT_PHASE" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="DATE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Defect Classification" size="255" source="Formula: IF IsEmpty([Defect Classification]) THEN [TYPE] ELSE [Defect Classification] ENDIF" type="V_String" />
+            <Field name="DENOMINATOR" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="DESCRIPTION" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="DUE DATE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="D-U-N-S Number" source="File: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Double" />
+            <Field name="Enterprise CL" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="FDA CLASS" size="8192" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="FISCAL CLOSED DATE" source="(Multiple Sources)" type="DateTime" />
+            <Field name="FISCAL_CAL_DATE" source="(Multiple Sources)" type="DateTime" />
+            <Field name="FollowUp Interim Name" size="8192" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="FollowUp Mitigation Name" size="8192" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Franchise" size="255" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Franchise Category" size="22" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Franchise Criticality Level" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Franchise Supplier Type" size="22" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Global Ultimate Business Name" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IDEM" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IMPACTED OPCO" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Last Audit Date" source="Formula: [_CurrentField_] (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Date" />
+            <Field name="Last updated" source="Formula: DateTimeNow() (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="DateTime" />
+            <Field name="LATITUDE" source="File: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Double" />
+            <Field name="LEVEL" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="LONGITUDE" source="File: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Double" />
+            <Field name="MATERIAL DESCRIPTION" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="MATERIAL NUMBER" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="METRIC" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="METRIC TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="MONTH" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="NC SITE FOUND" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="NUMERATOR" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="OneASL Supplier Number" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="OPCO" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="OPCO SITE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="OPENED DATE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Procurement Category" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Q&amp;C Risk Rating Calculation" size="1073741823" source="Formula: &quot;In Scope of SOP ONLY&quot;" type="V_WString" />
+            <Field name="Qualification Status" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="RATING" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="RECORD ID" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Sector" size="255" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="SEGMENTATION" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SIG INSPECTION OBSERVATION DETAILS" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Site D-U-N-S Number" source="File: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Double" />
+            <Field name="SOURCE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="State/ Province" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SUPPLIER CITY" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="SUPPLIER NAME" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="supplier name (J&amp;J Supplied)" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="SUPPLIER NUMBER" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="TYPE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="VALUE" source="Formula: (Multiple Sources)" type="Double" />
+            <Field name="YEAR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Legacy Reference Number" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="IDEM2" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+            <Field name="Category2" size="255" source="Formula: [_CurrentField_]" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="1242" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="OPCO" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="OPCO SITE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Franchise" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sector" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="SUPPLIER NAME" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CLEANSED SUPPLIER NAME" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CLEANSED SUPPLIER SITE" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="DATE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="MONTH" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="YEAR" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CL Level" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Category" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="METRIC" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="NUMERATOR" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="DENOMINATOR" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="VALUE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="DESCRIPTION" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="LEVEL" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="SOURCE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="SUPPLIER CITY" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="State/ Province" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Country" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Site D-U-N-S Number" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="D-U-N-S Number" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="supplier name (J&amp;J Supplied)" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Global Ultimate Business Name" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="LATITUDE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="LONGITUDE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="RECORD ID" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CLOSED DATE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="OPENED DATE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="IMPACTED OPCO" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="METRIC TYPE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="TYPE" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="RATING" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="MATERIAL NUMBER" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="MATERIAL DESCRIPTION" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Last updated" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="IDEM" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Defect Classification" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="SIG INSPECTION OBSERVATION DETAILS" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CONTACT" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISCAL_CAL_DATE" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="SEGMENTATION" size="255" source="File: C:\Users\khill16\AppData\Local\Temp\1\Staging\617a9793-be44-48de-9b43-fdd1f891286c\_externals\1\New All Data - Calendar Tableau Dummy Data (Backup 113022) In Progress.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1710" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1830" y="798" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\khill16\AppData\Local\Temp\1\Engine_27960_d49298858f2247a7bc16dfc46d20050c_\Engine_20972_c7c6463591494a8194a0bfe2fffe8e32_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings>
+        <Position x="2190" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Category","CL Level","CLEANSED SUPPLIER NAME","CLEANSED SUPPLIER SITE","CLOSED DATE","CONTACT","Country","DATE","Defect Classification","DESCRIPTION","D-U-N-S Number","Enterprise CL","FISCAL CLOSED DATE","FISCAL_CAL_DATE","Franchise","Global Ultimate Business Name","IDEM","IMPACTED OPCO","LATITUDE","LEVEL","LONGITUDE","MATERIAL DESCRIPTION","MATERIAL NUMBER","METRIC","METRIC TYPE","MONTH","OPCO","OPCO SITE","OPENED DATE","Procurement Category","RATING","RECORD ID","Sector","SEGMENTATION","SIG INSPECTION OBSERVATION DETAILS","Site D-U-N-S Number","SOURCE","SUPPLIER CITY","SUPPLIER NAME","supplier name (J&amp;J Supplied)","SUPPLIER NUMBER","TYPE","VALUE","YEAR"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2022" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" type="V_WString" size="255" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" type="Date" size="10" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" />
+            <SelectField field="Defect Classification" selected="True" type="V_WString" size="255" />
+            <SelectField field="DENOMINATOR" selected="True" type="Int16" size="2" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" type="Date" size="10" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" type="Date" size="10" />
+            <SelectField field="Franchise" selected="True" type="V_WString" size="255" />
+            <SelectField field="Global Ultimate Business Name" selected="True" type="V_WString" size="255" />
+            <SelectField field="IDEM" selected="True" type="V_WString" size="255" />
+            <SelectField field="IMPACTED OPCO" selected="True" size="4000" />
+            <SelectField field="Last updated" selected="True" rename="Last Updated" type="Date" size="10" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="NUMERATOR" selected="True" type="Int16" size="2" />
+            <SelectField field="OPCO" selected="True" size="255" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" type="Date" size="10" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" type="V_WString" size="255" />
+            <SelectField field="SEGMENTATION" selected="True" type="V_WString" size="255" />
+            <SelectField field="SHARED AUDIT VALUE" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="State/ Province" selected="False" type="V_WString" size="255" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" type="V_WString" size="255" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="Q&amp;C Risk Rating Calculation" selected="True" />
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="Unique_Supplier_Id" selected="True" />
+            <SelectField field="Material_Root_Id" selected="True" />
+            <SelectField field="Supplier_Root_Id" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="True" />
+            <SelectField field="FDA CLASS" selected="True" />
+            <SelectField field="FollowUp Interim Name" selected="True" />
+            <SelectField field="FollowUp Mitigation Name" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2106" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeToday()" field="Last updated" size="10" type="Date" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Last updated = DateTimeToday()
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="3114" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">\\itsusrasdna110\sqm_prod\SQUIDs\Data Output - DEV\Metric Data.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="True" />
+          <MultiFileType>Path</MultiFileType>
+          <MultiFileField>FileName</MultiFileField>
+          <KeepField value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Metric Data.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="246" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>NotContains</Operator>
+            <Field>METRIC TYPE</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-11-13 12:12:04</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>q&amp;c</Operand>
+              <StartDate>2019-11-13 12:12:04</StartDate>
+              <EndDate>2019-11-13 12:12:04</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!Contains([METRIC TYPE],"q&amp;c")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1542" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="State/ Province" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="Q&amp;C Risk Rating Calculation" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1422" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2574" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[DateTimeToday]" field="DateTimeToday for IF" size="1073741823" type="V_WString" />
+            <FormulaField expression="[FISC_CAL_MO_END_DT]" field="Fiscal Cal Mo End Dt for IF" size="1073741823" type="V_WString" />
+            <FormulaField expression="IF [DateTimeToday for IF] == [Fiscal Cal Mo End Dt for IF] THEN &quot;\\itsusrasdna110\sqm_prod\SQUIDs\Data\MonthlyReports\Metric Data_&quot; + datetimeformat([DateTimeToday],&quot;%b&quot;) + &quot;_&quot; + datetimeformat([DateTimeToday],&quot;%Y&quot;) + &quot;.xlsx|||Sheet1&quot; ELSE&#xA;&quot;\\itsusrasdna110\sqm_prod\SQUIDs\Data\Metric Data.xlsx|||Sheet1&quot; ENDIF" field="FileName" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DateTimeToday for IF = [DateTimeToday]
+Fiscal Cal Mo End Dt for IF = [FISC_CAL_M...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="2010" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>EDW_Calendar_Data.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CAL_DT" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="CAL_DT_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_YR_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_YR_MO" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_WK_END_DT" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="CAL_WK_NUM_IN_MO" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_WK_NUM_IN_YR" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_DAY_OF_WK_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_DAY_OF_WK_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_MO_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_MO_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_DAY_SHRT_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_MO_SHRT_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_MO_STRT_DT" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="CAL_MO_END_DT" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="CAL_QTR_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_MO_OF_QTR_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_QTR_YR_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="CAL_MO_YR_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="YR_WK_NO" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_YR_QTR" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_MO_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_MO_SHRT_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_CAL_MO_STRT_DT" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="FISC_CAL_MO_END_DT" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="FISC_QTR_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_QTR_NUM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_YR_NUM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_YR_MO" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_CURR_MO_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_MO_SEQ" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_LYR_MTD_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_MTD_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_PMTD_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_YTD_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_QTD_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_ROLL_12_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_PREV_YR_MO_TO_DT_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FISC_YR_QTR_NO" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_QTR_YR_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_MO_YR_NM" size="255" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="FISC_WK_NBR" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CAL_MO_SEQ" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CURR_MO_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="PREV_MO_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="G_ROLL_12_MO_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="WRKNG_DAY_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="WKEND_IND" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="DAI_CRT_DTTM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="DAI_UPDT_DTTM" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="DAI_ETL_ID" source="File: \\ITSUSRAWSP06292\AlteryxWorkflows2\Supplier Quality\SQuIDS\Master Data\EDW_Calendar_Data.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2106" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="CAL_DT" selected="True" />
+            <SelectField field="FISC_CAL_MO_END_DT" selected="True" />
+            <SelectField field="FISC_MO_YR_NM" selected="False" rename="FISCAL_CAL_DATE" type="DateTime" size="19" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2214" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="DateTimeToday" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="CAL_DT" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_OPCO" selected="True" />
+                <SelectField field="Left_Global Ultimate Business Name" selected="True" />
+                <SelectField field="Left_LATITUDE" selected="True" />
+                <SelectField field="Left_LONGITUDE" selected="True" />
+                <SelectField field="Left_CLOSED DATE" selected="True" />
+                <SelectField field="Left_OPENED DATE" selected="True" />
+                <SelectField field="Left_IMPACTED OPCO" selected="True" />
+                <SelectField field="Left_METRIC TYPE" selected="True" />
+                <SelectField field="Left_TYPE" selected="True" />
+                <SelectField field="Left_RATING" selected="True" />
+                <SelectField field="Left_supplier name (J&amp;J Supplied)" selected="True" />
+                <SelectField field="Left_MATERIAL NUMBER" selected="True" />
+                <SelectField field="Left_Last updated" selected="True" />
+                <SelectField field="Left_IDEM" selected="True" />
+                <SelectField field="Left_SEGMENTATION" selected="True" />
+                <SelectField field="Left_Defect Classification" selected="True" />
+                <SelectField field="Left_SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+                <SelectField field="Left_CONTACT" selected="True" />
+                <SelectField field="Left_SUPPLIER NUMBER" selected="True" />
+                <SelectField field="Left_FISCAL_CAL_DATE" selected="True" />
+                <SelectField field="Left_FISCAL CLOSED DATE" selected="True" />
+                <SelectField field="Left_MATERIAL DESCRIPTION" selected="True" />
+                <SelectField field="Left_DUE DATE" selected="True" />
+                <SelectField field="Left_D-U-N-S Number" selected="True" />
+                <SelectField field="Left_Country" selected="True" />
+                <SelectField field="Left_OPCO SITE" selected="True" />
+                <SelectField field="Left_SUPPLIER NAME" selected="True" />
+                <SelectField field="Left_DATE" selected="True" />
+                <SelectField field="Left_MONTH" selected="True" />
+                <SelectField field="Left_YEAR" selected="True" />
+                <SelectField field="Left_CL Level" selected="True" />
+                <SelectField field="Left_Site D-U-N-S Number" selected="True" />
+                <SelectField field="Left_NUMERATOR" selected="True" />
+                <SelectField field="Left_Category" selected="True" />
+                <SelectField field="Left_LEVEL" selected="True" />
+                <SelectField field="Left_SOURCE" selected="True" />
+                <SelectField field="Left_SUPPLIER CITY" selected="True" />
+                <SelectField field="Left_State/ Province" selected="True" />
+                <SelectField field="Left_DENOMINATOR" selected="True" />
+                <SelectField field="Left_VALUE" selected="True" />
+                <SelectField field="Left_METRIC" selected="True" />
+                <SelectField field="Left_DESCRIPTION" selected="True" />
+                <SelectField field="Left_Sector" selected="True" />
+                <SelectField field="Left_Franchise" selected="True" />
+                <SelectField field="Left_RECORD ID" selected="True" />
+                <SelectField field="Left_CLEANSED SUPPLIER SITE" selected="True" />
+                <SelectField field="Left_CLEANSED SUPPLIER NAME" selected="True" />
+                <SelectField field="Left_Procurement Category" selected="True" />
+                <SelectField field="Left_Enterprise CL" selected="True" />
+                <SelectField field="Left_AUDIT STATUS" selected="True" input="Left_" />
+                <SelectField field="Left_DateTimeToday" selected="True" />
+                <SelectField field="Right_CAL_DT" selected="True" />
+                <SelectField field="Right_FISC_CAL_MO_END_DT" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2058" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeAdd(DateTimeToday(),-7,&quot;days&quot;)" field="DateTimeToday" size="10" type="Date" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[DateTimeToday = DateTimeAdd(DateTimeToday(),-7,"days")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2322" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2814" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="DateTimeToday" selected="False" />
+            <SelectField field="CAL_DT" selected="False" />
+            <SelectField field="FISC_CAL_MO_END_DT" selected="False" />
+            <SelectField field="DateTimeToday for IF" selected="False" />
+            <SelectField field="Fiscal Cal Mo End Dt for IF" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="2802" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="42" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data Output - DEV\SQUIDs_NewAllData.tde</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SQUIDs_NewAllData.tde</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1422" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="134">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="150" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="True" />
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="DATE" selected="True" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FDA CLASS" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="FollowUp Interim Name" selected="True" />
+            <SelectField field="FollowUp Mitigation Name" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last Audit Date" selected="True" />
+            <SelectField field="Last updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OBS CLOSED" selected="True" />
+            <SelectField field="OBS TOTAL" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="Q&amp;C Risk Rating Calculation" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="State/ Province" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" />
+            <SelectField field="CURRENT_PHASE" selected="True" />
+            <SelectField field="Legacy Reference Number" selected="True" />
+            <SelectField field="IDEM2" selected="True" />
+            <SelectField field="Category2" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="135">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="2718" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="42" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data Output - DEV\Updated NewAllData.tde</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Updated NewAllData.tde</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="136">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2394" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Uppercase([AUDIT STATUS])" field="AUDIT STATUS" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[AUDIT STATUS = Uppercase([AUDIT STATUS])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="137">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2490" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\khill16\AppData\Local\Temp\1\Engine_27960_d49298858f2247a7bc16dfc46d20050c_\Engine_20972_3d2054e19ddd42f88d84966f8fee3973_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="163">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1698" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\khill16\AppData\Local\Temp\1\Engine_27960_d49298858f2247a7bc16dfc46d20050c_\Engine_20972_92da823cc2fa44be97d769ff194c73f9_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="166">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1542" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>Franchise</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-05-12 11:41:49</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>JABIL</Operand>
+              <StartDate>2022-05-12 11:41:49</StartDate>
+              <EndDate>2022-05-12 11:41:49</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Franchise] != "JABIL"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="168">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2934" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>OPCO</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-07-27 10:27:48</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2022-07-27 10:27:48</StartDate>
+              <EndDate>2022-07-27 10:27:48</EndDate>
+              <Operand>BWI</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[OPCO] = "BWI"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="169">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="3090" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">\\itsusrasdna110\sqm_prod\SQUIDs\Data\BWI EM\BWI EM Metric Data.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BWI EM Metric Data.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="170">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="2730" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="42" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data Output - DEV\NewAllData.tde</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>NewAllData.tde</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="172">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="558" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">\\itsusrasdna110\sqm_prod\SQUIDs\Data\QnC Risk Rating (NEW).xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>RemoveFile</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>QnC Risk Rating (NEW).xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="173">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2286" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Q&amp;C Risk Rating Calculation" selected="True" rename="QC Risk Rating Calculation" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="174">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="582" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">\\itsusrasdna110\sqm_prod\EM_SCORECARD\SQuIDS_Q&amp;C.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>65001</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SQuIDS_Q&amp;C.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="175">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="558" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">\\itsusrasdna110\sqm_prod\EM_SCORECARD\SQuIDS_Metric.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>65001</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SQuIDS_Metric.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="176">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" rename="DATE_dt" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" rename="MONTH_mo" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" rename="supplier_name_JNJ_Supplied" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" rename="YEAR_yr" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="Q&amp;C Risk Rating Calculation" selected="True" rename="QC_Risk_Rating_Calculation" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="Legacy Reference Number" selected="True" />
+            <SelectField field="IDEM2" selected="False" />
+            <SelectField field="Category2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="False" />
+            <SelectField field="State/ Province" selected="False" />
+            <SelectField field="CURRENT_PHASE" selected="False" />
+            <SelectField field="FDA CLASS" selected="False" />
+            <SelectField field="OBS TOTAL" selected="False" />
+            <SelectField field="OBS CLOSED" selected="False" />
+            <SelectField field="FollowUp Interim Name" selected="False" />
+            <SelectField field="Last Audit Date" selected="False" />
+            <SelectField field="FollowUp Mitigation Name" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="178">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="438" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="IDEM2" selected="False" />
+            <SelectField field="Category2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="179">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2610" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" type="Date" size="10" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last Updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="QC Risk Rating Calculation" selected="True" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="True" />
+            <SelectField field="FDA CLASS" selected="True" />
+            <SelectField field="FollowUp Interim Name" selected="True" />
+            <SelectField field="FollowUp Mitigation Name" selected="True" />
+            <SelectField field="Last Audit Date" selected="True" />
+            <SelectField field="CURRENT_PHASE" selected="True" />
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="Legacy Reference Number" selected="True" />
+            <SelectField field="IDEM2" selected="False" />
+            <SelectField field="Category2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="180">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2526" y="762" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last Updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="QC Risk Rating Calculation" selected="True" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="True" />
+            <SelectField field="FDA CLASS" selected="True" />
+            <SelectField field="FollowUp Interim Name" selected="True" />
+            <SelectField field="FollowUp Mitigation Name" selected="True" />
+            <SelectField field="Last Audit Date" selected="True" />
+            <SelectField field="CURRENT_PHASE" selected="True" />
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="Legacy Reference Number" selected="True" />
+            <SelectField field="IDEM2" selected="False" />
+            <SelectField field="Category2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="181">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2670" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last Updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="QC Risk Rating Calculation" selected="True" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="True" />
+            <SelectField field="FDA CLASS" selected="True" />
+            <SelectField field="FollowUp Interim Name" selected="True" />
+            <SelectField field="FollowUp Mitigation Name" selected="True" />
+            <SelectField field="Last Audit Date" selected="True" />
+            <SelectField field="CURRENT_PHASE" selected="True" />
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="Legacy Reference Number" selected="True" />
+            <SelectField field="IDEM2" selected="False" />
+            <SelectField field="Category2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="182">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="390" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Category" selected="True" />
+            <SelectField field="CL Level" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+            <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+            <SelectField field="CLOSED DATE" selected="True" />
+            <SelectField field="CONTACT" selected="True" />
+            <SelectField field="Country" selected="True" />
+            <SelectField field="DATE" selected="True" rename="DATE_dt" />
+            <SelectField field="Defect Classification" selected="True" />
+            <SelectField field="DENOMINATOR" selected="True" />
+            <SelectField field="DESCRIPTION" selected="True" />
+            <SelectField field="DUE DATE" selected="True" />
+            <SelectField field="D-U-N-S Number" selected="True" />
+            <SelectField field="Enterprise CL" selected="True" />
+            <SelectField field="FISCAL CLOSED DATE" selected="True" />
+            <SelectField field="FISCAL_CAL_DATE" selected="True" />
+            <SelectField field="Franchise" selected="True" />
+            <SelectField field="Global Ultimate Business Name" selected="True" />
+            <SelectField field="IDEM" selected="True" />
+            <SelectField field="IMPACTED OPCO" selected="True" />
+            <SelectField field="Last updated" selected="True" />
+            <SelectField field="LATITUDE" selected="True" />
+            <SelectField field="LEVEL" selected="True" />
+            <SelectField field="LONGITUDE" selected="True" />
+            <SelectField field="MATERIAL DESCRIPTION" selected="True" />
+            <SelectField field="MATERIAL NUMBER" selected="True" />
+            <SelectField field="METRIC" selected="True" />
+            <SelectField field="METRIC TYPE" selected="True" />
+            <SelectField field="MONTH" selected="True" rename="MONTH_mo" />
+            <SelectField field="NUMERATOR" selected="True" />
+            <SelectField field="OPCO" selected="True" />
+            <SelectField field="OPCO SITE" selected="True" />
+            <SelectField field="OPENED DATE" selected="True" />
+            <SelectField field="Procurement Category" selected="True" />
+            <SelectField field="RATING" selected="True" />
+            <SelectField field="RECORD ID" selected="True" />
+            <SelectField field="Sector" selected="True" />
+            <SelectField field="SEGMENTATION" selected="True" />
+            <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="True" />
+            <SelectField field="Site D-U-N-S Number" selected="True" />
+            <SelectField field="SOURCE" selected="True" />
+            <SelectField field="SUPPLIER CITY" selected="True" />
+            <SelectField field="SUPPLIER NAME" selected="True" />
+            <SelectField field="supplier name (J&amp;J Supplied)" selected="True" rename="supplier_name_JNJ_Supplied" />
+            <SelectField field="SUPPLIER NUMBER" selected="True" />
+            <SelectField field="TYPE" selected="True" />
+            <SelectField field="VALUE" selected="True" />
+            <SelectField field="YEAR" selected="True" rename="YEAR_yr" />
+            <SelectField field="NC SITE FOUND" selected="True" />
+            <SelectField field="Q&amp;C Risk Rating Calculation" selected="True" rename="QC_Risk_Rating_Calculation" />
+            <SelectField field="Franchise Criticality Level" selected="True" />
+            <SelectField field="Qualification Status" selected="True" />
+            <SelectField field="Franchise Category" selected="True" />
+            <SelectField field="Franchise Supplier Type" selected="True" />
+            <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="True" />
+            <SelectField field="OneASL Supplier Number" selected="True" />
+            <SelectField field="ASL Supplier" selected="True" />
+            <SelectField field="Legacy Reference Number" selected="True" />
+            <SelectField field="IDEM2" selected="False" />
+            <SelectField field="Category2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+            <SelectField field="AUDIT STATUS" selected="False" />
+            <SelectField field="State/ Province" selected="False" />
+            <SelectField field="CURRENT_PHASE" selected="False" />
+            <SelectField field="FDA CLASS" selected="False" />
+            <SelectField field="OBS TOTAL" selected="False" />
+            <SelectField field="OBS CLOSED" selected="False" />
+            <SelectField field="FollowUp Interim Name" selected="False" />
+            <SelectField field="Last Audit Date" selected="False" />
+            <SelectField field="FollowUp Mitigation Name" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="183">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="558" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Vision\Vision Data.xlsx|||Sheet1$</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>RemoveFile</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vision Data.xlsx
+Query=Sheet1$</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="184">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="270" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>Sector</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2023-03-29 16:04:14</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2023-03-29 16:04:14</StartDate>
+              <EndDate>2023-03-29 16:04:14</EndDate>
+              <Operand>Vision</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([Sector],"Vision")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="161">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="353" y="1025" width="1767" height="893" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Supervisor</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="138">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="378" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;12-01-2020&quot;" field="Supervisor Date" size="64" type="String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Supervisor Date = "12-01-2020"
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="139">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="858" y="1206" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[DATE] &lt;= [Supervisor Date]</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[DATE] &lt;= [Supervisor Date]</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="140">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="1050" y="1074" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <AutoResetMode>ByName</AutoResetMode>
+              <MultiMetaInfo>
+                <MetaInfo name="#1">
+                  <RecordInfo>
+                    <Field name="OPCO" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="1" />
+                    <Field name="OPCO SITE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="2" />
+                    <Field name="Franchise" size="255" source="Formula: [_CurrentField_]" type="V_String" column="3" />
+                    <Field name="Sector" size="255" source="Formula: (Multiple Sources)" type="V_String" column="4" />
+                    <Field name="SUPPLIER NAME" size="8192" source="Formula: (Multiple Sources)" type="V_WString" column="5" />
+                    <Field name="CLEANSED SUPPLIER NAME" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="6" />
+                    <Field name="CLEANSED SUPPLIER SITE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="7" />
+                    <Field name="DATE" source="Formula: (Multiple Sources)" type="DateTime" column="8" />
+                    <Field name="MONTH" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="9" />
+                    <Field name="YEAR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="10" />
+                    <Field name="CL Level" size="255" source="Formula: (Multiple Sources)" type="V_String" column="11" />
+                    <Field name="Category" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="12" />
+                    <Field name="METRIC" size="1073741823" source="(Multiple Sources)" type="V_WString" column="13" />
+                    <Field name="NUMERATOR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="14" />
+                    <Field name="DENOMINATOR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="15" />
+                    <Field name="VALUE" source="(Multiple Sources)" type="Double" column="16" />
+                    <Field name="DESCRIPTION" size="1073741823" source="(Multiple Sources)" type="V_WString" column="17" />
+                    <Field name="LEVEL" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="18" />
+                    <Field name="SOURCE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="19" />
+                    <Field name="SUPPLIER CITY" size="294" source="Formula: (Multiple Sources)" type="V_WString" column="20" />
+                    <Field name="State/ Province" size="255" source="Formula: (Multiple Sources)" type="V_String" column="21" />
+                    <Field name="Country" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="22" />
+                    <Field name="Site D-U-N-S Number" source="Formula: (Multiple Sources)" type="Double" column="23" />
+                    <Field name="D-U-N-S Number" source="Formula: (Multiple Sources)" type="Double" column="24" />
+                    <Field name="supplier name (J&amp;J Supplied)" size="255" source="Formula: (Multiple Sources)" type="V_String" column="25" />
+                    <Field name="Global Ultimate Business Name" size="255" source="Formula: (Multiple Sources)" type="V_String" column="26" />
+                    <Field name="LATITUDE" source="Formula: (Multiple Sources)" type="Double" column="27" />
+                    <Field name="LONGITUDE" source="Formula: (Multiple Sources)" type="Double" column="28" />
+                    <Field name="RECORD ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="29" />
+                    <Field name="CLOSED DATE" source="(Multiple Sources)" type="DateTime" column="30" />
+                    <Field name="OPENED DATE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="31" />
+                    <Field name="IMPACTED OPCO" size="4000" source="Formula: (Multiple Sources)" type="V_String" column="32" />
+                    <Field name="METRIC TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="33" />
+                    <Field name="TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="34" />
+                    <Field name="RATING" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="35" />
+                    <Field name="MATERIAL NUMBER" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="36" />
+                    <Field name="MATERIAL DESCRIPTION" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="37" />
+                    <Field name="IDEM" size="255" source="Formula: (Multiple Sources)" type="V_String" column="38" />
+                    <Field name="Last updated" source="Formula: (Multiple Sources)" type="DateTime" column="39" />
+                    <Field name="SEGMENTATION" size="255" source="Formula: (Multiple Sources)" type="V_String" column="40" />
+                    <Field name="CONTACT" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="41" />
+                    <Field name="SIG INSPECTION OBSERVATION DETAILS" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="42" />
+                    <Field name="SUPPLIER NUMBER" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="43" />
+                    <Field name="FISCAL_CAL_DATE" source="(Multiple Sources)" type="DateTime" column="44" />
+                    <Field name="FISCAL CLOSED DATE" source="(Multiple Sources)" type="DateTime" column="45" />
+                    <Field name="DUE DATE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="46" />
+                    <Field name="Procurement Category" size="255" source="Formula: (Multiple Sources)" type="V_String" column="47" />
+                    <Field name="Enterprise CL" size="255" source="Formula: (Multiple Sources)" type="V_String" column="48" />
+                    <Field name="NC SITE FOUND" size="255" source="Formula: (Multiple Sources)" type="V_String" column="49" />
+                    <Field name="Defect Classification" size="255" source="Formula: (Multiple Sources)" type="V_String" column="50" />
+                    <Field name="Franchise Criticality Level" size="255" source="Formula: [_CurrentField_]" type="V_String" column="51" />
+                    <Field name="Qualification Status" size="255" source="Formula: [_CurrentField_]" type="V_String" column="52" />
+                    <Field name="Franchise Category" size="22" source="Formula: [_CurrentField_]" type="String" column="53" />
+                    <Field name="Franchise Supplier Type" size="22" source="Formula: [_CurrentField_]" type="String" column="54" />
+                    <Field name="Crucial Supplier or Critical Subcontractor Status" size="255" source="Formula: [_CurrentField_]" type="V_String" column="55" />
+                    <Field name="OneASL Supplier Number" size="255" source="Formula: [_CurrentField_]" type="V_String" column="56" />
+                    <Field name="ASL Supplier" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="57" />
+                    <Field name="Q&amp;C Risk Rating Calculation" size="1073741823" source="Formula: &quot;In Scope of SOP ONLY&quot;" type="V_WString" column="58" />
+                    <Field name="Supervisor Date" source="DateTime: To MM-dd-yyyy" type="Date" column="59" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo name="#2">
+                  <RecordInfo>
+                    <Field name="OPCO" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="1" />
+                    <Field name="OPCO SITE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="2" />
+                    <Field name="Franchise" size="255" source="Formula: [_CurrentField_]" type="V_String" column="3" />
+                    <Field name="Sector" size="255" source="Formula: (Multiple Sources)" type="V_String" column="4" />
+                    <Field name="SUPPLIER NAME" size="8192" source="Formula: (Multiple Sources)" type="V_WString" column="5" />
+                    <Field name="CLEANSED SUPPLIER NAME" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="6" />
+                    <Field name="CLEANSED SUPPLIER SITE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="7" />
+                    <Field name="DATE" source="Formula: (Multiple Sources)" type="DateTime" column="8" />
+                    <Field name="MONTH" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="9" />
+                    <Field name="YEAR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="10" />
+                    <Field name="CL Level" size="255" source="Formula: (Multiple Sources)" type="V_String" column="11" />
+                    <Field name="Category" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="12" />
+                    <Field name="METRIC" size="1073741823" source="(Multiple Sources)" type="V_WString" column="13" />
+                    <Field name="NUMERATOR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="14" />
+                    <Field name="DENOMINATOR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="15" />
+                    <Field name="VALUE" source="(Multiple Sources)" type="Double" column="16" />
+                    <Field name="DESCRIPTION" size="1073741823" source="(Multiple Sources)" type="V_WString" column="17" />
+                    <Field name="LEVEL" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="18" />
+                    <Field name="SOURCE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="19" />
+                    <Field name="SUPPLIER CITY" size="294" source="Formula: (Multiple Sources)" type="V_WString" column="20" />
+                    <Field name="State/ Province" size="255" source="Formula: (Multiple Sources)" type="V_String" column="21" />
+                    <Field name="Country" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="22" />
+                    <Field name="Site D-U-N-S Number" source="Formula: (Multiple Sources)" type="Double" column="23" />
+                    <Field name="D-U-N-S Number" source="Formula: (Multiple Sources)" type="Double" column="24" />
+                    <Field name="supplier name (J&amp;J Supplied)" size="255" source="Formula: (Multiple Sources)" type="V_String" column="25" />
+                    <Field name="Global Ultimate Business Name" size="255" source="Formula: (Multiple Sources)" type="V_String" column="26" />
+                    <Field name="LATITUDE" source="Formula: (Multiple Sources)" type="Double" column="27" />
+                    <Field name="LONGITUDE" source="Formula: (Multiple Sources)" type="Double" column="28" />
+                    <Field name="RECORD ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="29" />
+                    <Field name="CLOSED DATE" source="(Multiple Sources)" type="DateTime" column="30" />
+                    <Field name="OPENED DATE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="31" />
+                    <Field name="IMPACTED OPCO" size="4000" source="Formula: (Multiple Sources)" type="V_String" column="32" />
+                    <Field name="METRIC TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="33" />
+                    <Field name="TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="34" />
+                    <Field name="RATING" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="35" />
+                    <Field name="MATERIAL NUMBER" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="36" />
+                    <Field name="MATERIAL DESCRIPTION" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="37" />
+                    <Field name="IDEM" size="255" source="Formula: (Multiple Sources)" type="V_String" column="38" />
+                    <Field name="Last updated" source="Formula: (Multiple Sources)" type="DateTime" column="39" />
+                    <Field name="SEGMENTATION" size="255" source="Formula: (Multiple Sources)" type="V_String" column="40" />
+                    <Field name="CONTACT" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="41" />
+                    <Field name="SIG INSPECTION OBSERVATION DETAILS" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="42" />
+                    <Field name="SUPPLIER NUMBER" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="43" />
+                    <Field name="FISCAL_CAL_DATE" source="(Multiple Sources)" type="DateTime" column="44" />
+                    <Field name="FISCAL CLOSED DATE" source="(Multiple Sources)" type="DateTime" column="45" />
+                    <Field name="DUE DATE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="46" />
+                    <Field name="Procurement Category" size="255" source="Formula: (Multiple Sources)" type="V_String" column="47" />
+                    <Field name="Enterprise CL" size="255" source="Formula: (Multiple Sources)" type="V_String" column="48" />
+                    <Field name="NC SITE FOUND" size="255" source="Formula: (Multiple Sources)" type="V_String" column="49" />
+                    <Field name="Defect Classification" size="255" source="Formula: (Multiple Sources)" type="V_String" column="50" />
+                    <Field name="Franchise Criticality Level" size="255" source="Formula: [_CurrentField_]" type="V_String" column="51" />
+                    <Field name="Qualification Status" size="255" source="Formula: [_CurrentField_]" type="V_String" column="52" />
+                    <Field name="Franchise Category" size="22" source="Formula: [_CurrentField_]" type="String" column="53" />
+                    <Field name="Franchise Supplier Type" size="22" source="Formula: [_CurrentField_]" type="String" column="54" />
+                    <Field name="Crucial Supplier or Critical Subcontractor Status" size="255" source="Formula: [_CurrentField_]" type="V_String" column="55" />
+                    <Field name="OneASL Supplier Number" size="255" source="Formula: [_CurrentField_]" type="V_String" column="56" />
+                    <Field name="ASL Supplier" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="57" />
+                    <Field name="Q&amp;C Risk Rating Calculation" size="1073741823" source="Formula: &quot;In Scope of SOP ONLY&quot;" type="V_WString" column="58" />
+                    <Field name="Supervisor Date" source="DateTime: To MM-dd-yyyy" type="Date" column="59" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo name="#3">
+                  <RecordInfo>
+                    <Field name="OPCO" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="1" />
+                    <Field name="OPCO SITE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="2" />
+                    <Field name="Franchise" size="255" source="Formula: [_CurrentField_]" type="V_String" column="3" />
+                    <Field name="Sector" size="255" source="Formula: (Multiple Sources)" type="V_String" column="4" />
+                    <Field name="SUPPLIER NAME" size="8192" source="Formula: (Multiple Sources)" type="V_WString" column="5" />
+                    <Field name="CLEANSED SUPPLIER NAME" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="6" />
+                    <Field name="CLEANSED SUPPLIER SITE" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="7" />
+                    <Field name="DATE" source="Formula: (Multiple Sources)" type="DateTime" column="8" />
+                    <Field name="MONTH" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="9" />
+                    <Field name="YEAR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="10" />
+                    <Field name="CL Level" size="255" source="Formula: (Multiple Sources)" type="V_String" column="11" />
+                    <Field name="Category" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="12" />
+                    <Field name="METRIC" size="1073741823" source="(Multiple Sources)" type="V_WString" column="13" />
+                    <Field name="NUMERATOR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="14" />
+                    <Field name="DENOMINATOR" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="15" />
+                    <Field name="VALUE" source="(Multiple Sources)" type="Double" column="16" />
+                    <Field name="DESCRIPTION" size="1073741823" source="(Multiple Sources)" type="V_WString" column="17" />
+                    <Field name="LEVEL" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="18" />
+                    <Field name="SOURCE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="19" />
+                    <Field name="SUPPLIER CITY" size="294" source="Formula: (Multiple Sources)" type="V_WString" column="20" />
+                    <Field name="State/ Province" size="255" source="Formula: (Multiple Sources)" type="V_String" column="21" />
+                    <Field name="Country" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="22" />
+                    <Field name="Site D-U-N-S Number" source="Formula: (Multiple Sources)" type="Double" column="23" />
+                    <Field name="D-U-N-S Number" source="Formula: (Multiple Sources)" type="Double" column="24" />
+                    <Field name="supplier name (J&amp;J Supplied)" size="255" source="Formula: (Multiple Sources)" type="V_String" column="25" />
+                    <Field name="Global Ultimate Business Name" size="255" source="Formula: (Multiple Sources)" type="V_String" column="26" />
+                    <Field name="LATITUDE" source="Formula: (Multiple Sources)" type="Double" column="27" />
+                    <Field name="LONGITUDE" source="Formula: (Multiple Sources)" type="Double" column="28" />
+                    <Field name="RECORD ID" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="29" />
+                    <Field name="CLOSED DATE" source="(Multiple Sources)" type="DateTime" column="30" />
+                    <Field name="OPENED DATE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="31" />
+                    <Field name="IMPACTED OPCO" size="4000" source="Formula: (Multiple Sources)" type="V_String" column="32" />
+                    <Field name="METRIC TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="33" />
+                    <Field name="TYPE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="34" />
+                    <Field name="RATING" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="35" />
+                    <Field name="MATERIAL NUMBER" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="36" />
+                    <Field name="MATERIAL DESCRIPTION" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="37" />
+                    <Field name="IDEM" size="255" source="Formula: (Multiple Sources)" type="V_String" column="38" />
+                    <Field name="Last updated" source="Formula: (Multiple Sources)" type="DateTime" column="39" />
+                    <Field name="SEGMENTATION" size="255" source="Formula: (Multiple Sources)" type="V_String" column="40" />
+                    <Field name="CONTACT" size="255" source="Formula: (Multiple Sources)" type="V_WString" column="41" />
+                    <Field name="SIG INSPECTION OBSERVATION DETAILS" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="42" />
+                    <Field name="SUPPLIER NUMBER" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="43" />
+                    <Field name="FISCAL_CAL_DATE" source="(Multiple Sources)" type="DateTime" column="44" />
+                    <Field name="FISCAL CLOSED DATE" source="(Multiple Sources)" type="DateTime" column="45" />
+                    <Field name="DUE DATE" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="46" />
+                    <Field name="Procurement Category" size="255" source="Formula: (Multiple Sources)" type="V_String" column="47" />
+                    <Field name="Enterprise CL" size="255" source="Formula: (Multiple Sources)" type="V_String" column="48" />
+                    <Field name="NC SITE FOUND" size="255" source="Formula: (Multiple Sources)" type="V_String" column="49" />
+                    <Field name="Defect Classification" size="255" source="Formula: (Multiple Sources)" type="V_String" column="50" />
+                    <Field name="Franchise Criticality Level" size="255" source="Formula: [_CurrentField_]" type="V_String" column="51" />
+                    <Field name="Qualification Status" size="255" source="Formula: [_CurrentField_]" type="V_String" column="52" />
+                    <Field name="Franchise Category" size="22" source="Formula: [_CurrentField_]" type="String" column="53" />
+                    <Field name="Franchise Supplier Type" size="22" source="Formula: [_CurrentField_]" type="String" column="54" />
+                    <Field name="Crucial Supplier or Critical Subcontractor Status" size="255" source="Formula: [_CurrentField_]" type="V_String" column="55" />
+                    <Field name="OneASL Supplier Number" size="255" source="Formula: [_CurrentField_]" type="V_String" column="56" />
+                    <Field name="ASL Supplier" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" column="57" />
+                    <Field name="Q&amp;C Risk Rating Calculation" size="1073741823" source="Formula: &quot;In Scope of SOP ONLY&quot;" type="V_WString" column="58" />
+                    <Field name="Supervisor Date" source="DateTime: To MM-dd-yyyy" type="Date" column="59" />
+                  </RecordInfo>
+                </MetaInfo>
+              </MultiMetaInfo>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ManualDelayed</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="141">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="966" y="1206" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression><![CDATA[IsNull([CLEANSED SUPPLIER NAME]) or IsNull([CLEANSED SUPPLIER SITE]) or IsEmpty([CLEANSED SUPPLIER NAME]) or IsEmpty([CLEANSED SUPPLIER SITE]) ]]></Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>IsNull([CLEANSED SUPPLIER NAME]) or IsNull([CLEANSED SUPPLIER SITE]) or IsEmpty(...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="142">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="678" y="1110" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>!IsNull([DATE]) or !IsEmpty([DATE])</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!IsNull([DATE]) or !IsEmpty([DATE])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="143">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="570" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Supervisor Date" selected="False" />
+                <SelectField field="DateTime_Out" selected="True" rename="Supervisor Date" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="144">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="474" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>Supervisor Date</InputFieldName>
+              <Format>MM-dd-yyyy</Format>
+              <OutputFieldName>DateTime_Out</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert Supervisor Date From:
+MM-dd-yyyy</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="145">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1122" y="1254" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="METRIC TYPE" selected="True" />
+                <SelectField field="METRIC" selected="True" />
+                <SelectField field="SOURCE" selected="True" />
+                <SelectField field="SUPPLIER NAME" selected="True" />
+                <SelectField field="SUPPLIER CITY" selected="True" />
+                <SelectField field="CLEANSED SUPPLIER NAME" selected="True" />
+                <SelectField field="CLEANSED SUPPLIER SITE" selected="True" />
+                <SelectField field="State/ Province" selected="True" />
+                <SelectField field="Country" selected="True" />
+                <SelectField field="DATE" selected="True" />
+                <SelectField field="CLOSED DATE" selected="True" />
+                <SelectField field="OPENED DATE" selected="True" />
+                <SelectField field="OPCO" selected="True" />
+                <SelectField field="OPCO SITE" selected="True" />
+                <SelectField field="Franchise" selected="True" />
+                <SelectField field="Sector" selected="True" />
+                <SelectField field="Category" selected="True" />
+                <SelectField field="MONTH" selected="False" />
+                <SelectField field="YEAR" selected="False" />
+                <SelectField field="CL Level" selected="False" />
+                <SelectField field="NUMERATOR" selected="False" />
+                <SelectField field="DENOMINATOR" selected="False" />
+                <SelectField field="VALUE" selected="False" />
+                <SelectField field="DESCRIPTION" selected="False" />
+                <SelectField field="LEVEL" selected="False" />
+                <SelectField field="Site D-U-N-S Number" selected="False" />
+                <SelectField field="D-U-N-S Number" selected="False" />
+                <SelectField field="supplier name (J&amp;J Supplied)" selected="False" />
+                <SelectField field="Global Ultimate Business Name" selected="False" />
+                <SelectField field="LATITUDE" selected="False" />
+                <SelectField field="LONGITUDE" selected="False" />
+                <SelectField field="RECORD ID" selected="True" />
+                <SelectField field="IMPACTED OPCO" selected="False" />
+                <SelectField field="TYPE" selected="False" />
+                <SelectField field="RATING" selected="False" />
+                <SelectField field="MATERIAL NUMBER" selected="False" />
+                <SelectField field="MATERIAL DESCRIPTION" selected="False" />
+                <SelectField field="IDEM" selected="False" />
+                <SelectField field="Last updated" selected="False" />
+                <SelectField field="SEGMENTATION" selected="False" />
+                <SelectField field="CONTACT" selected="False" />
+                <SelectField field="SIG INSPECTION OBSERVATION DETAILS" selected="False" />
+                <SelectField field="SUPPLIER NUMBER" selected="True" />
+                <SelectField field="FISCAL_CAL_DATE" selected="False" />
+                <SelectField field="FISCAL CLOSED DATE" selected="False" />
+                <SelectField field="DUE DATE" selected="False" />
+                <SelectField field="Procurement Category" selected="False" />
+                <SelectField field="Enterprise CL" selected="False" />
+                <SelectField field="NC SITE FOUND" selected="False" />
+                <SelectField field="FDA CLASS" selected="False" />
+                <SelectField field="Defect Classification" selected="False" />
+                <SelectField field="Franchise Criticality Level" selected="False" />
+                <SelectField field="Qualification Status" selected="True" />
+                <SelectField field="Franchise Category" selected="False" />
+                <SelectField field="Franchise Supplier Type" selected="False" />
+                <SelectField field="Crucial Supplier or Critical Subcontractor Status" selected="False" />
+                <SelectField field="OneASL Supplier Number" selected="False" />
+                <SelectField field="ASL Supplier" selected="False" />
+                <SelectField field="Q&amp;C Risk Rating Calculation" selected="False" />
+                <SelectField field="Supervisor Date" selected="True" />
+                <SelectField field="Monitor Date" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="146">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1206" y="1254" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>NotContains</Operator>
+                <Field>Sector</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-01-21 14:46:05</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>other</Operand>
+                  <StartDate>2021-01-21 14:46:05</StartDate>
+                  <EndDate>2021-01-21 14:46:05</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>!Contains([Sector],"other")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="147">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1494" y="1374" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Sector</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-01-21 14:47:27</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Janssen</Operand>
+                  <StartDate>2021-01-21 14:47:27</StartDate>
+                  <EndDate>2021-01-21 14:47:27</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Sector],"Janssen")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="148">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1590" y="1578" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>Sector</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-01-21 14:47:49</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Consumer</Operand>
+                  <StartDate>2021-01-21 14:47:49</StartDate>
+                  <EndDate>2021-01-21 14:47:49</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Sector],"Consumer")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="149">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1734" y="1734" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>Contains([Sector],"vision") or Contains([Sector],"jjv")</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([Sector],"vision") or Contains([Sector],"jjv")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="150">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1338" y="1278" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>Contains</Operator>
+                <Field>SOURCE</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-01-21 14:50:50</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>curve</Operand>
+                  <StartDate>2021-01-21 14:50:50</StartDate>
+                  <EndDate>2021-01-21 14:50:50</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Contains([SOURCE],"curve")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="151">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1482" y="1242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Curve.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Curve.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="152">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1638" y="1350" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Janssen.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Janssen.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="153">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1710" y="1554" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Consumer.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Consumer.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="154">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1890" y="1698" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Vision.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vision.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="155">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1914" y="1818" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="19" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Med Device.yxdb</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <NoSpatialIndex>False</NoSpatialIndex>
+                <SaveSource>True</SaveSource>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Med Device.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="156">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1470" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Curve.xlsx|||Curve</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Curve.xlsx
+Query=Curve</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="157">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1638" y="1266" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Janssen.xlsx|||Janssen</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Janssen.xlsx
+Query=Janssen</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="158">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1710" y="1470" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Consumer.xlsx|||Consumer</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Consumer.xlsx
+Query=Consumer</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="159">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1890" y="1626" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Vision.xlsx|||Vision</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Vision.xlsx
+Query=Vision</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="160">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1998" y="1746" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\itsusrasdna110\sqm_prod\SQUIDs\Data\Missing Supplier Details\Med Device.xlsx|||Med Device</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <SkipFieldNames>False</SkipFieldNames>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Med Device.xlsx
+Query=Med Device</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="134" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="184" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output26" />
+      <Destination ToolID="173" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="10" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="138" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="176" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="False" />
+      <Destination ToolID="178" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="False" />
+      <Destination ToolID="182" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="166" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="166" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Join" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="168" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="134" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Output" />
+      <Destination ToolID="137" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Output" />
+      <Destination ToolID="179" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Output" />
+      <Destination ToolID="180" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Output" />
+      <Destination ToolID="181" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="166" Connection="True" />
+      <Destination ToolID="163" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="168" Connection="True" />
+      <Destination ToolID="169" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="173" Connection="Output" />
+      <Destination ToolID="136" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="176" Connection="Output" />
+      <Destination ToolID="175" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="178" Connection="Output" />
+      <Destination ToolID="172" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="179" Connection="Output" />
+      <Destination ToolID="170" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="180" Connection="Output" />
+      <Destination ToolID="135" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="181" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="182" Connection="Output" />
+      <Destination ToolID="174" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="184" Connection="True" />
+      <Destination ToolID="183" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="138" Connection="Output" />
+      <Destination ToolID="144" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="139" Connection="True" />
+      <Destination ToolID="140" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="141" Connection="False" />
+      <Destination ToolID="140" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="142" Connection="False" />
+      <Destination ToolID="140" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="139" Connection="False" />
+      <Destination ToolID="141" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="141" Connection="True" />
+      <Destination ToolID="145" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="142" Connection="True" />
+      <Destination ToolID="139" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="143" Connection="Output" />
+      <Destination ToolID="142" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="144" Connection="Output" />
+      <Destination ToolID="143" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="145" Connection="Output" />
+      <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="146" Connection="True" />
+      <Destination ToolID="150" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="False" />
+      <Destination ToolID="148" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="True" />
+      <Destination ToolID="152" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="True" />
+      <Destination ToolID="157" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="148" Connection="False" />
+      <Destination ToolID="149" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="148" Connection="True" />
+      <Destination ToolID="153" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="148" Connection="True" />
+      <Destination ToolID="158" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="149" Connection="True" />
+      <Destination ToolID="154" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="149" Connection="False" />
+      <Destination ToolID="155" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="149" Connection="True" />
+      <Destination ToolID="159" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="149" Connection="False" />
+      <Destination ToolID="160" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="150" Connection="False" />
+      <Destination ToolID="147" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="150" Connection="True" />
+      <Destination ToolID="151" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="150" Connection="True" />
+      <Destination ToolID="156" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>NewAllData Union for TDE- V4.0.1</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="3ac2139d-25a9-4a1f-ba17-96a5b12c9359" />
+      <Telemetry>
+        <PreviousWorkflowId value="0c85605e-36e4-4ba9-9ed7-eb8126c3e976" />
+        <OriginWorkflowId value="0c85605e-36e4-4ba9-9ed7-eb8126c3e976" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
